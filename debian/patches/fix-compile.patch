@@ -1,0 +1,149 @@
+Description: Use mygetline to avoid namespace collision
+ Add include for math.h for use of modf.
+ Move function declarations into icom.h to avoid 
+ implicit-function-declaration warnings.
+ Remove uses of gets().
+
+--- a/icom.c
++++ b/icom.c
+@@ -8,9 +8,12 @@
+ 
+ #ifndef MSDOS			/* include for Unix */
+ #include <sys/stat.h>
++#include <sys/time.h>
+ #include <fcntl.h>
+ #include <termios.h>
+ #include <time.h>
++#include <math.h>
++#include <unistd.h>
+ #endif /* MSDOS */
+ 
+ /*
+@@ -31,7 +34,7 @@
+ /*
+  * Local function prototypes
+  */
+-static int getline(char *);
++static int mygetline(char *);
+ static int argchan(struct icom *, struct chan *, char *);
+ static int argbank(struct icom *, struct chan *, char *);
+ static int setswitch(struct icom *, struct cmdtable *, int);
+@@ -41,13 +44,13 @@
+ static int sw_keybd(void);
+ char *capname(int, struct cmdtable *);
+ static char *capdescr(char *, struct cmdtable *);
+-int capkey(char *, struct cmdtable *);
+ double fabs(double);
+ static void printch(struct icom *, char *);
+ static int readmeter(struct icom *, struct cmdtable *, int, char *);
+ static void perr(int);
+ static int qqsv(struct icom *, struct cmdtable *);
+ static void banner(struct icom *);
++static int command(struct icom *, struct cmdtable *);
+ 
+ /*
+  * Global variables
+@@ -308,7 +311,7 @@
+ 			*ptr = '\0';
+ 			strcat(args, " ");
+ 			strcat(args, s1);
+-			argn = getline(args);
++			argn = mygetline(args);
+ 			argi = 0;
+ 			temp = command(rptr, key);
+ 		} else {
+@@ -331,13 +334,14 @@
+ 				}
+ 			} else {
+ 				printf("icom>");
+-				if (gets(args) == NULL)
++				if (fgets(args, LINMAX, stdin) == NULL)
+ 					exit(0);
++				args[strcspn(args, "\n")] = '\0';
+ 			}
+ 			if (*args == '#')
+ 				continue;
+ 
+-			argn = getline(args);
++			argn = mygetline(args);
+ 			argi = 0;
+ 			temp = command(rptr, cmd);
+ 		}
+@@ -862,7 +866,7 @@
+ 
+ 			if (*defarg != '\0') {
+ 				strcpy(s2, defarg);
+-				argn = getline(s2);
++				argn = mygetline(s2);
+ 				argi = 0;
+ 				if (argn == 0)
+ 					continue;
+@@ -871,7 +875,7 @@
+ 				if (rval < 0)
+ 					break;
+ 			}
+-			argn = getline(s1);
++			argn = mygetline(s1);
+ 			argi = 0;
+ 			if (argn == 0)
+ 				continue;
+@@ -1844,7 +1848,7 @@
+ 		if (argn - argi < 2)
+ 			printf("%s\n", cp->name);
+ 		else
+-			strlcpy(cp->name, argv[++argi],
++			strncpy(cp->name, argv[++argi],
+ 			    sizeof(cp->name));
+ 		break;
+ 
+@@ -2653,7 +2657,7 @@
+  * *argv[] array. The number of tokens found is returned to the caller.
+  */
+ static int			/* number of tokens */
+-getline(
++mygetline(
+ 	char	*str		/* pointer to input string */
+ 	)
+ {
+--- a/icom.h
++++ b/icom.h
+@@ -394,6 +394,7 @@
+ extern char *modetoa(int, struct cmdtable *);
+ extern char *getcap(char *, struct cmdtable *);
+ extern void setcap(char *, struct cmdtable *, char *);
++extern int capkey(char *, struct cmdtable *);
+ 
+ /*
+  * Exported by radio.c
+@@ -413,6 +414,12 @@
+ extern int loadbank(int, int, char *);
+ extern int readbank(int, int, char *);
+ extern struct icom *select_radio(int, int);
++extern int readvfo(struct icom *);
++extern void doublefreq(double, u_char *, int);
++extern int emptychan(int, struct chan *);
++extern void dtohex(int, u_char *);
++extern int emptyvfo(struct chan *);
++extern int readoffset(int, double *);
+ 
+ /*
+  * Exported by packet.c
+--- a/radio.c
++++ b/radio.c
+@@ -9,8 +9,6 @@
+ /*
+  * Local function prototypes
+  */
+-void dtohex(int, u_char *);
+-void doublefreq(double, u_char *, int); /* double to frequency */
+ double freqdouble(u_char *, int); /* frequency to double */
+ static int read_r8500(int, struct chan *);
+ static int write_r8500(int, struct chan *);
+@@ -18,7 +16,6 @@
+ static int write_756(int, struct chan *);
+ static int read_7000(int, struct chan *);
+ static int write_7000(int, struct chan *);
+-int emptyvfo(struct chan *);
+ 
+ 
+ /*

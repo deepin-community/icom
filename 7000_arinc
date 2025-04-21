@@ -1,0 +1,111 @@
+
+# Carribean/South America
+
+5.1 2887 USB name "CAR A" # CAR-A
++  3455	USB name "CAR B" # CAR-B
++  5520	USB name "CAR B" # CAR-B
++  5550	USB name "CAR A" # CAR-A
++  6577	USB name "CAR A" # CAR-A
++  6586	USB name "CAR B" # CAR-B
++  8846	USB name "CAR B" # CAR-B
++  8918	USB name "CAR A" # CAR-A
++ 11330	USB name "CAR B" # CAR-B
++ 11387	USB name "CAR B" # CAR-B
++ 11396	USB name "CAR A" # CAR-A
++ 13297	USB name "CAR A" # CAR-A
++ 17907	USB name "CAR A/B" # CAR-A
+
+# VOLMET
+
++  3485	USB name "VOLM NAT" # VOLMET-NAT
++  6604	USB name "VOLM NAT" # VOLMET-NAT
++ 10051	USB name "VOLM NAT" # VOLMET-NAT
++ 13270	USB name "VOLM NAT" # VOLMET-NAT
+
++  3413	USB name "VOLM EU" # VOLMET-EU
++  5505	USB name "VOLM EU" # VOLMET-EU
++  8957	USB name "VOLM EU" # VOLMET-EU
++ 13264	USB name "VOLM EU" # VOLMET-EU
+
++  2863	USB name "VOLM PAC" # VOLMET-PAC
++  6679	USB name "VOLM PAC" # VOLMET-PAC
++  8828	USB name "VOLM PAC" # VOLMET-PAC
++ 13282	USB name "VOLM PAC" # VOLMET-PAC
++  5450 USB name "VOLM ME" # VOLMET-ME
+
+# North Atlantic
+
++  3016 USB name "NAT A" # NAT-A
++  5598	USB name "NAT A" # NAT-A
++  8906	USB name "NAT A" # NAT-A
++ 13306	USB name "NAT A" # NAT-A
++ 17946	USB name "NAT A" # NAT-A
+
++  2899	USB name "NAT B" # NAT-B
++  5616	USB name "NAT B" # NAT-B
++  8864	USB name "NAT B" # NAT-B
++ 13291	USB name "NAT B" # NAT-B
++ 17946	USB name "NAT B" # NAT-B
+
++  2862	USB name "NAT C" # NAT-C
++  5649	USB name "NAT C" # NAT-C
++  8879	USB name "NAT C" # NAT-C
++ 13306	USB name "NAT C" # NAT-C
++ 17946	USB name "NAT C" # NAT-C
+
++  2971	USB name "NAT D" # NAT-D
++  4675	USB name "NAT D" # NAT-D
++  8891	USB name "NAT D" # NAT-D
++ 11279	USB name "NAT D" # NAT-D
++ 13291	USB name "NAT D" # NAT-D
++ 17946	USB name "NAT D" # NAT-D
+
++  2962	USB name "NAT E" # NAT-E
++  6628	USB name "NAT E" # NAT-E
++  8825	USB name "NAT E" # NAT-E
++ 11309	USB name "NAT E" # NAT-E
++ 13354	USB name "NAT E" # NAT-E
+
++  3476	USB name "NAT F" # NAT-F
++  6622	USB name "NAT F" # NAT-F
++  8831	USB name "NAT F" # NAT-F
+
+# Pacific
+
++  2869 USB name "CEP" # CEP-1/2
++  3413	USB name "CEP" # CEP-1/2
++  5547	USB name "CEP" # CEP-1/2
++  5574	USB name "CEP" # CEP-1/2
++  8843	USB name "CEP" # CEP-1/2
++ 11282	USB name "CEP" # CEP-1/2
++ 13261	USB name "CEP" # CEP-1/2
++ 13354	USB name "CEP" # CEP-1/2
++ 17904	USB name "CEP" # CEP-1/2
+
++  2998	USB name "CWP" # CWP-1/2
++  4666	USB name "CWP" # CWP-1/2
++  6532	USB name "CWP" # CWP-1/2
++  6562	USB name "CWP" # CWP-1/2
++  8903	USB name "CWP" # CWP-1/2
++ 11384	USB name "CWP" # CWP-1/2
++ 13300	USB name "CWP" # CWP-1/2
++ 17904	USB name "CWP" # CWP-1/2
++ 21985	USB name "CWP" # CWP-1/2
+
++  2932	USB name "NP" # NP
++  5628	USB name "NP" # NP
++  5667	USB name "NP" # NP
++  6665	USB name "NP" # NP
++  8915	USB name "NP" # NP
++ 10048	USB name "NP" # NP
++ 13294	USB name "NP" # NP
++ 17904	USB name "NP" # NP
++ 17946	USB name "NP" # NP
++ 21925	USB name "NP" # NP
+
++  3467	USB name "SP" # SP
++  5643	USB name "SP" # SP
++  5667	USB name "SP" # SP
++  8867	USB name "SP" # SP
++ 13273	USB name "SP" # SP
++ 17904	USB name "SP" # SP

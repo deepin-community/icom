@@ -1,0 +1,11 @@
+# 706g palette
+# start in memo mode
+#
+radio 706g
+#empty $
+vfo a
+default tone off split 0
+default
+restore 1:39 706g_rpt
+default
+restore 40:99 706g_arinc

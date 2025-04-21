@@ -1,22 +1,31 @@
-Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: template-repository
-Source: https://github.com/deepin-community/template-repository
+This is the Debian GNU/Linux package of icom.
+This package was put together from sources obtained at:
+  http://www.eecis.udel.edu/~mills/resource/icom.tar.gz
+by Colin Tuckley <colint@debian.org>
+Previous versions were obtained from:
+  http://www.eecis.udel.edu/~ntp/ntp_spool/software/icom.tar.gz
+by Hamish Moffatt <hamish@debian.org>
 
-Files: *
-Copyright: 2023 Tsic404 <liuheng@deepin.org>
-License: GPL-2+
- This package is free software; you can redistribute it and/or modify
- it under the terms of the GNU General Public License as published by
- the Free Software Foundation; either version 2 of the License, or
- (at your option) any later version.
- .
- This package is distributed in the hope that it will be useful,
- but WITHOUT ANY WARRANTY; without even the implied warranty of
- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- GNU General Public License for more details.
- .
- You should have received a copy of the GNU General Public License
- along with this program. If not, see <https://www.gnu.org/licenses/>
- .
- On Debian systems, the complete text of the GNU General
- Public License version 2 can be found in "/usr/share/common-licenses/GPL-2".
+/***********************************************************************
+ *                                                                     *
+ * Copyright (c) David L. Mills 1994-2003                              *
+ *                                                                     *
+ * Permission to use, copy, modify, and distribute this software and   *
+ * its documentation for any purpose and without fee is hereby         *
+ * granted, provided that the above copyright notice appears in all    *
+ * copies that both the copyright notice and this permission           *
+ * notice appear in supporting documentation, and that the name        *
+ * University of Delaware not be used in advertising or publicity      *
+ * pertaining to distribution of the software without specific,        *
+ * written prior permission. The University of Delaware makes no       *
+ * representations about the suitability this software for any         *
+ * purpose. It is provided "as is" without express or implied          *
+ * warranty.                                                           *
+ *                                                                     *
+ ***********************************************************************
+
+(Additional note from the maintainer: 
+ I clarified this with the author by email in January 1999.
+ "Without fee" means no fee is due to the copyright holder,
+ not that no fee may be charged.)
+

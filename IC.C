@@ -1,0 +1,2903 @@
+/*
+ * Program to control ICOM radios
+ *
+ * Main program
+ */
+#include "icom.h"
+#include <ctype.h>
+
+#ifndef MSDOS			/* include for Unix */
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <termios.h>
+#include <time.h>
+#endif /* MSDOS */
+
+/*
+ * Module definitions
+ */
+#define ARGMAX	20		/* maximum number of command args */
+#define DICOM	"/dev/icom"	/* CI-V serial port device */
+
+/*
+ * External functions
+ */
+extern FILE *fopen();
+extern char *strtok(), *strcpy();
+extern char *optarg;
+extern int optind, opterr;
+extern double freqdouble(u_char *, int);
+
+/*
+ * Local function prototypes
+ */
+static int getline(char *);
+static int argchan(struct icom *, struct chan *, char *);
+static int argbank(struct icom *, struct chan *, char *);
+static int setswitch(struct icom *, struct cmdtable *, int);
+static int setswitch2(struct icom *, struct cmdtable *, int);
+static int setswitch3(struct icom *, struct cmdtable *, int, int);
+static int sw_keypad(void);
+static int sw_keybd(void);
+char *capname(int, struct cmdtable *);
+static char *capdescr(char *, struct cmdtable *);
+int capkey(char *, struct cmdtable *);
+double fabs(double);
+static void printch(struct icom *, char *);
+static int readmeter(struct icom *, struct cmdtable *, int, char *);
+static void perr(int);
+static int qqsv(struct icom *, struct cmdtable *);
+static void banner(struct icom *);
+
+/*
+ * Global variables
+ */
+int	fd_icom;		/* CI-V device */
+struct icom *rptr = NULL;	/* radio structure pointer */
+int	flags;			/* radio flags */
+int	pflags;			/* program flags */
+static char defarg[LINMAX];	/* default arguments */
+static char args[LINMAX];	/* command line */
+static char *argv[ARGMAX];	/* command line args */
+static int argn;		/* number of command line args */
+static int argi;		/* command args index */
+static FILE *fp_cmd[FPMAX] = {NULL}; /* include file stack */
+static int fp = 0;		/* include file statck index */
+static char *updown = " +- ";	/* channel dinkle */
+
+#ifndef MSDOS
+static int fd;			/* terminal control file descriptor */
+static struct termios terma, termb; /* Unix terminal interface */
+extern int errno;
+#endif /* MSDOS */
+
+/*
+ * Main program
+ */
+int
+main(
+	int	argc,		/* number of arguments */
+	char	**argcv		/* vector of argument pointers */
+	)
+{
+	char	chr;		/* char temp */
+	char	*ptr;		/* fiddles */
+	int	i, temp;	/* int temps */
+	double	freq;		/* double temp */
+	struct icom *rp;	/* radio structure pointer */
+	struct chan *cp;	/* memory channel pointer */
+	char	s1[LINMAX];	/* string buffer */
+	FILE	*fp_temp;
+
+	/*
+	 * Initialize
+	 */
+	flags = pflags = 0;
+	*defarg = '\0';
+	rptr = NULL;
+
+#ifndef MSDOS
+	/*
+	 * Process command-line arguments
+	 */
+	if ((fd_icom = open(DICOM, O_RDWR, 0777)) < 0) {
+		printf("*** Unable to open serial port %s\n", DICOM);
+		exit(1);
+	}
+	while ((temp = getopt(argc, argcv, "c:df:g:km:o:r:")) != -1) {
+		switch (temp) {
+
+		/*
+		 * -d - debug trace
+		 */
+		case 'd':
+			pflags |= P_TRACE | P_ERMSG;
+			continue;
+
+		/*
+		 * -f <file> - open command file
+		 */
+		case 'f':
+			if ((fp_temp = fopen(optarg, "r")) == NULL) {
+				perr(R_IO);
+				exit(R_IO);
+			}
+			fp++;
+			fp_cmd[fp] = fp_temp;
+			continue;
+
+		/*
+		 * -k - select keypad mode
+		 */
+		case 'k':
+			pflags |= P_PAD;
+			continue;
+
+		/*
+		 * -r <radio> - select radio. Use default bit rate.
+		 */
+		case 'r':
+			temp = capkey(optarg, identab);
+			if (temp < 0) {
+				perr(temp);
+				exit(temp);
+			}
+			rptr = select_radio(temp, 0);
+			if (rptr == NULL) {
+				perr(R_RAD);
+				exit(R_RAD);
+			}
+			continue;
+		}
+
+		/*
+		 * The remaining options are valid only after a radio
+		 * has been selected. If any are selected, the program
+		 * exits after executing the command line options.
+		 */
+		if (rptr == NULL) {
+			perr(R_DEF);
+			exit(R_DEF);
+		}
+		rp = rptr;
+		cp = &rp->chan;
+		switch (temp) {
+
+		/*
+		 * -c <chan> - set bank, channel
+		 *
+		 * This is the same as the chan keyboard command.
+		 */
+		case 'c':
+			pflags |= P_EXIT;
+			temp = argchan(rp, cp, optarg);
+			if (temp < 0) {
+				perr(temp);
+				continue;
+			}
+			temp = readchan(rp);
+			if (temp < 0)
+				perr(temp);
+			continue;
+
+		/*
+		 * -g <freq> - set frequency
+		 *
+		 * This is the same as the default frequency keyboard
+		 * command.
+		 */
+		case 'g':
+			pflags |= P_EXIT;
+			if (sscanf(optarg, "%lf", &freq) != 1) {
+				perr(R_FMT);
+				continue;
+			}
+			if (freq > 1000)
+				freq /= 1000;
+				temp = loadfreq(rp, freq);
+			if (temp < 0)
+				perr(temp);
+			continue;
+
+		/*
+		 * -m <mode> - set mode
+		 *
+		 * This is the same as the mode keybard command. Note,
+		 * this option must precede the -g option for older
+		 * radios.
+		 */
+		case 'm':
+			pflags |= P_EXIT;
+			temp = capkey(optarg, rp->modetab);
+			if (temp < 0) {
+				perr(temp);
+				continue;
+			}
+			temp = loadmode(rp->ident, temp);
+			if (temp < 0)
+				perr(temp);
+			continue;
+		}
+	}
+
+	/*
+	 * If a radio was found, initialize it. If its settings were
+	 * changed and a command file is not open, assume this is run
+	 * from a script and nothing more needs to be done.
+	 */
+	if (pflags & P_EXIT)
+		exit(0);
+
+	if (pflags & P_PAD) {
+		if (sw_keypad())
+			pflags &= ~P_PAD;
+	}
+#endif /* MSDOS */
+
+	/*
+	 * Main loop
+	 */
+	while (1) {
+		flags &= ~F_CACHE;
+		pflags &= ~(P_DISP | P_DSPCH | P_DSPST | P_KEYP |
+		    P_ESC);
+		if (pflags & P_PAD) {
+
+			/*
+			 * Keypad mode. Keypad commands begin with a
+			 * sequence of digits and special characters and
+			 * end with a single letter, ANSI escape
+			 * sequence or '\n', which specifies the
+			 * function. Escape sequences consist of ESC
+			 * followed by '[' and either a letter or
+			 * sequence of digits followed by '~', which is
+			 * not part of the command. Help '?' displays a
+			 * list of command names and descriptions.
+			 */
+			printf(">");
+			ptr = s1;
+			*ptr = *args = '\0';
+			while (1) {
+				chr = (char)getchar();
+				if (chr == KILL) {
+ 					printf(" XXX\n>");
+					ptr = s1;
+					*ptr = *args = '\0';
+					continue;
+				}
+				if (chr == ESC) {
+					pflags |= P_ESC;
+					*ptr = '\0';
+					ptr = args;
+					continue;
+				}
+				if (pflags & P_ESC) {
+					if (chr == '~' || chr == '\n')
+						break;
+
+					*ptr++ = chr;
+ 					if (isalpha(chr))
+						break;
+
+					continue;
+				}
+				if (!isalpha(chr) && !iscntrl(chr) &&
+				    chr != '?' && chr != ' ') {
+					pflags |= P_KEYP;
+					*ptr++ = chr;
+ 					putchar(chr);
+					continue;
+				}
+				*ptr = '\0';
+				ptr = args;
+				if (chr != '\n') {
+					pflags |= P_KEYP;
+					*ptr++ = chr;
+					putchar(chr);
+				}
+				if (pflags & P_KEYP)
+					putchar('\n');
+				break;
+			}
+
+			/*
+			 * Rewrite the line with the command letter
+			 * first followed by the argument, then pretend
+			 * it a keyboard command.
+			 */
+			*ptr = '\0';
+			strcat(args, " ");
+			strcat(args, s1);
+			argn = getline(args);
+			argi = 0;
+			temp = command(rptr, key);
+		} else {
+
+			/*
+			 * Keyboard mode. Get the next command line and
+			 * parse the tokens separated by whitespace.
+			 * Ignore '#' and the rest of the line. This is
+			 * handy for command script annotations.
+			 */
+			if (fp_cmd[fp] != NULL) {
+				if (fgets(args, LINMAX, fp_cmd[fp]) ==
+				    NULL) {
+					close(fp_cmd[fp]);
+					fp--;
+					continue;
+
+				} else {
+					printf("%s", args);
+				}
+			} else {
+				printf("icom>");
+				if (gets(args) == NULL)
+					exit(0);
+			}
+			if (*args == '#')
+				continue;
+
+			argn = getline(args);
+			argi = 0;
+			temp = command(rptr, cmd);
+		}
+		perr(temp);
+		if (rptr == NULL)
+			continue;
+
+		/*
+		 * Update chan, freq, mode.
+		 */
+		rp = rptr;
+		cp = &rp->chan;
+		if (pflags & (P_DISP | P_DSPCH | P_DSPST)) {
+			printch(rp, s1);
+			printf("%s\n", s1);
+		}
+	}
+}
+
+
+/*
+ * Process each command in the line in turn.
+ */
+int
+command(
+	struct icom *rp,	/* radio pointer */
+	struct cmdtable *cmdop	/* command table pointer */
+	)
+{
+	int	rval;
+
+	rval = R_OK;
+	if (argn == 0) {
+		pflags |= P_DISP;
+		return (rval);
+	}
+	while (argn - argi > 0) {
+		rval =  qqsv(rptr, cmdop);
+		if (rval < 0)
+			break;
+
+		argi++;
+	}
+	return (rval);
+}
+
+
+/*
+ * Execute command
+ *
+ * This routine executes a command consisting of a single line beginning
+ * with a command token followed by argument tokens. Some commands cause
+ * this routine to be invoked recursively. In each case the recursive
+ * call points to a command token.
+ */
+int
+qqsv(
+	struct icom *rp,	/* radio pointer */
+	struct cmdtable *cmdop	/* command table pointer */
+	)
+{
+	FILE *fp_in;		/* data input file */
+	FILE *fp_out;		/* data output file */
+	char	s1[LINMAX];	/* string buffer */
+	char	s2[LINMAX];	/* string buffer */
+	u_char	rsp[BMAX];	/* radio response */
+	u_char	*ptr;		/* fiddles */
+	int	i, temp, sw, rval; /* int temps */
+	FILE	*fp_temp;
+	double	freq, step, dtemp; /* double temps */
+	struct chan *cp;	/* memory channel pointer */
+	u_char cmdempty[] = {V_EMPTY, FI};
+	u_char cmdctl[] = {0, 0, 0, 0, FI};
+	u_char cmdvfom[] = {V_VFOM, FI};
+	u_char cmdwrite[] = {V_WRITE, FI};
+	u_char cmdtx[] = {V_TX, 0x00, 0x01, FI};
+	u_char cmdrx[] = {V_TX, 0x00, 0x00, FI};
+	u_char cmdvfoa[] = {V_SVFO, 0x00, FI};
+	u_char cmdvfob[] = {V_SVFO, 0x01, FI};
+	u_char cmdsplit[] = {V_SPLIT, 0x00, FI};
+	u_char cmdswap[] = {V_SVFO, 0xb0, FI};
+	struct timeval tv;
+	struct tm *tm;
+
+	/*
+	 * For the 756, 7000 and 7800 time comands
+	 */
+	u_char year7000[] = {V_SETW, 0x05, 0x00, 0x39, FI, 0x00, FI};
+	u_char date7000[] = {V_SETW, 0x05, 0x00, 0x40, FI, 0x00, FI};
+	u_char time7000[] = {V_SETW, 0x05, 0x00, 0x41, FI, 0x00, FI};
+	u_char date7800[] = {V_SETW, 0x05, 0x00, 0x59, FI, 0x00, 0x00,
+	    0x00, FI};
+	u_char time7800[] = {V_SETW, 0x05, 0x00, 0x60, FI, 0x00, FI};
+	u_char time756[] = {V_SETW, 0x05, 0x16, FI, 0x00, FI};
+
+	/*
+	 * Ignore selected noise strings.
+	 */
+	rval = R_OK;
+	if (strcmp(argv[argi], "MHz") == 0 || strcmp(argv[argi],
+	    "kHz") == 0 || strcmp(argv[argi], "dB") == 0)
+		return(rval);
+
+	sw = capkey(argv[argi], cmdop);
+	switch (sw) {
+
+	/*
+	 * radio [ <name> [ <baud> ]]
+	 *
+	 * Select the <name> radio and CI-V bit rate <baud> for further
+	 * commands and display its description and band limits. If
+	 * <baud> is missing, use the default from tables. If <name> is
+	 * missing and the radio has not been previously defined, the
+	 * bus is probed for all known radios, which takes some time. If
+	 * previously defined, its description and band limits of are
+	 * displayed.
+	 */
+	case C_RADIO:
+		if (argn - argi < 2) {
+			if (rp != NULL) {
+				banner(rp);
+				break;
+			}
+			temp = R_NOR;;
+			for (i = 0; name[i].name[0] != '\0'; i++) {
+				rp = select_radio(name[i].ident, 0);
+				if (rp != NULL)
+					banner(rp);
+			}
+		} else {
+			temp = capkey(argv[++argi], identab);
+			if (temp < 0)
+				return (temp);
+
+			if (argn - argi < 2)
+				i = 0;
+			else
+				i = capkey(argv[++argi], baud);
+			if (i < 0)
+				return(i);
+
+			rp = select_radio(temp, i);
+			if (rp != NULL)
+				banner(rp);
+		}
+		if (rptr == NULL)
+			return (R_RAD);
+
+		pflags |= P_DSPCH;
+		break;
+
+	/*
+	 * include
+	 *
+	 * include command file.
+	 */
+	case C_INCLD:
+		if (argn - argi < 2) {
+			rval = R_ARG;
+			break;
+		}
+		if ((fp_temp = fopen(argv[++argi], "r")) == NULL) {
+			rval = (R_IO);
+			break;
+		}
+		fp++;
+		fp_cmd[fp] = fp_temp;
+		break;
+
+	/*
+	 * quit
+	 *
+	 * Quit the dance
+	 */
+	case C_QUIT:
+		exit(0);
+
+	/*
+	 * verbose off | on
+	 *
+	 * Set verbose mode
+	 */
+	case C_VERB:
+		if (argn - argi < 2)
+			return (R_ARG);
+
+		temp = capkey(argv[++argi], verbx);
+		if (temp < 0)
+			rval = temp;
+		else
+			pflags = (pflags & ~P_VERB) | temp;
+		return (rval);
+
+	/*
+	 * trace [ all | none | bus | pkt ]
+	 *
+	 * Set debug flags
+	 */
+	case C_DEBUG:
+		if (argn - argi < 2)
+			return (R_ARG);
+
+		temp = capkey(argv[++argi], dbx);
+		if (temp < 0)
+			rval = temp;
+		else
+			pflags = (pflags & ~(P_TRACE | P_ERMSG)) | temp;
+		return (rval);
+
+	/*
+	 * pad
+	 *
+	 * Switch to keypad mode.
+	 */
+	case C_KEYPAD:
+		if (!sw_keypad())
+			pflags |= P_PAD;
+		return (rval);
+
+	/*
+	 * / (keypad mode)
+	 *
+	 * Erase input
+	 */
+	case R_ERR:
+	case C_ERASE:
+		return (rval);
+
+	/*
+	 * q (keypad mode)
+	 *
+	 * Switch to keyboard mode.
+	 */
+	case C_KEYBD:
+		if (!sw_keybd())
+			pflags &= ~P_PAD;
+		return (rval);
+	}
+
+	/*
+	 * The remaining commands are valid only after a radio has been
+	 * selected.
+	 */
+	if (rp == NULL)
+		return (R_DEF);
+
+	cp = &rp->chan;
+	switch (sw) {
+
+	/*
+	 * dump vfo (debug)
+	 */
+	case C_DUMP:
+		printf("flags %x pflags %x vfo", flags, pflags);
+		ptr = (u_char *)&cp->vfo;
+		for (i = 0; i < sizeof(struct vfo7000); i++)
+			printf(" %02x", *ptr++ & 0xff);
+		printf("\nsplit %f step %02x pstep %02x %02x atten %02x scan %02x\n",
+		    cp->split, cp->aux.step, cp->aux.pstep[0],
+		    cp->aux.pstep[1], cp->aux.atten, cp->aux.scan);
+		break;
+
+	/*
+	 * default
+	 *
+	 * Concatenate remaining tokens as default string for restore.
+	 */
+	case C_DEFLT:
+		if (argn - argi < 2) {
+			printf("default:%s\n", defarg);
+			break;
+		}
+		*defarg = '\0';
+		while (argn - argi > 1) {
+			strcat(defarg, " ");
+			strcat(defarg, argv[++argi]);
+		}
+		break;
+
+	/*
+	 * time [ set ]
+	 *
+	 * Set date and time and display for readback. This works for
+	 * the 7000 and 756 and maybe works for the 7800.
+	 */
+	case C_TIME:
+		gettimeofday(&tv, NULL);
+		tm = gmtime((time_t *)&tv.tv_sec);
+
+		/*
+		 * 7000 yyyy mm/dd hhmm
+		 */ 
+		if (rp->ident == 0x70) {
+			if (argn - argi > 1) {
+				++argi;
+				dtohex(tm->tm_year + 1900,
+				    &year7000[4]);
+				rval = setcmda(rp->ident, year7000,
+				    rsp);
+				if (rval < 0)
+					break;
+
+				dtohex((tm->tm_mon + 1) * 100 +
+				    tm->tm_mday, &date7000[4]);
+				setcmda(rp->ident, date7000, rsp);
+				dtohex(tm->tm_hour * 100 + tm->tm_min,
+				    &time7000[4]);
+				setcmda(rp->ident, time7000, rsp);
+			}
+			year7000[4] = FI;
+			setcmda(rp->ident, year7000, rsp);
+			sprintf(s1, "%02x%02x ", rsp[4], rsp[5]);
+			date7000[4] = FI;
+			setcmda(rp->ident, date7000, rsp);
+			sprintf(s2, "%x/%x ", rsp[4], rsp[5]);
+			strcat(s1, s2);
+			time7000[4] = FI;
+			setcmda(rp->ident, time7000, rsp);
+			sprintf(s2, "%02x%02x UTC", rsp[4], rsp[5]);
+			strcat(s1, s2);
+
+		/*
+		 * 7800 yyyy mm/dd hhmm
+		 */
+		} else if (rp->ident == 0x6a) {
+			if (argn - argi > 1) {
+				++argi;
+				dtohex(tm->tm_year + 1900,
+				    &date7800[4]);
+				dtohex((tm->tm_mon + 1) * 100 +
+				    tm->tm_mday, &date7800[6]);
+				rval = setcmda(rp->ident, date7800,
+				    rsp);
+				if (rval < 0)
+					break;
+
+				dtohex(tm->tm_hour * 100 + tm->tm_min,
+				    &time7800[4]);
+				setcmda(rp->ident, time7800, rsp);
+			}
+			date7800[4] = FI;
+			setcmda(rp->ident, date7800, rsp);
+			sprintf(s1, "%02x%02x ", rsp[4], rsp[5]);
+			sprintf(s2, "%x/%x ", rsp[6], rsp[7]);
+			strcat(s1, s2);
+			time7800[4] = FI;
+			setcmda(rp->ident, time7800, rsp);
+			sprintf(s2, "%02x%02x UTC", rsp[4], rsp[5]);
+			strcat(s1, s2);
+
+		/*
+		 * 756 hhmm
+		 */
+		} else {
+			if (argn - argi > 1) {
+				++argi;
+				dtohex(tm->tm_hour * 100 + tm->tm_min,
+				    &time756[3]);
+				rval = setcmda(rp->ident, time756, rsp);
+				if (rval < 0)
+					break;
+			}
+			time756[3] = FI;
+			setcmda(rp->ident, time756, rsp);
+			sprintf(s1, "%02x%02x UTC", rsp[3], rsp[4]);
+		}
+		printf("%s\n", s1);
+		break;
+
+	/*
+	 * (command not found)
+	 *
+	 * We get here if the token matches no valid command name. If it
+	 * has valid floating-point format, set the frequency as given.
+	 * If it is a valid mode name, then set the mode as given.
+	 * Otherwise, declare an error.
+	 */
+	case C_FREQX:
+		if (sscanf(argv[argi], "%lf", &freq) == 1) {
+			if (freq > 1000.)
+				freq /= 1000;
+			rval = loadfreq(rp, freq);
+			if (rval < 0)
+				break;
+
+			pflags |= P_DISP;
+			break;
+		}
+		temp = capkey(argv[argi], rp->modetab);
+		if (temp < 0) {
+			rval = temp;
+			break;
+		}
+		rval = loadmode(rp->ident, temp);
+		if (rval < 0)
+			break;
+
+		pflags |= P_DISP;
+		break;
+
+	/*
+	 * mode <mode>
+	 *
+	 * The only reason this command is here is to provide help with
+	 * the valid mode combinations. The following radios support the
+	 * mode variants listed (1 narrow, 2 medium, 3 wide).
+	 *
+	 *	 usb/lsb    cw/rtty	am	    fm		wfm
+	 * 706g	 2, 3	    1, 2, 3	2, 3	    2, 3	1
+	 * 756	 1, 2, 3    1, 2, 3	1, 2, 3	    2, 3	no
+	 * 7000	 1, 2, 3    1, 2, 3	1, 2, 3	    1, 2, 3	1
+	 * R8500 1, 2, 3    1, 2, 3	1, 2, 3	    1, 2	1 
+	 */
+	case C_MODE:
+		if (argn - argi < 2) {
+			pflags |= P_DISP;
+			break;
+		}
+		temp = capkey(argv[++argi], rp->modetab);
+		if (temp < 0) {
+			rval = temp;
+			break;
+		}
+		rval = loadmode(rp->ident, temp);
+		if (rval < 0)
+			break;
+
+		pflags |= P_DISP;
+		break;
+
+	/*
+	 ***************************************************************
+	 *                                                             *
+         * These commands are the bread and butter for most operators. *
+	 * They can be used to enter and display frequency and mode    *
+	 * data and, when available, filter configuration. Note the    *
+	 * difference between the freq and chan commands; the freq     *
+	 * command operates directly on the VFO, while the chan        *
+	 * command retrieves the entire channel contents, including in *
+	 * the 7000 both VFOs and channel name.                        *
+	 *                                                             *
+	 ***************************************************************
+	 */
+	/*
+	 ***************************************************************
+	 *                                                             *
+         * The save and restore commands are used to save a single     *
+	 * channel or block of channels to a file and restore them     *
+	 * from a file. They can also be used to clone data between    *
+	 * compatible radios. The read, write and empty commands       *
+	 * operate on a single  channel or block of channels.          *
+	 *                                                             *
+	 ***************************************************************
+	 *
+	 * The arguments to these commands specify a single bank/chanel
+	 * number or a range of bank/channel numbers. See argchan() for
+	 * syntax
+	 */
+	/*
+	 * save [ chan ] [ file ]
+	 *
+	 * Save a block of memory channels to a file.
+	 */
+	case C_SAVE:
+		if (argn - argi < 2)
+			temp = argchan(rp, cp, NULL);
+		else
+			temp = argchan(rp, cp, argv[++argi]);
+		if (temp < 0)
+			return (temp);;
+
+		if ((fp_out = fopen(argv[++argi], "w")) == NULL)
+			return (R_IO);
+
+		pflags |= P_DSPCH;
+		while (1) {
+			rval = readchan(rp);
+			if (rval < 0)
+				break;
+
+			printch(rp, s1);
+			printf("%s\n", s1);
+			if (cp->freq != 0)
+				fprintf(fp_out, "%s\n", s1);
+			if (argchan(rp, cp, &updown[temp]) == 3)
+				break;
+		}
+		fclose(fp_out);
+		pflags &= ~P_DSPCH;
+		break;
+
+	/*
+	 * restore [ chan ] [ file ]
+	 *
+	 * Restore a block of memory channels from a file. If the
+	 * argument is '*', restore each file line to the same memory
+	 * channel it came from. If not, restore the block specified,
+	 * from the first channel to the lase.
+	 */
+	case C_RESTORE:
+		if (argn < 3)
+			return (R_ARG);
+
+		if (*argv[++argi] == '*')
+			temp = 4;
+		else
+			temp = argchan(rp, cp, argv[argi]);
+		if (temp < 0)
+			return (temp);
+
+		if ((fp_in = fopen(argv[++argi], "r")) == NULL)
+			return (R_IO);
+
+		pflags |= P_DSPCH;
+		while (1) {
+
+			/*
+			 * Get next line from file. Ignore empty lines.
+			 */
+			if (fgets(s1, LINMAX, fp_in) == NULL)
+				break;
+
+			if (*defarg != '\0') {
+				strcpy(s2, defarg);
+				argn = getline(s2);
+				argi = 0;
+				if (argn == 0)
+					continue;
+
+				rval = command(rp, loadtab);
+				if (rval < 0)
+					break;
+			}
+			argn = getline(s1);
+			argi = 0;
+			if (argn == 0)
+				continue;
+
+			/*
+			 * If '*' argument, copy the data to the channel
+			 * specified on the file line. If not, copy the
+			 * data to the channel specified in the
+			 * argument.
+			 */
+			emptyvfo(cp);
+			if (temp == 4) {
+				rval = argchan(rp, cp, argv[argi++]);
+				if (rval < 0)
+					break;
+
+				if (argn == 1)
+					continue;
+
+				rval = command(rp, loadtab);
+				if (rval < 0)
+					break;
+
+				printch(rp, s1);
+				printf("%s\n", s1);
+				rval = writechan(rp);
+				if (rval < 0)
+					break;
+			} else {
+				if (argn == 1)
+					continue;
+
+				argi++;
+				rval = command(rp, loadtab);
+				if (rval < 0)
+					break;
+
+				printch(rp, s1);
+				printf("%s\n", s1);
+				rval = writechan(rp);
+				if (rval < 0)
+					break;
+
+				if (argchan(rp, cp, &updown[temp]) == 3)
+					break;
+			}
+		}
+		close(fp_in);
+		pflags &= ~(P_DISP | P_DSPCH);
+		break;
+
+	/*
+	 * read [ chan ]
+	 *
+	 * Read frequency, mode and other data from a memory channel.
+	 * While it seems silly, specifying a block of channels reads
+	 * them all and leaves the current channel pointer at the first
+	 * one beyond the range.
+	 */
+	case C_READ:
+		if (argn - argi < 2)
+			temp = argchan(rp, cp, NULL);
+		else
+			temp = argchan(rp, cp, argv[++argi]);
+		if (temp < 0) {
+			if (temp == R_NOP)
+				capkey("?", loadtab);
+			return (temp);
+		}
+		pflags |= P_DSPCH;
+		while (1) {
+			rval = readchan(rp);
+			if (rval < 0)
+				break;
+
+			printch(rp, s1);
+			printf("%s\n", s1);
+			if (argchan(rp, cp, &updown[temp]) == 3)
+				break;
+		}
+		pflags &= ~P_DSPCH;
+		break;
+
+	/*
+	 * write [ chan ]
+	 *
+	 * Write the current frequency, mode and other data to a memory
+	 * channel. Various radios interpret other data in various ways.
+	 * For the 7000, this includes both VFOs with their current
+	 * mode, filter setting, duplex and CTSS/DTCS configuration.
+	 * While it seems silly, specifying a block of channels writes
+	 * them all and leaves the current channel pointer at the first
+	 * one beyond the range.
+	 */
+	case C_WRITE:
+		if (argn < 2)
+			temp = argchan(rp, cp, NULL);
+		else
+			temp = argchan(rp, cp, argv[++argi]);
+		if (temp < 0)
+			return (temp);
+
+		while (1) {
+			rval = writechan(rp);
+			if (rval < 0)
+				break;
+
+			if (argchan(rp, cp, &updown[temp]) == 3)
+				break;
+		}
+		break;
+
+	/*
+	 * empty [ chan ] [ chan ]
+	 *
+	 * Empty memory channel or block of memory channels.
+	 */
+	case C_EMPTY:
+		if (argn - argi < 2)
+			temp = argchan(rp, cp, NULL);
+		else
+			temp = argchan(rp, cp, argv[++argi]);
+		if (temp < 0)
+			return (temp);
+
+		while (1) {
+			rval = emptychan(rp->ident, cp);
+			if (rval < 0)
+				break;
+
+			if (argchan(rp, cp, &updown[temp]) == 3)
+				break;
+		}
+		cp->freq = 0;
+		break;
+
+	/*
+	 * bank [ bank ] [ name ] [...]
+	 *
+	 * Read/write bank name. This works for the R8500 and maybe
+	 * R9000, but not for known transceivers, which don't have a
+	 * bank name.
+	 */
+	case C_BANK:
+		if (argn - argi < 2)
+			temp = cp->bank;
+		else if (sscanf(argv[++argi], "%d", &temp) != 1)
+			return (R_FMT);
+
+		if (argn > 2)
+			loadbank(rp->ident, temp, cp->name);
+		rval = readbank(rp->ident, temp, s1);
+		if (rval < 0)
+			break;
+
+		cp->bank = temp;
+		printf("bank %d %s\n", temp, s1);
+		break;
+
+	/*
+	 ***************************************************************
+	 *                                                             *
+         * The following commands can provide software compensation    *
+	 * for VFO or BFO frequency errors. Some radios generate BFO   *
+	 * frequencies using a VCXO for each mode. The BFO             *
+	 * compensation command corrects for the intrinsic frequency   *
+	 * error (Hz) in each mode. Other radios generate all LO and   *
+	 * BFO frequencies from a single VFO synthesizer. The VFO      *
+	 * compensation corrects for the intrinsic frequency error     *
+	 * (PPM). As each radio is different, these commands should    *
+	 * probably live in a batch file.                              *
+	 *                                                             *
+	 ***************************************************************
+	 */
+	/*
+	 * vfocomp [ <offset> ]
+	 *
+	 * Set the VFO frequency compensation (PPM).
+	 */
+	case C_VCOMP:
+		if (argn - argi > 1) {
+			if (sscanf(argv[++argi], "%lf", &freq) != 1)
+				return (R_FMT);
+
+			rp->freq_comp = freq;
+		}
+		printf("frequency %f VFO offset %.2f PPM\n",
+		    cp->freq, rp->freq_comp);
+		break;
+
+	/*
+	 * bfocomp <mode> [ <offset> ]
+	 *
+	 * Set the BFO frequency compensation (Hz).
+	 */
+	case C_BCOMP:
+		if (argn - argi > 1) {
+			if (sscanf(argv[++argi], "%lf", &freq) != 1)
+				return (R_FMT);
+
+			rp->bfo[cp->mode & 0x0f] = freq;
+		}
+		freq = rp->bfo[cp->mode & 0x0f];
+		printf("mode %s BFO offset %.0lf Hz\n",
+		    capname(cp->mode, rp->modetab), freq);
+
+		break;
+
+	/*
+	 ***************************************************************
+	 *                                                             *
+         * Radio commands that read and write internal registers,      *
+	 * including VFO options, scan options, and duplex/simplex     *
+	 * options.                                                    *
+	 *                                                             *
+	 ***************************************************************
+	 */
+	/*
+	 * Modern transceivers have two VFOs, called A and B,
+	 * alternatively main and sub, and two frequency/mode displays.
+	 * Each VFO is associated with mode and memory channel. The
+	 * functions of the vfo commands differ in funky ways on the
+	 * various transceivers.
+	 *
+	 * On the 7000 a "vfo a" command shows VFO A on the main display
+	 * and VFO B on the sub display. A "vfo b" command shows VFO B
+	 * on the main display and VFO A on the sub display. A "vfo
+	 * btoa" command copies the contents of VFO B to VFO A. A "vfo
+	 * swap" command interchanges the contents of VFO A and VFO B.
+	 * The 7000 can't do any of the other vfo commands.
+	 *
+	 * On the 756 the main display is at the top in large bright
+	 * font, while the sub display is at the bottom in small dim
+	 * font. Each display is associated with a VFO and a memory
+	 * channel. The mode, duplex direction and tone configuration
+	 * can be set separately for each VFO. Both VFOs and related
+	 * data can be saved in a memory channel. Ordinarily, updates
+	 * from the panel controls and this program go to the main VFO.
+	 * A "split sub" command switches updates to the sub VFO, while
+	 * a "split main" command switches back to the main VFO. Note
+	 * that the updated VFO is highlighted in bright font. A "vfo
+	 * equal" command copies the contents of the main VFO to the sub
+	 * VFO, while a "vfo swap" command interchanges the contents of
+	 * the two VFOs. The "vfo watch" and "vfo nowatch" turn the
+	 * dual-watch function on and off. Note that in dual-watch the
+	 * sub VFO is highlihted in large font.
+	 *
+	 * vfo [ <command> ] (V_SVFO 0x07 command)
+	 *
+	 * Execute one of the subcommands on the help menu.
+	 */
+	case C_VFO:
+		rval = setswitch(rp, vfo, V_SVFO);
+		if (rval < 0)
+			break;
+
+		pflags |= P_DSPCH;
+		break;
+
+	/*
+	 * swap (V_SVFO 0x07 command)
+	 *
+	 * Swap the contents of VFO A and VFO B and make the swapped VFO
+	 * active to enter frequency and mode. This is the same function
+	 * as the "vfo swap" command useful in keypad mode to monitor
+	 * the transmit frequency.
+	 */
+	case C_SWAP:
+		rval = setcmda(rp->ident, cmdswap, rsp);
+		if (rval < 0)
+			break;
+
+		pflags |= P_DSPCH;
+		break;
+
+	/*
+	 * split [ cmd ] (V_SPLIT 0x0f command)
+	 *
+	 * Use VFO A for receive and VFO B for transmit.
+	 *
+	 * Ordinarily, ICOM transceivers transmit and receive with VFO
+	 * on VFO A. A "split on" command transmits with VFO B, while a
+	 * "split off" restores the normal behavior. The 7000 can do
+	 * "split dup+", "split dup-" and "split simplex" as well.
+	 *
+	 * In addition to the split commands on the help menu, this
+	 * command can be used to set the transmit offset in kHz if the
+	 * argument is preceeded by a + or - or to an arbitrary value in
+	 * MHz if an unsigned value. 
+	 */
+	case C_SPLIT:
+		if (argn - argi > 1) {
+			if (sscanf(argv[++argi], "%lf", &freq) == 1) {
+				if (freq > 1000)
+					freq /= 1000;
+				readvfo(rp);
+				if (argv[argi][0] == '+' ||
+				    argv[argi][0] == '-') {
+					freq /= 1000.;
+					freq += cp->freq;
+				}
+				cp->split = freq;
+				if (cp->split == 0) {
+					cmdsplit[1] = 0x00;
+					rval = setcmda(rp->ident,
+					    cmdsplit, rsp);
+					pflags |= P_DSPCH;
+					break;
+				}
+				rval = setcmda(rp->ident, cmdswap, rsp);
+				if (rval < 0)
+					break;
+
+				rval = loadfreq(rp, freq);
+				if (rval < 0)
+					break;
+
+				rval = loadmode(rp->ident, cp->mode);
+				if (rval < 0)
+					break;
+
+				setcmda(rp->ident, cmdvfoa, rsp);
+				cmdsplit[1] = 0x01;
+				setcmda(rp->ident, cmdswap, rsp);
+				pflags |= P_DSPCH;
+				break;
+			}
+			argi--;
+		}
+		rval = setswitch(rp, split, V_SPLIT);
+		if (rval < 0)
+			break;
+
+		pflags |= P_DSPCH;
+		break;
+
+	/*
+	 * mvfo (V_VFOM 0x0a command)
+	 *
+	 * Read memory channel and transfer to VFO. This works for the
+	 * 756 and 7000. The radio does this his in memory channel mode,
+	 * so this program does it in VFO mode. In principle, this
+	 * command should never be necessary, but is included for test
+	 * and exploration.
+	 */
+	case C_VFOM:
+		if (argn - argi < 2)
+			rval = argchan(rp, cp, NULL);
+		else
+			rval = argchan(rp, cp, argv[++argi]);
+		if (rval < 0)
+			break;
+
+		rval = readchan(rp);
+		if (rval < 0)
+			break;
+
+		rval = setcmda(rp->ident, cmdvfom, rsp);
+		break;
+
+	/*
+	 * duplex [ duplex ]
+	 *
+	 * Set transmit offset for FM duplex. This works with the 706G
+	 * and 7000, which have four duplex registers, one for each of
+	 * the HF, 50 MHz, 144 MHz and 420 MHz bands. In order to read
+	 * and write these registers, the frequency must be first set
+	 * within the correct band.
+	 */
+	case C_DUPLEX:
+		if (argn - argi < 2) {
+			rval = readoffset(rp->ident, &freq);
+			if (rval < 0)
+				break;
+
+			printf("duplex %.1f\n", freq);
+			break;
+		}
+		if (sscanf(argv[++argi], "%lf", &freq) != 1)
+			return (R_FMT);
+
+		rval = loadoffset(rp->ident, freq);
+		break;
+
+	/*
+	 * scan [ <command> ] (V_SCAN 0x0e command)
+	 *
+	 * Perform awesome scans, both memory an channel. Some
+	 * radios have simply awesome scanning modes; others are
+	 * mostly bare. Need some volunteer experimentors here.
+	 */
+	case C_SCAN:
+		return (setswitch(rp, scan, V_SCAN));
+
+	/*
+	 ***************************************************************
+	 *                                                             *
+         * Tuning step and rate commands. The step and rate commands   *
+	 * should work for all radios, as they do not use the radio    *
+	 * tuning-step functions. The dial command works with the      *
+	 * radio tuning-step functions, so is model dependent.         *
+	 *                                                             *
+	 ***************************************************************
+	 */
+	/*
+	 * rate [ <rate> ]
+	 *
+	 * Set tuning rate. The values of <rate> from 0 through 20
+	 * select the rate values in a 1-2.5-5-10 sequence. Warning: if
+	 * the frequency resolution (minimum tuning step) is 10, 100,
+	 * 1000 Hz, etc., the nexxt step up would be 25, 250, 2500,
+	 * etc., which is not a multiple of the minimum tuning step. In
+	 * such cases the step is rounded to 20, 200, 2000, etc.
+	 */
+	case C_RATE:
+		if (argn - argi > 1) {
+			if (sscanf(argv[++argi], "%d", &temp) != 1)
+				return (R_FMT);
+
+			if (temp > 20)
+				temp = 20;
+			else if (temp < rp->minstep)
+				temp = rp->minstep;
+			rp->rate = temp;
+			rp->step = logtab[rp->rate];
+			step = modf(cp->freq * 1e6 / rp->step, &freq);
+			freq = freq / 1e6 * rp->step;
+			rval = loadfreq(rp, freq);
+			if (rval < 0)
+				break;
+		}
+		pflags |= P_DSPST;
+		break;
+
+	/*
+	 * rate up (keypad)
+	 *
+	 * Set tuning rate up one notch.
+	 */
+	case C_RUP:
+		if (rp->rate < 20)
+			rp->rate++;
+		rp->step = logtab[rp->rate];
+		step = modf(cp->freq * 1e6 / rp->step, &freq);
+		freq = freq / 1e6 * rp->step;
+		rval = loadfreq(rp, freq);
+		if (rval < 0)
+			break;
+
+		pflags |= P_DSPST;
+		break;
+
+	/*
+	 * rate down (keypad)
+	 *
+	 * Set tuning rate down one notch.
+	 */
+	case C_RDOWN:
+		if (rp->rate > rp->minstep)
+			rp->rate--;
+		rp->step = logtab[rp->rate];
+		step = modf(cp->freq * 1e6 / rp->step, &freq);
+		freq = freq / 1e6 * rp->step;
+		rval = loadfreq(rp, freq);
+		if (rval < 0)
+			break;
+
+		pflags |= P_DSPST;
+		break;
+
+	/*
+	 * Tuning step commands. The step command sets the tuning step
+	 * directly to an arbitrary value. The up and down commands
+	 * shift the frequency up or down by the value of the tuning
+	 * step.
+	 *
+	 * step [ <step> ]
+	 *
+	 * Set tuning step directly in Hz. This is useful when scanning
+	 * odd channel spacings, such as aviation and marine radio
+	 * channels. Note that the tuning rate is set to minimum here,
+	 * since otherwise the rounding process would violate the
+	 * principle of least astonishment.
+	 */
+	case C_STEP:
+		if (argn - argi > 1) {
+			if (sscanf(argv[++argi], "%lf", &dtemp) != 1)
+				return (R_FMT);
+
+			if (dtemp < logtab[rp->minstep])
+				dtemp = logtab[rp->minstep];
+			rp->step = dtemp;
+			rp->rate = rp->minstep;
+		}
+		pflags |= P_DSPST;
+		break;
+
+	/*
+	 * up (keypad)
+	 *
+	 * Tune up one step.
+	 */
+	case C_UP:
+		freq = cp->freq + rp->step / 1e6;
+		if (freq >= rp->ustep)
+			freq = rp->lstep;
+		rval = loadfreq(rp, freq);
+		if (rval < 0)
+			break;
+
+		cp->freq = freq;
+		pflags |= P_DSPST;
+		break;
+
+	/*
+	 * down (keypad)
+	 *
+	 * Tune down one step.
+	 */
+	case C_DOWN:
+		freq = cp->freq - rp->step / 1e6;
+		if (freq < rp->lstep)
+			freq = rp->ustep;
+		rval = loadfreq(rp, freq);
+		if (rval < 0)
+			break;
+
+		cp->freq = freq;
+		pflags |= P_DSPST;
+		break;
+
+	/*
+	 * band [ <low> ] [ <high> ]
+	 *
+	 * Set band scan limits. An up or down via keypad beyond the
+	 * upper limit wraps to the lower limit and vice-versa.
+	 */
+	case C_BAND:
+		if (argn - argi < 2) {
+			printf("band %s\n", capdescr("band", rp->cap));
+			break;
+		}
+		if (argn - argi < 3)
+			return (R_ARG);
+
+		if (sscanf(argv[++argi], "%lf", &freq) != 1)
+			return (R_FMT);
+
+		if (sscanf(argv[++argi], "%lf", &step) != 1)
+			return (R_FMT);
+
+		if (freq > step) {
+			dtemp = freq;
+			freq = step;
+			step = dtemp;
+		}
+		if (freq < rp->lband)
+			freq = rp->lband;
+		rp->lstep = freq;
+		if (step > rp->uband)
+			step = rp->uband;
+		rp->ustep = step;
+		break;
+
+	/*
+	 ***************************************************************
+	 *                                                             *
+         * Control commands. These are used to set switches, twirl     *
+	 * controls and read meters. Various radios implement none or  *
+	 * a subset of the defined functions.                          *
+	 *                                                             *
+	 ***************************************************************
+	 */
+	/*
+	 * ctl [ name ] [ value ] (V_WRCTL 0x14 command)
+	 *
+	 * The ctl subcommand reads or writes internal registers
+	 * associated with a front panel control. The 756 and 7000 can
+	 * read and write them. The 706G can read these registers but
+	 * cannot write them. The R8500 can write them but not read
+	 * them. Most radios implement only a subset of the defined
+	 * subcommands.
+	 */
+	case C_CTRL:
+		if (argn - argi < 2) {
+			for (i = 0; ctlc[i].name[0] != '\0'; i++) {
+				temp = readmeter(rp, ctlc,
+				    ctlc[i].ident, rsp);
+				if (temp < 0)
+					continue;
+				printf("%10s %s\n", ctlc[i].name, rsp);
+			}
+			break;
+		}
+		temp = capkey(argv[++argi], rp->ctrl);
+		if (temp < 0)
+			return (temp);
+
+		cmdctl[0] = temp >> 8;
+		cmdctl[1] = temp;
+		if (argn < 3) {
+			cmdctl[2] = FI;
+			rval = readmeter(rp, ctlc, temp, s1);
+			if (rval < 0)
+				break;
+
+			printf("%s\n", s1);
+		} else {
+			if (sscanf(argv[++argi], "%d", &sw) != 1)
+				return (R_FMT);
+
+			sw = (sw * 255) / 100;
+			if (temp >> 16 == F)
+				sw += 128;
+			sprintf(s1, "%04d", sw);
+			ptr = s1;
+			cmdctl[2] = (*ptr++ & 0xf) * 16;
+			cmdctl[2] += *ptr++ & 0xf;
+			cmdctl[3] = (*ptr++ & 0xf) * 16;
+			cmdctl[3] += *ptr++ & 0xf; 
+			rval = setcmda(rp->ident, cmdctl, rsp);
+		}
+		break;
+
+	/*
+	 * meter [ name ] [ value ] (V_RMTR 0x15 command)
+	 *
+	 * The meter subcommands report current meter indications. Note
+	 * that the S meter is reported in S units and dB above S9. The
+	 * squelch condition is reported as open (signal) or closed
+	 * (silent).
+	 * 
+	 * The 706G can read the signal and sql meters.
+	 */
+	case C_METER:
+		if (argn - argi < 2) {
+			for (i = 0; meter[i].name[0] != '\0'; i++) {
+				temp = readmeter(rp, meter,
+				    meter[i].ident, s1);
+				if (temp < 0)
+					continue;
+				printf("%10s %s\n", meter[i].name, s1);
+			}
+			break;
+		}
+		temp = capkey(argv[++argi], meter);
+		if (temp < 0)
+			return (temp);
+
+		rval = readmeter(rp, meter, temp, s1);
+		if (rval == R_OK)
+			printf("%s\n", s1);
+		break;
+
+	/*
+	 * set [ name ] [ value ] (V_TOGL 0x16 command)
+	 *
+	 * The switch subcommands read or write internal switches. 
+	 */
+	case C_SWTCH:
+		if (argn - argi < 2) {
+			for (i = 0; switches[i].name[0] != '\0'; i++) {
+				temp = readmeter(rp, ctlc,
+				    switches[i].ident, s1);
+				if (temp < 0)
+					continue;
+
+				printf("%10s %s\n", switches[i].name,
+				    s1);
+			}
+			break;
+		}
+		temp = capkey(argv[++argi], switches);
+		if (temp < 0)
+			return (temp);
+
+		cmdctl[0] = temp >> 8;
+		cmdctl[1] = temp;
+		if (argn - argi < 2) {
+			cmdctl[2] = FI;
+			rval = readmeter(rp, switches, temp, s1);
+			break;
+
+		} else {
+			temp >>= 16;
+			if (temp == A) {
+				temp = capkey(argv[++argi], agc);
+			} else if (temp == B) {
+				temp = capkey(argv[++argi], fmtb);
+			} else if (temp == W) {
+				temp = capkey(argv[++argi], fmtw);
+			} else {
+				sscanf(argv[++argi], "%d", &temp);
+				sprintf(s1, "%02d", temp);
+				ptr = s1;
+				temp = (*ptr++ & 0xf) * 16;
+				temp += *ptr++ & 0xf;
+			}
+			if (temp < 0)
+				return (temp);
+
+			cmdctl[2] = temp; 
+			cmdctl[3] = FI; 
+			rval = setcmda(rp->ident, cmdctl, rsp);
+		}
+		break;
+
+	/*
+	 * dial [ <step> ] (V_DIAL 0x10 command)
+	 *
+	 * Set dial tuning step. This command works with all radios,
+	 * including the 775 and R8500; however, the allowable arguments
+	 * are different. Note that in the R8500 the allowable steps are
+	 * constrained to multiples of 0.5 kHz.
+	 */
+	case C_DIAL:
+		if (argn - argi < 2) {
+			temp = cp->aux.step;
+			if (temp != 0x13)
+				printf("dial %s kHz\n", capname(temp,
+				    rp->dialtab));
+			else
+				printf("dial %.1f kHz\n",
+				    freqdouble(cp->aux.pstep, 2) / 10);
+			break;
+		}
+
+		/*
+		 * Construct V_DIAL command for tuning step.
+		 */
+		ptr = s1;
+		*ptr++ = V_DIAL;
+		dtemp = 0;
+		temp = capkey(argv[++argi], rp->dialtab);
+		if (temp < 0)
+			return (temp);
+
+		if (temp == 0x13) {
+			if (sscanf(argv[argi], "%lf", &dtemp) != 1)
+				return (R_FMT);
+		}
+		*ptr++ = temp;
+		*ptr = FI;
+		rval = setcmda(rp->ident, s1, rsp);
+		if (rval < 0)
+			break;
+
+		/*
+		 * Save step and programmed step for later.
+		 */
+		cp->aux.step = temp;
+		doublefreq(dtemp * 10, s1, 2);
+		memcpy(cp->aux.pstep, s1, 2);
+		break;
+
+	/*
+	 ***************************************************************
+	 *                                                             *
+         * CTSS and DTCS commands. These commands turn on and off and  *
+	 * program the repeater tone (tone), tone squelch (tsql) and   *
+	 * digital tone squelch (dtcs) functions.                      *
+	 *                                                             *
+	 ***************************************************************
+	 *
+	 * The syntax for all three commands is the same;
+	 *
+	 * tone		reports the status and frequency/code
+	 * tone off	turns off the function
+	 * tone on	turns on the function
+	 * tone <code>	turns on the function and programs the
+	 *		frequency/code
+	 * tone ?	reports a list of valid CTSS/DTCS code
+	 * tsql ?	values. The <code> must be identical to
+	 *		an item in the list.
+	 *
+	 * dtcs ?	reports a list of valid DTCS code values. The
+	 *		<code> must be identical to an item on the list.
+	 *		The polarity codes "-pp" are appended, where pp
+	 *		are N (upright) or N (inverted). 
+	 *
+	 * The three commands are mutually exlusive; setting one of them
+	 * on turns off the others.
+	 */
+	/*
+	 * tone [ args ] (V_TONE 0x1b command)
+	 *
+	 * Set the repeator tone CTSS frequency. This works for the 756
+	 * and 7000.
+	 */
+	case C_TONE:
+		return (setswitch3(rp, tone, 0x00, 0x42));
+
+	/*
+	 * tsql [ args ] (V_TONE 0x1b command)
+	 *
+	 * Set the tone squelch CTSS frequency. This works for the 756
+	 * and 7000.
+	 */
+	case C_TSQL:
+		return (setswitch3(rp, tone, 0x01, 0x43));
+
+	/*
+	 * dtcs [ args ] (V_TONE 0x1b command)
+	 *
+	 * Set the digital tone squelch DTCS code. This works only for
+	 * the 7000.
+	 */
+	case C_DTCS:
+		return (setswitch3(rp, dtcs, 0x02, 0x4b));
+
+	/*
+	 ***************************************************************
+	 *                                                             *
+         * Utility commands. Select the antenna, attenuator, preamp,   *
+	 * agc and and break-in options.                               *
+	 *                                                             *
+	 ***************************************************************
+	 */
+	/*
+	 * The duplex, preamp and attenuator commands can be set for
+	 * each band segment. There are four duplex offset registers,
+	 * one each fot HF, 6 m, 2 m and 70 cm bands. The preamp and
+	 * attentuator settings are stored by band segment as follows:
+	 *
+	 * 703g		756		7000
+	 * .3-1.6	.3-1.6		.03-1.6
+	 * 1.6-2	1.6-2		1.6-2		160 m
+	 * 2-5		2-6		2-6		80 m
+	 * 5-8		6-8		6-8		40 m
+	 * 8-11		8-11		8-11		30 m
+	 * 11-20			11-20		20, 17 m
+	 * 		11-15				20 m
+	 *		15-20				17 m
+	 * 20-22	20-22		20-22		15 m
+	 * 22-26	22-26		22-26		12 m
+	 * 26-40	26-45		26-30		10 m
+	 * 40-60	45-60		45-129		6 m
+	 *				129-144
+	 * 60-148			144-148		2 m
+	 * 148-200
+	 * 400-470			400-470		70 sm
+	 */		
+	/*
+	 * ant [ 1 | 1R | 2 | 2R ] (V_SANT 0x12 command)
+	 *
+	 * Select antenna. Transceivers like the 756 have two antennas
+	 * (1, 2) for transmit/receive and a third (R) for receive only.
+	 * For instance, option 1R selects antenna 1 for transmit and R
+	 * for receive. 
+	 */
+	case C_ANT:
+		argv[argi] = capname(sw, cmd);
+		return (setswitch(rp, ant, V_SANT));
+
+	/*
+	 * atten [ <command> ] (V_ATTEN 0x11 command)
+	 *
+	 * Set attenuator options. The options include all known
+	 * attentuator options in dB. Following are the known values for
+	 * a few modern radios.
+	 *
+	 * 706G		20 dB
+	 * 756, 7000	6, 12, 18 dB
+	 * R8500	10, 20, 30 dB
+	 */
+	case C_ATTEN:
+		argv[argi] = capname(sw, cmd);
+		return (setswitch(rp, atten, V_ATTEN));
+
+	/*
+	 * preamp [ off | 1 | 2 ]
+	 *
+	 * Set preamp options. Some radios have none, one or two preamp
+	 * settings.
+	 *
+	 * 706G, 7000	1
+	 * 756		2
+	 * R8500	none
+	 */
+	case C_PAMP:
+		argv[argi] = capname(sw, cmd);
+		return (setswitch2(rp, preamp, (V_TOGL << 8) | 0x02));
+
+	/*
+	 * agc [ slow | medium | fast ]
+	 *
+	 * Set AGC options. Some radios have none or a subset of these
+	 * options.
+	 *
+	 * 706G		medium, fast
+	 * 756, 7000	slow, medium, fast
+	 * R8500	slow (agcslow), fast (agcfast)
+	 */
+	case C_AGC:
+		argv[argi] = capname(sw, cmd);
+		return (setswitch2(rp, agc, (V_TOGL << 8) | 0x12));
+
+	/*
+	 * break [ off | semi | full ]
+	 *
+	 * Set break options. This works on the 706G, 756 and 7000.
+	 */
+	case C_BREAK:
+		argv[argi] = capname(sw, cmd);
+		return (setswitch2(rp, fmtb, (V_TOGL << 8) | 0x47));
+
+	/*
+	 ***************************************************************
+	 *                                                             *
+	 * Power and voice commands. These commands control the power  *
+	 * to the radio, turn the transmitter on and off and report    *
+	 * the status by voice.                                        *
+	 *                                                             *
+	 ***************************************************************
+	 */
+	/*
+	 * power [ off | on ] (V_POWER 0x18 command)
+	 *
+	 * Set power on/off. The radio will be powered off after the
+	 * sleep interval, but it will still listen for a power on
+	 * command. This works only on the R8500.
+	 */
+	case C_POWER:
+		return (setswitch(rp, power, V_POWER));
+
+	/*
+	 * ptt (V_PTT 0x1c command)
+	 *
+	 * Display transmit condition; turn transmitter on and off.
+	 */
+	case C_PTT:
+		return (setswitch2(rp, tx, V_TX << 8 | 0x00));
+
+	/*
+	 * rx (V_TX 0x1c command). Turn transmitter off.
+	 */
+	case C_RX:
+		return (setcmda(rp->ident, cmdrx, rsp));
+
+	/*
+	 * tx (V_TX 0x1c command). Turn transmitter on.
+	 */
+	case C_TX:
+		return (setcmda(rp->ident, cmdtx, rsp));
+
+	/*
+	 * say [ all | freq | mode ] (V_ANNC 0x13 command)
+	 *
+	 * Set announce control off/on. This requires the UT-102 Voice
+	 * Synthesizer Unit, which is standard in the 7000.
+	 */
+	case C_ANNC:
+		return (setswitch(rp, say, V_ANNC));
+
+	/*
+	 ***************************************************************
+	 *                                                             *
+	 * Mongrels. These commands are used for testing and just      *
+	 * playing around.                                             *    
+	 *                                                             *
+	 ***************************************************************
+	 */
+	/*
+	 * name <string>
+	 *
+	 * Set channel name. Enclose in quotes if <string> contains
+	 * spaces.
+	 */
+	case C_NAME:
+		if (argn - argi < 2)
+			printf("%s\n", cp->name);
+		else
+			strlcpy(cp->name, argv[++argi],
+			    sizeof(cp->name));
+		break;
+
+	/*
+	 * key <id> <string> (V_SETW 0x1a command)
+	 *
+	 * Program memory keyer (756 and 7000). Each of four memory
+	 * keyer channels can hold 55 characters.
+	 */
+	case C_KEY:
+		if (argn - argi < 2) {
+			rval = R_ARG;
+			break;
+		}
+
+		/*
+		 * Get memory keyer ID (1-4)
+		 */
+		ptr = s1;
+		*ptr++ = V_SETW;
+		*ptr++ = 0x02;
+		if (sscanf(argv[++argi], "%d", &temp) != 1) {
+			rval = R_FMT;
+			break;
+		}
+		*ptr++ = temp;
+
+		/*
+		 * If no argument string, read from radio. Remove
+		 * trailing spaces from the radio string.
+		 */
+		if (argn - argi < 2) {
+			*ptr = FI;
+			rval = setcmda(rp->ident, s1, rsp);
+			if (rval < 0)
+				return (rval);
+
+			for (i = rval - 2; i > 2; i--) {
+				if (rsp[i] == ' ')
+					rsp[i] = '\0';
+				else
+					break;
+			}
+			temp = rsp[2];
+			printf("%d (%d) %s\n", temp, i - 2, &rsp[3]);
+			break;
+		}
+
+		/*
+		 * Concatenate remaining strings and send to radio.
+		 */
+		*ptr = '\0';
+		temp = 55;
+		while (argn - argi > 1 && temp > 0) {
+			strncat(s1, argv[++argi], temp);
+			strcat(s1, " ");
+			temp -= strlen(argv[argi]) + 1;
+		}
+		s1[strlen(s1) - 1] = FI;
+			rval = setcmda(rp->ident, s1, rsp);
+		break;
+
+	/*
+	 * Miscellaneous control (S_CTRL) subcommands.
+	 */
+	case C_MISC:
+		return (setswitch2(rp, misc, V_TOGL));
+		
+	/*
+	 * test BCD
+	 *
+	 * Send CI-V test message
+	 */
+	case C_TEST:
+		if (argn - argi < 2)
+			break;
+
+		ptr = s1;
+		for (i = 1; i < argn; i++) {
+			sscanf(argv[++argi], "%x", &temp);
+			*ptr++ = temp;
+		}
+		*ptr = FI;
+		rval = setcmda(rp->ident, s1, rsp);
+		break;
+
+	/*
+	 * step (r8500)
+	 */
+	C_XSTEP:
+		if (sscanf(argv[++argi], "%x", &temp) != 1) {
+			rval = R_FMT;
+			break;
+		}
+		cp->aux.step = temp;
+		break;
+
+	/*
+	 * pstep (r8500)
+	 */
+	C_PSTEP:
+		break;
+
+
+	}
+	return (rval);
+}
+
+
+/*
+ * capname(ident, table) - returns capability name given key
+ */
+char *				/* capability name, "" (not found) */
+capname(
+	int	ident,		/* capability key */
+	struct cmdtable *table	/* capability table */
+	)
+{
+	int i;
+
+	for (i = 0; table[i].name[0] != '\0'; i++) {
+		if (table[i].ident == ident)
+			return (table[i].name);
+	}
+	return ("");
+}
+
+
+/*
+ * capkey(name, table) - returns capability key given name
+ */
+int				/* capability key, -1 (not found) */
+capkey(
+	char	*name,		/* capability name */
+	struct cmdtable *table	/* capability table */
+	)
+{
+	int i, temp;
+
+	if (*name == '?') {
+		for (i = 0; table[i].name[0] != '\0'; i++)
+			printf("%10s %s\n", table[i].name,
+			    table[i].descr);
+		return (R_NOP);
+	}
+	for (i = 0; table[i].name[0] != '\0'; i++) {
+		if (strcasecmp(name, table[i].name) == 0 ||
+		    *table[i].name == '*')
+			break;
+	}
+	if (table[i].ident == R_NOP)
+		printf("*** %s\n", table[i].descr);
+	return (table[i].ident);
+}
+
+
+/*
+ * capdescr(name, table) - returns capability description given name
+ */
+char *				/* capability string, "" (not found") */
+capdescr(
+	char	*name,		/* capability name */
+	struct cmdtable *table	/* capability table */
+	)
+{
+	int i;
+
+	if (*name == '?') {
+		for (i = 0; table[i].name[0] != '\0'; i++)
+			printf("%10s %s\n", table[i].name,
+			    table[i].descr);
+		return ("");
+	}
+	for (i = 0; table[i].name[0] != '\0'; i++) {
+		if (strcasecmp(name, table[i].name) == 0)
+			break;
+	}
+	return (table[i].descr);
+}
+
+
+/*
+ * setcap(name, table, string) - insert capability string
+ */
+void
+setcap(
+	char *name,		/* capability name */
+	struct cmdtable *table,	/* capability table */
+	char *string		/* capability string */
+	)
+{
+	int i;
+
+	for (i = 0; table[i].name[0] != '\0'; i++) {
+		if (strcasecmp(name, table[i].name) == 0) {
+			strcpy(table[i].descr, string);
+			return;
+		}
+	}
+	strcpy(table[i].name, name);
+	strcpy(table[i].descr, string);
+	table[i + 1].name[0]  = '\0';
+	table[i + 1].ident = R_NOP;
+	table[i + 1].descr[0] = '\0';
+}
+
+
+/*
+ * setswitch(radio, name, op) - V_VFO, V_SPLIT, V_SCAN, V_SANT, V_ATTEN,
+ * V_POWER, V_TX, V_ANNC.
+ *
+ * Commands with a single character command and one argument, with the
+ * single exception of the V_SANT, which can have one or two arguments
+ * depending on the radio type. Only the V_SANT and V_ATTEN can 
+ */
+static int
+setswitch(
+	struct icom *rp,	/* radio structure pointer */
+	struct cmdtable *cmmd,	/* command table pointer */
+	int	op		/* command code */
+	)
+{
+	struct chan *cp;
+	struct vfo7000 *vp;
+	u_char	cmd[BMAX], rsp[BMAX];
+	int	temp, rval;
+
+	cmd[0] = op;
+	cmd[1] = FI;
+	if (argn - argi < 2) {
+
+		/*
+		 * Read data from radio. Only the V_SANT and V_ATTEN
+		 * return unambigous data. The V_SANT returns one or two
+		 * octets depending on the transceiver model. The R8500
+		 * can't return anything.
+		 */
+		switch (op) {
+
+		case V_SANT:
+			rval = setcmda(rp->ident, cmd, rsp);
+			if (rval < 0)
+				break;
+
+			temp = rsp[1];
+			if (rsp[2] != FI)
+				temp |= rsp[2] << 8;
+			printf("%s %s\n", argv[argi], capname(temp,
+			    cmmd));
+			break;
+
+		case V_ATTEN:
+			rval = setcmda(rp->ident, cmd, rsp);
+			if (rval < 0)
+				break;
+
+			temp = rsp[1];
+			printf("%s %s dB\n", argv[argi],
+			    capname(temp, cmmd));
+			break;
+
+		case V_ANNC:
+			cmd[1] = 0x00;
+			cmd[2] = FI;
+			rval = setcmda(rp->ident, cmd, rsp);
+			pflags |= P_DISP;
+			break;
+
+		default:
+			rval = R_ARG;
+		}
+	} else {
+
+		/*
+		 * Write data to the radio. First, decode argument.
+		 */
+		temp = capkey(argv[++argi], cmmd);
+		if (temp < 0)
+			return (temp);
+
+		cmd[2] = FI;
+
+		/*
+		 * For the ant command, find out if one or two
+		 * subcommand bytes follow.
+		 */
+		if (op == V_SANT) {
+			rval = setcmda(rp->ident, cmd, rsp);
+			if (rval < 0)
+				return (rval);
+
+			if (rsp[2] != FI) {
+				cmd[2] = temp >> 8;
+				cmd[3] = FI;
+			}
+		}
+		cmd[1] = temp;
+		rval = setcmda(rp->ident, cmd, rsp);
+		if (rval < 0)
+			return (rval);
+
+
+		/*
+		 * For the attenuator command, copy attenuator code for
+		 * R8500.
+		 */
+		if (op == V_ATTEN) {
+			cp = &rp->chan;
+			cp->aux.atten = temp;
+
+		/*
+		 * For the split duplex subcommands, edit mode2.
+		 */
+		} else if (op == V_SPLIT) {
+			cp = &rp->chan;
+			vp = &cp->vfo;
+			switch (temp) {
+
+			case 0x10:		/* simplex */
+				vp->mode2 = (vp->mode2 & 0x0f) | 0x00;
+				break;
+
+			case 0x11:		/* dup- */
+				vp->mode2 = (vp->mode2 & 0x0f) | 0x10;
+				break;
+
+			case 0x12:		/* dup+ */
+				vp->mode2 = (vp->mode2 & 0x0f) | 0x20;
+				break;
+			}
+		}
+	}
+	return (rval);
+}
+
+
+/*
+ * setswitch2(radio, name, op) - V_PAMP, V_AGC, V_BREAK, V_PTT and
+ * V_MISC.
+ *
+ * Commands with a two-octet command and one argument.
+ */
+static int
+setswitch2(
+	struct icom *rp,	/* radio structure pointer */
+	struct cmdtable *cmmd,	/* command table pointer */
+	int	op		/* command code */
+	)
+{
+	u_char	cmd[BMAX], rsp[BMAX];
+	int	temp, rval, i;
+
+	rval = R_OK;
+	cmd[0] = op >> 8;
+	cmd[1] = op;
+	cmd[2] = FI;
+	if (argn - argi < 2) {
+		rval = setcmda(rp->ident, cmd, rsp);
+		if (rval < 0)
+			return (rval);
+
+		for (i = 0; cmmd[i].name[0] != '\0'; i++) {
+			if ((cmmd[i].ident & 0xff) == rsp[2]) {
+				printf("%s %s\n", argv[argi],
+				    cmmd[i].name);
+				break;
+			}
+		}
+	} else {
+		temp = capkey(argv[++argi], cmmd);
+		if (temp < 0)
+			return (temp);
+
+		cmd[2] = temp;
+		cmd[3] = FI;
+		rval = setcmda(rp->ident, cmd, rsp);
+	}
+	return (rval);
+}
+
+
+/*
+ * setswitch3(radio, name, op, sw) - V_TONE, etc.
+ *
+ * This routine is used with the tone, tsql and dtcs commands, which
+ * turn on and off and program CTSS tones and DTCS codes.
+ */
+static int
+setswitch3(
+	struct icom *rp,	/* radio structure pointer */
+	struct cmdtable *cmmd,	/* command table pointer */
+	int	op,		/* command code */
+	int	sw		/* switch code */
+	)
+{
+	struct chan *cp;
+	struct vfo7000 *vp;
+	u_char	rsp[BMAX];
+	int	temp, rval, i;
+	u_char	cmdctl[] = {V_TONE, 0, 0, 0, 0, FI};
+	u_char	cmdswt[] = {V_TOGL, 0, 0, FI};
+	char	*token;
+
+	cmdctl[1] = op;
+	cmdctl[2] = FI;
+	cmdswt[1] = sw;
+	cmdswt[2] = FI;
+	if (argn - argi < 2) {
+
+		/*
+		 * Read switch code
+		 */
+		rval = setcmda(rp->ident, cmdswt, rsp);
+		if (rval < 0)
+			return (rval);
+
+		temp = rsp[2];
+		token = capname(temp, toneon);
+
+		/*
+		 * Read frequency/code
+		 */
+		rval = setcmda(rp->ident, cmdctl, rsp);
+		if (rval < 0)
+			return (rval);
+
+		temp = rsp[3] << 8 | rsp[4];
+		for (i = 0; cmmd[i].name[0] != '\0'; i++) {
+			if ((cmmd[i].ident) == temp) {
+				if (cmdctl[1] == 0x02) {
+					temp = rsp[2];
+					printf("%s %s (%s-%s)\n",
+					    argv[argi], token,
+					    cmmd[i].name, capname(temp,
+					    polar));
+				} else {
+					printf("%s %s (%s Hz)\n",
+					    argv[argi], token,
+					    cmmd[i].name);
+				}
+			}
+		}
+	} else {
+
+		/*
+		 * Set frequency/code. Repeater tone and tone squelch
+		 * frequencies are in nn.n Hz and tenths. Digital tone
+		 * squelch codes are in nn-pp code polarity.
+		 */
+		token = strtok(argv[++argi], "-");
+		temp = capkey(token, cmmd);
+		if (temp < 0)
+			return (temp);
+
+		cp = &rp->chan;
+		vp = &cp->vfo;
+		if (temp > 0x01) {
+			cmdctl[3] = temp >> 8;
+			cmdctl[4] = temp;
+			token = strtok(NULL, "-");
+			if (token == NULL) {
+				cmdctl[2] = 0;
+			} else {
+				temp = capkey(token, polar);
+				if (temp < 0)
+					return (temp);
+
+				cmdctl[2] = temp;
+			}
+			rval = setcmda(rp->ident, cmdctl, rsp);
+			if (rval < 0)
+				return (rval);
+
+			/*
+			 * Update VFO tones
+			 */
+			switch (op) {
+
+			case 0:
+				memcpy(&vp->tone, &cmdctl[2], 3);
+				break;
+
+			case 1:
+				memcpy(&vp->tsql, &cmdctl[2], 3);
+				break;
+
+			case 2:
+				memcpy(&vp->dtcs, &cmdctl[2], 3);
+				break;
+			}
+			temp = 0x01;
+		}
+
+		/*
+		 * Set switch code
+		 */
+		vp->mode2 &= 0xf0;
+		if (temp == 0x01)
+			vp->mode2 += op + 1;
+		cmdswt[2] = temp;
+		rval = setcmda(rp->ident, cmdswt, rsp);
+	}
+	return (rval);
+}
+
+
+/*
+ * readmeter(radio, optab, op, pstring) - V_METER, V_TOGL
+ */
+static int
+readmeter(
+	struct icom *rp,	/* radio structure */
+	struct cmdtable *optab,	/* command table */
+	int	op,		/* operation code */
+	char	*s2		/* result string */
+	)
+{
+	u_char cmd[] = {0, 0, 0, 0, FI};
+	char	rsp[BMAX], *ptr;
+	int	temp, i;
+
+	/*
+	 * Read register or switch
+	 */
+	cmd[0] = op >> 8;
+	cmd[1] = op;
+	cmd[2] = FI;
+	temp = setcmda(rp->ident, cmd, rsp);
+	if (temp < 0)
+		return (temp);
+
+	if (temp < 5)
+		temp = ((rsp[2] >> 4) & 0xf) * 10 +
+		    (rsp[2] & 0xf);
+	else
+		temp = ((rsp[2] >> 4) & 0xf) * 1000 +
+		    (rsp[2] & 0xf) * 100 + ((rsp[3] >>
+		    4) & 0xf) * 10 + (rsp[3] & 0xf);
+	ptr = capname(op, optab);
+
+	/*
+	 * Format as required
+	 */
+	switch (op >> 16) {
+
+	case A:			/* agc */
+		if (temp == 1)
+			strcpy(s2, "fast");
+		else if (temp == 2)
+			strcpy(s2, "mid");
+		else if (temp == 3)
+			strcpy(s2, "slow");
+		break;
+
+	case B:			/* breakin */
+		if (temp == 0)
+			strcpy(s2, "off");
+		else if (temp == 1)
+			strcpy(s2, "semi");
+		else if (temp == 2)
+			strcpy(s2, "full");
+		break;
+
+	case F:			/* signed control */
+		sprintf(s2, "%d", ((temp - 128) * 100) / 256);
+		break;
+
+	case G:			/* unsigned control */
+		sprintf(s2, "%d", (temp * 100) / 256);
+		break;
+
+	case P:			/* preamp */
+		if (temp == 0)
+			strcpy(s2, "off");
+		else if (temp == 1)
+			strcpy(s2, "1");
+		else if (temp == 2)
+			strcpy(s2, "2");
+		break;
+
+	case Q:			/* squelch */
+		if (temp == 1)
+			strcpy(s2, "open");
+		else
+			strcpy(s2, "closed");
+		break;
+
+	case S:			/* S meter */
+		for (i = 0; temp > mtab[i].smeter; i++);
+		strcpy(s2, mtab[i].pip);
+		break;
+
+	case W:			/* miscellaneous switch */
+		if (temp == 0)
+			strcpy(s2, "off");
+		else
+			strcpy(s2, "on");
+		break;
+	}
+	return (R_OK);
+}
+
+
+/*
+ * banner - format and print banner
+ */
+void
+banner(
+	struct icom *rp		/* radio structure pointer */
+	)
+{
+	printf("radio %s (%02x) %g-%g MHz chan %d bank %d baud %s\n",
+	    capdescr(rp->name, identab), rp->ident, rp->lband,
+	    rp->uband, rp->maxch - rp->minch + 1, rp->maxbk -
+	    rp->minbk + 1, capname(rp->baud, baud));
+	rptr = rp;
+}
+
+
+/*
+ * printch - format and print channel data
+ */
+static void
+printch(
+	struct icom *rp,	/* radio structure pointer */
+	char *s1		/* prettyprint string */
+	)
+{
+	struct chan *cp;
+	struct vfo7000 *vp;
+	char	s2[LINMAX];
+	char	*s3;
+	int	temp;
+	double	dtemp;
+
+	/*
+	 * Reveal frequency and mode
+	 */
+	cp = &rp->chan;
+	vp = &cp->vfo;
+	readvfo(rp);
+ 	if (cp->freq == 0) {
+		if (rp->flags & F_BANK)
+			sprintf(s1, "%2d.%-2d empty", cp->bank,
+			    cp->mchan);
+		else
+			sprintf(s1, "%2d empty", cp->mchan);
+		return;
+	}
+	if (rp->flags & F_BANK)
+		sprintf(s1, "%2d.%-2d %.*f MHz %s", cp->bank,
+		    cp->mchan, sigtab[rp->rate], cp->freq,
+		    capname(cp->mode, rp->modetab));
+	else
+		sprintf(s1, "%2d %.*f MHz %s", cp->mchan,
+		    sigtab[rp->rate], cp->freq, capname(cp->mode,
+		    rp->modetab));
+	if (pflags & P_DSPST) {
+		sprintf(s2, " rate %d step %.0f Hz", rp->rate,
+		    rp->step);
+		strcat(s1, s2);
+	}
+	if (!(pflags & P_DSPCH))
+		return;
+
+	if (flags & (F_7000 | F_756)) {
+
+		/*
+		 * Reveal split
+		 */
+		if (cp->split != 0) {
+			sprintf(s2, " split %.*f MHz", sigtab[rp->rate],
+			    cp->split);
+			strcat(s1, s2);
+		}
+
+		/*
+		 * Reveal duplex direction
+		 */
+		temp = vp->mode2 & 0xf0;
+		switch(temp) {
+
+		case 0x10:
+			strcat(s1, " split dup-");
+			break;
+
+		case 0x20:
+			strcat(s1, " split dup+");
+			break;
+		}
+
+		/*
+		 * Reveal tone squelch info
+		 */
+		temp = vp->mode2 & 0xf;
+		switch (temp) {
+
+		case 1:
+	 		temp = (vp->tone[1] << 8) | vp->tone[2];
+			sprintf(s2, " tone %s Hz", capname(temp,
+			    tone));
+			strcat(s1, s2);
+			break;
+
+		case 2:
+ 			temp = (vp->tsql[1] << 8) | vp->tsql[2];
+			sprintf(s2, " tsql %s Hz", capname(temp,
+			    tone));
+			strcat(s1, s2);
+			break;
+
+		case 3:
+ 			temp = (vp->dtcs[1] << 8) | vp->dtcs[2];
+			sprintf(s2, " dtcs %s-", capname(temp, dtcs));
+			strcat(s1, s2);
+			temp = vp->dtcs[0] & 0x3;
+			sprintf(s2, "%s", capname(temp, polar));
+			strcat(s1, s2);
+		}
+	} else if (flags & F_8500){
+
+		/*
+		 * Reveal tuning step.
+		 */
+		if (cp->aux.step != 0) {
+			temp = cp->aux.step;
+			if (temp != 0x13)
+				sprintf(s2, " dial %s kHz",
+				    capname(temp, rp->dialtab));
+			else
+				sprintf(s2, " dial %.1f kHz",
+				    freqdouble(cp->aux.pstep, 2) / 10);
+
+			strcat(s1, s2);
+		}
+
+		/*
+		 * Reveal attentuator setting.
+		 */
+		if (cp->aux.atten != 0) {
+			sprintf(s2, " atten %x dB", cp->aux.atten);
+			strcat(s1, s2);
+		}
+	}
+
+	/*
+	 * Reveal channel name enclosed in quotes ".
+	 */
+	if (cp->name[0] != '\0') {
+		sprintf(s2, " name \"%s\"", cp->name);
+		strcat(s1, s2);
+	}
+}
+
+
+/*
+ * Print error comment
+ */
+static void
+perr(
+	int	temp		/* error code */
+	)
+{
+	switch (temp) {
+
+	case R_CMD:
+		printf("*** unknown command\n");
+		break;
+
+	case R_ARG:
+		printf("*** unknown or missing command argument\n");
+		break;
+
+	case R_FMT:
+		printf("*** invalid argument format\n");
+		break;
+
+	case R_RAD:
+		printf("*** unknown radio\n");
+		break;
+
+	case R_NOR:
+		printf("*** no radios found\n");
+		break;
+
+	case R_DEF:
+		printf("*** radio not defined\n");
+		break;
+
+	case R_ERR:
+		printf("*** radio can't do that\n");
+		break;
+
+	case R_IO:
+		printf("*** file open error\n");
+		break;
+	}
+}
+ 
+
+/*
+ * Getline(str) - process input line and extract tokens
+ *
+ * Blank lines and comments beginning with '#' are ignored and the
+ * string converted to lower case. The resulting tokens are saved in the
+ * *argv[] array. The number of tokens found is returned to the caller.
+ */
+static int			/* number of tokens */
+getline(
+	char	*str		/* pointer to input string */
+	)
+{
+	char	*ptr;
+	char	xbreak[] = " ,\t\n\0";
+	char	sbreak[] = "\"\n\0";
+	int i, temp;
+
+	/*
+	 * Trim trailing \r and comments
+	 */
+	ptr = strchr(str, '\r');
+	if (ptr != NULL)
+		*ptr = '\0';
+	ptr = strchr(str, '#');
+	if (ptr != NULL)
+		*ptr = '\0';
+
+	/*
+	 * Scan for tokens delimited by space, comma, tab, newline or
+	 * null. Arbitrary strings begin with quote " and end with
+	 * quote, newline or null. Quotes are not included in the token.
+	 */
+	ptr = str;
+	for (i = 0; i < ARGMAX;) {
+		temp = strspn(ptr, xbreak);
+		ptr += temp;
+		if (*ptr == '\0')
+			break;
+
+		if (*ptr == '"') {
+			argv[i++] = ++ptr;
+			temp = strcspn(ptr, sbreak);
+		} else {
+			argv[i++] = ptr;
+			temp = strcspn(ptr, xbreak);
+		}
+		ptr += temp;
+		if (*ptr == '\0')
+			break;
+
+		*ptr++ = '\0';
+	}
+	argn = i;
+	return (i);
+}
+
+
+/*
+ * argchan(radio, chan, sptr) - decode channel argument
+ *
+ * NULL		current bank/channel
+ * $		all channels, current bank
+ * b:$		all channels, bank b
+ * $:$		all channels, all banks
+ * +		current bank/channel plus 1 with wrap
+ * -		current bank/channel minus 1 with wrap
+ * c		channel c, current bank
+ * b.c		channel c, bank b
+ * c1:c2	channel range c1-c2, current bank with wrap
+ * b1.c1:b2.c2	channel range b1.c1-b2.c2 with wrap
+ *
+ * returns 0 if single, 1 if multiple, 2 if reversed, 3 if end of range,
+ * R_NOP if error
+ */
+static int			/* > 0 (ok), < 0 (error) */
+argchan(
+	struct icom *rp,	/* radio structure */
+	struct chan *cp,	/* channel structure */
+	char	*sptr		/* ascii argument pointer */
+	)
+{
+	int	rval, bank, mchan, topbk, topch;
+
+	/*
+	 * null: current channel only
+	 */
+	if (cp->bank == rp->topbk && cp->mchan == rp->topch)
+		rval = 3;
+	else
+		rval = 0;
+	if (sptr == NULL)
+		return (0);
+
+	/*
+	 * '?': format help
+	 */
+	if (*sptr == '?') {
+		capkey(sptr, argch);
+		return (R_NOP);
+	}
+
+	/*
+	 * " ": end of range
+	 */
+	if (*sptr == ' ')
+		return (3);
+
+	/*
+	 * "+": next higher channel, current bank with wrap
+	 */
+	if (*sptr == '+') {
+		cp->mchan++;
+		if (cp->mchan > rp->maxch) {
+			cp->mchan = rp->minch;
+			cp->bank++;
+			if (cp->bank > rp->maxbk)
+				cp->bank = rp->minbk;
+		}
+		return (rval);
+	}
+
+	/*
+	 * "-" next lower channel, current bank with wrap
+	 */
+	if (*sptr == '-') {
+		cp->mchan--;
+		if (cp->mchan < rp->minch) {
+			cp->mchan = rp->maxch;
+			cp->bank--;
+			if (cp->bank < rp->minbk)
+				cp->bank = rp->maxbk;
+		}
+		return (rval);
+	}
+
+	/*
+	 * "$" all channels, current bank
+	 */
+	if (strcmp(sptr, "$") == 0) {
+		rp->topbk = cp->bank;
+		cp->mchan = rp->minch;
+		rp->topch = rp->maxch;
+		return (1);
+	}
+
+	/*
+	 * "$:$" all banks, all channels
+	 */
+	if (strcmp(sptr, "$:$") == 0) {
+		cp->bank = rp->minbk;
+		rp->topbk = rp->maxbk;
+		cp->mchan = rp->minch;
+		rp->topch = rp->maxch;
+		return (1);
+	}
+	
+	/*
+	 * "b.$" bank b, all channels
+	 */
+	if (strstr(sptr, ".$") != NULL && sscanf(sptr, "%d", &bank) ==
+	    1) {
+		cp->bank = bank;
+		rp->topbk = bank;
+		cp->mchan = rp->minch;
+		rp->topch = rp->maxch;
+		return (1);
+	}
+	
+	/*
+	 * "b1.c1:b2.c2:": channel range b1.c1-b2.c2
+	 */
+	if (sscanf(sptr, "%d.%d:%d.%d", &bank, &mchan, &topbk,
+	    &topch) == 4) {
+		cp->bank = bank;
+		rp->topbk = topbk;
+		cp->mchan = mchan;
+		rp->topch = topch;
+		if (cp->bank > rp->topbk || (cp->bank == rp->topbk &&
+		    cp->mchan > rp->topch))
+			return (2);
+		else
+			return (1);
+	}
+
+	/*
+	 * "c1:c2": channel range c1-c2 current bank
+	 */
+	if (sscanf(sptr, "%d:%d", &mchan, &topch) == 2) {
+		rp->topbk = cp->bank;
+		cp->mchan = mchan;
+		rp->topch = topch;
+		if (cp->mchan > rp->topch)
+			return (2);
+		else
+			return (1);
+	}
+
+	/*
+	 * "c.b": channel c, bank b only
+	 */
+	if (sscanf(sptr, "%d.%d", &bank, &mchan) == 2) {
+		cp->bank = rp->topbk = bank;
+		cp->mchan = rp->topch = mchan;
+		return (0);
+	}
+
+	/*
+	 * "c": channel c, current bank
+	 */
+	if (sscanf(sptr, "%d", &mchan) == 1) {
+		rp->topbk = cp->bank;
+		cp->mchan = rp->topch = mchan;
+		return (0);
+	}
+	printf("*** bad channel format %s\n", sptr);
+	return (R_NOP);
+}
+
+
+/*
+ * sw_keypad() - switch to keypad mode
+ */
+static int			/* 0 (ok), < 0 (system error) */
+sw_keypad()
+{
+	fd = open("/dev/tty", O_RDONLY);
+	if (fd < 0)
+		return (R_IO);
+
+	if (tcgetattr(fd, &terma) < 0)
+		return (R_IO);
+
+	tcgetattr(fd, &termb);
+	termb.c_lflag &= ~(ICANON | ECHO);
+	termb.c_cc[VMIN] = 1;
+	termb.c_cc[VTIME] = 0;
+	if (tcsetattr(fd, TCSADRAIN, &termb) < 0)
+		return (R_IO);
+
+	return (R_OK);
+}
+
+
+/*
+ * sw_keybd() - switch to keyboard mode
+ */
+static int			/* 0 (ok), < 0 (system error) */
+sw_keybd()
+{
+	if (tcsetattr(fd, TCSADRAIN, &terma) < 0)
+		return (R_IO);
+
+	return (R_OK);
+}
+
+/* end program */

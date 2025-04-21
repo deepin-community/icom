@@ -1,0 +1,22 @@
+# Radio
+#
+20	1150	mode AMw # name WDEL-AM	#
++	1260	mode AMw name WNRK-AM	# Newark
++	1290	mode AMw name WJBR-AM	# Wilmington
++	1450	mode AMw name WILM-AM	#
++	1550	mode AMw name WSER-AM	#
+#
++	5975	mode AMw name BBC	# London
++	7325	mode AMw name BBC	# London
++	12095	mode AMw name BBC	# London
++	15070	mode AMw name BBC	# London
+#
++	2500	mode USB name WWV	# Ft. Collins
++	5000	mode USB name WWV	# Ft. Collins
++	10000	mode USB name WWV	# Ft. Collins
++	15000	mode USB name WWV	# Ft. Collins
++	20000	mode USB name WWV	# Ft. Collins
+#
++ 	3330	mode USB name CHU	# Ottawa
++ 	7335	mode USB name CHU	# Ottawa
++ 	14670	mode USB name CHU	# Ottawa

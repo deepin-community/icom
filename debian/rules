@@ -1,4 +1,21 @@
 #!/usr/bin/make -f
 
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/buildflags.mk
+
+package = icom
+
 %:
 	dh $@
+
+override_dh_auto_install:
+	make install BINDIR=debian/icom/usr/bin
+
+override_dh_installdocs:
+	dh_installdocs call.txt freq.txt arinc_freq
+	cp -r 7000* 706* 756* r7000 r71 r72 8500* r8500* qsy debian/icom/usr/share/doc/icom/examples
+	chmod -R a-x debian/icom/usr/share/doc/icom/examples/*
+	cp -a html debian/icom/usr/share/doc/icom
+
+override_dh_installman:
+	dh_installman debian/icom.man

@@ -1,0 +1,71 @@
+# Company Radio
+
++  3010	USB name "Berne" # Berne
++  3013	USB name "San Fran" # ARINC San Fransisco, Honolulu
++  3482	USB name "Portis" # Portishead
++  3485	USB name "St Johns" # Rainbow St Johns
++  3494	USB name "New York" # ARINC New York
+#  4550	USB name "Gulf Mex" # ARINC Gulf Mexico
++  4654	USB name "Berne" # Berne
++  4670	USB name "Berne" # Berne
+#  4702	USB name "Berne" # Berne
+#  4807	USB name "Portis" # Portishead
++  5529	USB name "Houston" # Houston
++  5604	USB name "St Johns" # Rainbow St Johns
++  5610	USB name "Portis" # Portishead
++  6526	USB name "New York" # ARINC New York, Berne
++  6634	USB name "Portis" # Portishead
++  6637	USB name "Houston" # Houston
++  6640	USB name "ARINC" # ARINC New York, San Fransisco, Honolulu
++  6643	USB name "Berne" # Berne
+#  6705	USB name "Berne" # Berne
+#  6742	USB name "Berne" # Berne
+#  6820	USB name "Gulf Mex" # ARINC Gulf Mexico
+#  8070	USB name "Gulf Mex" # ARINC Gulf Mexico
+#  8170	USB name "Portis" # Portishead
++  8819	USB name "St Johns" # Rainbow St Johns
++  8843	USB name "San Fran" # ARINC San Fransisco
++  8936	USB name "Berne" # Berne
++  8960	USB name "Portis" # Portishead
+#  9211	USB name "Berne" # Berne
++ 10033	USB name "Honolulu" # ARINC Honolulu
++ 10069	USB name "Berne" # Berne
++ 10075	USB name "Houston" # Houston
+# 10291	USB name "Portis" # Portishead
++ 11306	USB name "Portis" # Portishead
++ 11342	USB name "ARINC" # ARINC New York, Honolulu, San Fransisco 
+# 12133	USB name "Portis" # Portishead
+# 13205	USB name "Berne" # Berne
+# 13266	USB name "Berne" # Berne
++ 13285	USB name "St Johns" # Rainbow St Johns
++ 13300	USB name "San Fran" # ARINC San Fransisco
++ 13324	USB name "Berne" # Berne
++ 13330	USB name "New York" # ARINC New York, Houston
++ 13348	USB name "San Fran" # ARINC San Fransisco, Honolulu
++ 13354	USB name "ARINC" # ARINC New York, San Fransisco, Honolulu, Gulf Mexico
+# 13420	USB name "St Johns" # Rainbow St Johns
+# 13865	USB name "Portis" # Portishead
+# 14890	USB name "Portis" # Portishead
+# 15046	USB name "Berne" # Berne
+# 15050	USB name "Berne" # Berne
+# 15835	USB name "Berne" # Berne
+# 17405	USB name "Portis" # Portishead
++ 17910	USB name "St Johns" # Rainbow St Johns
++ 17925	USB name "ARINC" # ARINC New York, San Fransisco, Honolulu
++ 17931	USB name "Berne" # Berne
++ 17940	USB name "Houston" # Houston
+# 18023	USB name "Berne" # Berne
+# 18480	USB name "Berne" # Berne
+# 19510	USB name "Portis" # Portishead
+# 19554	USB name "Berne" # Berne
+# 20035	USB name "Berne" # Berne
+# 20065	USB name "Portis" # Portishead
+# 20870	USB name "Berne" # Berne
+# 21765	USB name "Portis" # Portishead
++ 21933	USB name "Berne" # Berne
++ 21964	USB name "ARINC" # ARINC New York, San Fransisco, Honolulu, Houston
++ 21988	USB name "Berne" # Berne
+# 23285	USB name "Berne" # Berne
+# 25500	USB name "Berne" # Berne
+
+

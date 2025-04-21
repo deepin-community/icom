@@ -1,5 +1,123 @@
-template-repository (1.0-1) unstable; urgency=medium
+icom (20120228-6) unstable; urgency=medium
 
-  * Initial release
+  * Team upload.
+  * Address FTBFS w/GCC-14 due to [-Wint-conversion] (Closes: #1075081)
+  * Set Rules-Requires-Root: binary-targets in debian/control
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- tony mancill <tmancill@debian.org>  Sun, 07 Jul 2024 15:19:53 -0700
+
+icom (20120228-5) unstable; urgency=medium
+
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since buster (oldstable):
+    + Build-Depends: Drop versioned constraint on dpkg-dev.
+
+  [ tony mancill ]
+  * Clean-up compiler warnings (Closes: #1066486)
+  * Add lintian-overrides
+
+ -- tony mancill <tmancill@debian.org>  Tue, 19 Mar 2024 21:58:58 -0700
+
+icom (20120228-4) unstable; urgency=medium
+
+  * Add Vcs fields for repo on Salsa
+  * Update Uploaders field, removing Colin Tuckley (Closes: #990599)
+  * Use debhelper-compat 13 (Closes: #965590)
+  * Change package Priority from extra to optional
+  * Fix FTCBFS: Let dh_auto_build pass cross tools to make.
+    Thank you to Helmut Grohne for the patch.  (Closes: #929220)
+  * Use dh sequencer
+
+ -- tony mancill <tmancill@debian.org>  Wed, 22 Dec 2021 22:11:52 -0800
+
+icom (20120228-3) unstable; urgency=medium
+
+  * Remove hamish from uploaders since he has retired (closes: #831489)
+  * Bump standards version to 3.9.8
+  * Raise debhelper compatibility version level to 6
+
+ -- Colin Tuckley <colint@debian.org>  Sun, 02 Jul 2017 10:46:00 +0100
+
+icom (20120228-2) unstable; urgency=medium
+
+  * Fix Buff overflow in radio.c (closes: #780505).
+
+ -- Colin Tuckley <colint@debian.org>  Sat, 02 May 2015 20:49:00 +0100
+
+icom (20120228-1) unstable; urgency=medium
+
+  * New Upstream Release
+  * Ack the NMU from Joop
+  * Bump standards version to 3.9.6
+  * Raise debhelper compatibility version level to 5
+  * Fix various minor Lintian warnings
+  * Update to source format 3 (quilt)
+
+ -- Colin Tuckley <colint@debian.org>  Wed, 15 Oct 2014 17:36:16 +0100
+
+icom (20040912-1.1) unstable; urgency=low
+
+  * Retiring - remove myself from the uploaders list.
+
+ -- Joop Stakenborg <pa3aba@debian.org>  Sat, 14 Nov 2009 14:16:07 +0000
+
+icom (20040912-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Hamish Moffatt <hamish@debian.org>  Sat, 17 Sep 2005 14:10:31 +1000
+
+icom (20020923-3) unstable; urgency=medium
+
+  * Modified icom.c to include <errno.h>. Fixes FTBFS on
+    amd64 (closes: #277805). Thanks to Andreas Jochens for the patch.
+  * Upgraded to debhelper 4
+  * Upgraded to standards-revision 3.6.1 (was 3.5.7)
+
+ -- Hamish Moffatt <hamish@debian.org>  Mon, 25 Apr 2005 21:56:51 +1000
+
+icom (20020923-2) unstable; urgency=low
+
+  * Fixed links in /usr/share/doc/icom/html/index.htm (closes: #179732)
+  * Added manual page icom(1)
+
+ -- Hamish Moffatt <hamish@debian.org>  Tue,  4 Feb 2003 23:50:12 +1100
+
+icom (20020923-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Hamish Moffatt <hamish@debian.org>  Thu, 10 Oct 2002 22:57:26 +1000
+
+icom (19990819-3) unstable; urgency=low
+
+  * Updated standards-version and added build-depends
+  * Applied patch from Don VE3HUR to fix the number of memories
+    in the IC-765 and to fix incorrect parsing of the freq
+    command when a mode is specified.
+
+ -- Hamish Moffatt <hamish@debian.org>  Wed, 30 Jan 2002 23:33:21 +1100
+
+icom (19990819-2) unstable; urgency=low
+
+  * FHS compliant
+
+ -- Hamish Moffatt <hamish@debian.org>  Fri,  1 Oct 1999 23:31:47 +1000
+
+icom (19990819-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Hamish Moffatt <hamish@debian.org>  Fri, 10 Sep 1999 22:57:31 +1000
+
+icom (19980709-2) unstable; urgency=low
+
+  * Applied patch for GLIBC 2.1, fixes bug#38499
+
+ -- Hamish Moffatt <hamish@debian.org>  Sat, 29 May 1999 23:35:00 +1000
+
+icom (19980709-1) unstable; urgency=low
+
+  * First upload
+
+ -- Hamish Moffatt <hamish@debian.org>  Sun, 07 Feb 1999 00:39:00 +1100
