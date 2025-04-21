@@ -1,0 +1,6 @@
+# r8500 setup
+
+radio r8500
+restore * r8500_arinc
+restore * r8500_bc
+restore * r8500_ham

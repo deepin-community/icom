@@ -1,0 +1,81 @@
+# MWARA Memory channels 756 and 706g
+#
+# Carribean/South America
+
++  2887 USB name "CAR A" # CAR-A
++  3455	USB name "CAR B" # CAR-B
++  5520	USB name "CAR B" # CAR-B
++  5550	USB name "CAR A" # CAR-A
++  6577	USB name "CAR A" # CAR-A
++  6586	USB name "CAR B" # CAR-B
++  8846	USB name "CAR B" # CAR-B
++  8918	USB name "CAR A" # CAR-A
++ 11330	USB name "CAR B" # CAR-B
++ 11387	USB name "CAR B" # CAR-B
++ 11396	USB name "CAR A" # CAR-A
++ 13297	USB name "CAR A" # CAR-A
++ 17907	USB name "CAR A/B" # CAR-A
+
+# VOLMET
+
++  3485	USB name "VOLM NAT" # VOLMET-NAT
++  6604	USB name "VOLM NAT" # VOLMET-NAT
++ 10051	USB name "VOLM NAT" # VOLMET-NAT
++ 13270	USB name "VOLM NAT" # VOLMET-NAT
+
++  3413	USB name "VOLM EU" # VOLMET-EU
++  5505	USB name "VOLM EU" # VOLMET-EU
++  8957	USB name "VOLM EU" # VOLMET-EU
++ 13264	USB name "VOLM EU" # VOLMET-EU
+
++  2863	USB name "VOLM PAC" # VOLMET-PAC
++  6679	USB name "VOLM PAC" # VOLMET-PAC
++  8828	USB name "VOLM PAC" # VOLMET-PAC
++ 13282	USB name "VOLM PAC" # VOLMET-PAC
++  5450 USB name "VOLM ME" # VOLMET-ME
+
+# North Atlantic
+
++  3016 USB name "NAT A" # NAT-A
++  5598	USB name "NAT A" # NAT-A
++  8906	USB name "NAT A" # NAT-A
++ 13306	USB name "NAT A" # NAT-A
++ 17946	USB name "NAT A" # NAT-A
+
++  2899	USB name "NAT B" # NAT-B
++  5616	USB name "NAT B" # NAT-B
++  8864	USB name "NAT B" # NAT-B
++ 13291	USB name "NAT B" # NAT-B
++ 17946	USB name "NAT B" # NAT-B
+
++  2862	USB name "NAT C" # NAT-C
++  5649	USB name "NAT C" # NAT-C
++  8879	USB name "NAT C" # NAT-C
++ 13306	USB name "NAT C" # NAT-C
++ 17946	USB name "NAT C" # NAT-C
+
++  2971	USB name "NAT D" # NAT-D
++  4675	USB name "NAT D" # NAT-D
++  8891	USB name "NAT D" # NAT-D
++ 11279	USB name "NAT D" # NAT-D
++ 13291	USB name "NAT D" # NAT-D
++ 17946	USB name "NAT D" # NAT-D
+
++  2962	USB name "NAT E" # NAT-E
++  6628	USB name "NAT E" # NAT-E
++  8825	USB name "NAT E" # NAT-E
++ 11309	USB name "NAT E" # NAT-E
++ 13354	USB name "NAT E" # NAT-E
+
++  3476	USB name "NAT F" # NAT-F
++  6622	USB name "NAT F" # NAT-F
++  8831	USB name "NAT F" # NAT-F
+
+# Santa Maria RTTY
+
+#  5474   RTTY    # Santa Maria
+#  9994.2 RTTY    # Santa Maria
+# 10539.1 RTTY    # Santa Maria
+# 12323   RTTY    # Santa Maria
+# 14497.5 RTTY    # Santa Maria
+

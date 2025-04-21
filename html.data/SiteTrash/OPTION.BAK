@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="HTML Tidy, see www.w3.org">
+		<title>Command Line Options</title>
+		<link href="scripts/style.css" type="text/css" rel="stylesheet">
+	</head>
+	<body>
+		<h3>Command Line Options</h3>
+		<hr>
+		<p>Following is a list of recognized command line options. Note that, in the case of multiple options, the preferred order is <tt>-r, -c, -m, -g, -d, -k, -a</tt> and <tt>-f</tt>. The following options are valid at any time.</p>
+		<dl>
+			<dt><tt>-a</tt>
+			<dd>Enable the audio codec (Sun workstations only).
+			<dt><tt>-d</tt>
+			<dd>Enable debug trace as in the <tt>trace</tt> keyboard command.
+			<dt><tt>-f</tt> <i>filename</i>
+			<dd>Read commands from the file <i>filename</i>.
+			<dt><tt>-k</tt>
+			<dd>Begin program operation in keypad mode.
+			<dt><tt>-r</tt> <i>name</i>
+			<dd>Select the radio with identifier <i>name</i>. See above for a list of radio names and modes currently supported.
+		</dl>
+		<p>The following options are valid only after a radio has been selected</p>
+		<dl>
+			<dt><tt>-c</tt> <i>channel</i>
+			<dd>Select the memory channel <i>channel</i> and set the radio frequency, mode and offset to its contents.
+			<dt><tt>-d</tt>
+			<dd>Display the current radio frequency and mode. This is designed for use in shell scripts to confirm or log the results.
+			<dt><tt>-g</tt> <i>frequency</i>
+			<dd>Set the radio frequency to <i>frequency</i> in MHz if less than 1000 and in kHz otherwise.
+			<dt><tt>-m</tt> <i>mode</i>
+			<dd>Set the radio mode to <i>mode</i>. See above for a list of mode names valid for various radios. The mode names are specific to each radio type; not all radios support the same modes.
+		</dl>
+		<hr>
+		<script type="text/javascript" language="javascript" src="scripts/footer.txt"></script>
+	</body>
+</html>

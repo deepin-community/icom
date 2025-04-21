@@ -1,0 +1,313 @@
+# R8500 Aviation Radio (banks 13-19)
+
+# Carribean/South America
+
+13.0 2887 USB dial 3 name "CAR A" # CAR-A
++  3455	USB dial 3 name "CAR B" # CAR-B
++  5520	USB dial 3 name "CAR B" # CAR-B
++  5550	USB dial 3 name "CAR A" # CAR-A
++  6577	USB dial 3 name "CAR A" # CAR-A
++  6586	USB dial 3 name "CAR B" # CAR-B
++  8846	USB dial 3 name "CAR B" # CAR-B
++  8918	USB dial 3 name "CAR A" # CAR-A
++ 11330	USB dial 3 name "CAR B" # CAR-B
++ 11387	USB dial 3 name "CAR B" # CAR-B
++ 11396	USB dial 3 name "CAR A" # CAR-A
++ 13297	USB dial 3 name "CAR A" # CAR-A
++ 17907	USB dial 3 name "CAR A/B" # CAR-A
+
+# VOLMET
+
++  3485	USB dial 3 name "VOLM NAT" # VOLMET-NAT
++  6604	USB dial 3 name "VOLM NAT" # VOLMET-NAT
++ 10051	USB dial 3 name "VOLM NAT" # VOLMET-NAT
++ 13270	USB dial 3 name "VOLM NAT" # VOLMET-NAT
+
++  3413	USB dial 3 name "VOLM EU" # VOLMET-EU
++  5505	USB dial 3 name "VOLM EU" # VOLMET-EU
++  8957	USB dial 3 name "VOLM EU" # VOLMET-EU
++ 13264	USB dial 3 name "VOLM EU" # VOLMET-EU
+
++  2863	USB dial 3 name "VOLM PAC" # VOLMET-PAC
++  6679	USB dial 3 name "VOLM PAC" # VOLMET-PAC
++  8828	USB dial 3 name "VOLM PAC" # VOLMET-PAC
++ 13282	USB dial 3 name "VOLM PAC" # VOLMET-PAC
+
++  5450 USB dial 3 name "VOLM ME" # VOLMET-ME
+
++  3479	USB dial 3 name "E SAM" # E-SAM
++  5526	USB dial 3 name "E SAM" # E-SAM
++  8855	USB dial 3 name "E SAM" # E-SAM
++ 10096	USB dial 3 name "E SAM" # E-SAM
++ 13297	USB dial 3 name "E SAM" # E-SAM
++ 17907	USB dial 3 name "E SAM" # E-SAM
+
++  2944	USB dial 3 name "W SAM" # W-SAM
++  4669	USB dial 3 name "W SAM" # W-SAM
++  6549	USB dial 3 name "W SAM" # W-SAM
++ 10024	USB dial 3 name "W SAM" # W-SAM
++ 11360	USB dial 3 name "W SAM" # W-SAM
++ 17907	USB dial 3 name "W SAM" # W-SAM
+
+# North Atlantic
+
+# NAT-A Gander, New York, Santa Maria, Shanwick (43N-47N
+
+14.0 3016 USB dial 3 name "NAT A" # NAT-A
++  5598	USB dial 3 name "NAT A" # NAT-A
++  8906	USB dial 3 name "NAT A" # NAT-A
++ 13306	USB dial 3 name "NAT A" # NAT-A
++ 17946	USB dial 3 name "NAT A" # NAT-A
+
+# NAT-B Gander, Iceland, Shanwick (47N-64N)
+
++  2899	USB dial 3 name "NAT B" # NAT-B
++  5616	USB dial 3 name "NAT B" # NAT-B
++  8864	USB dial 3 name "NAT B" # NAT-B
++ 13291	USB dial 3 name "NAT B" # NAT-B
++ 17946	USB dial 3 name "NAT B" # NAT-B
+
+# NAT-C Gander, Iceland, Shanwick (47N-64N)
+
++  2872	USB dial 3 name "NAT C" # NAT-C
++  5649	USB dial 3 name "NAT C" # NAT-C
++  8879	USB dial 3 name "NAT C" # NAT-C
++ 13306	USB dial 3 name "NAT C" # NAT-C
++ 17946	USB dial 3 name "NAT C" # NAT-C
+
+# NAT-D Bodo, Gander, Iceland, Shanwick, Arctic Radio (north of 62N)
+
++  2971	USB dial 3 name "NAT D" # NAT-D
++  4675	USB dial 3 name "NAT D" # NAT-D
++  8891	USB dial 3 name "NAT D" # NAT-D
++ 11279	USB dial 3 name "NAT D" # NAT-D
++ 13291	USB dial 3 name "NAT D" # NAT-D
++ 17946	USB dial 3 name "NAT D" # NAT-D
+
+# NAT-E Canarias, New York, Santa Maria (south of 43N)
+
++  2962	USB dial 3 name "NAT E" # NAT-E
++  6628	USB dial 3 name "NAT E" # NAT-E
++  8825	USB dial 3 name "NAT E" # NAT-E
++ 11309	USB dial 3 name "NAT E" # NAT-E
++ 13354	USB dial 3 name "NAT E" # NAT-E
++ 17946	USB dial 3 name "NAT D" # NAT-E
+
+# NAT-F Gander, Shanwick (Gander-Shanwick express)
+
++  3476	USB dial 3 name "NAT F" # NAT-F
++  6622	USB dial 3 name "NAT F" # NAT-F
++  8831	USB dial 3 name "NAT F" # NAT-F
++ 13291	USB dial 3 name "NAT F" # NAT-F
++ 17946	USB dial 3 name "NAT D" # NAT-F
+
+# Pacific
+
+15.0 2869 USB dial 3 name "CEP" # CEP-1/2
++  3413	USB dial 3 name "CEP" # CEP-1/2
++  5547	USB dial 3 name "CEP" # CEP-1/2
++  5574	USB dial 3 name "CEP" # CEP-1/2
++  8843	USB dial 3 name "CEP" # CEP-1/2
++ 11282	USB dial 3 name "CEP" # CEP-1/2
++ 13261	USB dial 3 name "CEP" # CEP-1/2
++ 13354	USB dial 3 name "CEP" # CEP-1/2
++ 17904	USB dial 3 name "CEP" # CEP-1/2
+
++  2998	USB dial 3 name "CWP" # CWP-1/2
++  4666	USB dial 3 name "CWP" # CWP-1/2
++  6532	USB dial 3 name "CWP" # CWP-1/2
++  6562	USB dial 3 name "CWP" # CWP-1/2
++  8903	USB dial 3 name "CWP" # CWP-1/2
++ 11384	USB dial 3 name "CWP" # CWP-1/2
++ 13300	USB dial 3 name "CWP" # CWP-1/2
++ 17904	USB dial 3 name "CWP" # CWP-1/2
++ 21985	USB dial 3 name "CWP" # CWP-1/2
+
++  2932	USB dial 3 name "NP" # NP
++  5628	USB dial 3 name "NP" # NP
++  5667	USB dial 3 name "NP" # NP
++  6665	USB dial 3 name "NP" # NP
++  8915	USB dial 3 name "NP" # NP
++ 10048	USB dial 3 name "NP" # NP
++ 13294	USB dial 3 name "NP" # NP
++ 17904	USB dial 3 name "NP" # NP
++ 17946	USB dial 3 name "NP" # NP
++ 21925	USB dial 3 name "NP" # NP
+
++  3467	USB dial 3 name "SP" # SP
++  5643	USB dial 3 name "SP" # SP
++  5667	USB dial 3 name "SP" # SP
++  8867	USB dial 3 name "SP" # SP
++ 13273	USB dial 3 name "SP" # SP
++ 17904	USB dial 3 name "SP" # SP
+
+# Africa/South Atlantic/Mideast/Indean Ocean
+
+16.0 2854 USB dial 3 name "SAT 2" # SAT-2
++  5565	USB dial 3 name "SAT 2" # SAT-2
++ 11291	USB dial 3 name "SAT 2" # SAT-2
++ 13315	USB dial 3 name "SAT 2" # SAT-2
++ 17955	USB dial 3 name "SAT 2" # SAT-2
++  3452 USB dial 3 name "AFI/SAT" # AFI-1/SAT-1
++  6535	USB dial 3 name "AFI/SAT" # AFI-1/SAT-1
++  8861	USB dial 3 name "AFI/SAT" # AFI-1/SAT-1
++ 13357	USB dial 3 name "AFI/SAT" # AFI-1/SAT-1
++ 17955	USB dial 3 name "AFI/SAT" # AFI-1/SAT-1
+
++  3419	USB dial 3 name "AFI 2" # AFI-2
++  5652	USB dial 3 name "AFI 2" # AFI-2
++  8894	USB dial 3 name "AFI 2" # AFI-2
++ 13273	USB dial 3 name "AFI 2" # AFI-2
++ 17961	USB dial 3 name "AFI 2" # AFI-2
+
++  3467	USB dial 3 name "AFI/MID" # AFI-3/MID-2
++  5658	USB dial 3 name "AFI/MID" # AFI-3/MID-2
++ 10018	USB dial 3 name "AFI/MID" # AFI-3/MID-2
++ 11300	USB dial 3 name "AFI/MID" # AFI-3/MID-2
++ 13288	USB dial 3 name "AFI/MID" # AFI-3/MID-2
++ 17961	USB dial 3 name "AFI/MID" # AFI-3/MID-2
+
++  2878	USB dial 3 name "AFI 4" # AFI-4
++  5493	USB dial 3 name "AFI 4" # AFI-4
++  8903	USB dial 3 name "AFI 4" # AFI-4
++ 13294	USB dial 3 name "AFI 4" # AFI-4
++ 17961	USB dial 3 name "AFI 4" # AFI-4
+
++  3476	USB dial 3 name "AFI/INO" # AFI-5/INO-1
++  5634	USB dial 3 name "AFI/INO" # AFI-5/INO-1
++  8879	USB dial 3 name "AFI/INO" # AFI-5/INO-1
++ 13306	USB dial 3 name "AFI/INO" # AFI-5/INO-1
++ 17961	USB dial 3 name "AFI/INO" # AFI-5/INO-1
+
+# Europe/West Asia
+
+17.0 3479 USB dial 3 name "EUR A" # EUR-A
++  5661	USB dial 3 name "EUR A" # EUR-A
++  6598	USB dial 3 name "EUR A" # EUR-A
++ 10084	USB dial 3 name "EUR A" # EUR-A
++ 13288	USB dial 3 name "EUR A" # EUR-A
++ 17961	USB dial 3 name "EUR A" # EUR-A
+
++  2992	USB dial 3 name "MID 1" # MID-1
++  4669	USB dial 3 name "MID 1" # MID-1
++  6631	USB dial 3 name "MID 1" # MID-1
++  8951	USB dial 3 name "MID 1" # MID-1
++ 11375	USB dial 3 name "MID 1" # MID-1
++ 17961	USB dial 3 name "MID 1" # MID-1
+
++  2944	USB dial 3 name "MID 3" # MID-3
++  4669	USB dial 3 name "MID 3" # MID-3
++  6631	USB dial 3 name "MID 3" # MID-3
++  8951	USB dial 3 name "MID 3" # MID-3
++ 11375	USB dial 3 name "MID 3" # MID-3
++ 17961	USB dial 3 name "MID 3" # MID-3
+
++  3019	USB dial 3 name "NCA 1" # NCA-1
++  5646	USB dial 3 name "NCA 1" # NCA-1
++ 13315	USB dial 3 name "NCA 1" # NCA-1
++ 17958	USB dial 3 name "NCA 1" # NCA-1
+
++  2851	USB dial 3 name "NCA 2" # NCA-2
++  4678	USB dial 3 name "NCA 2" # NCA-2
++  6592	USB dial 3 name "NCA 2" # NCA-2
++ 10096	USB dial 3 name "NCA 2" # NCA-2
++ 17958	USB dial 3 name "NCA 2" # NCA-2
+
++  3004	USB dial 3 name "NCA 3" # NCA-3
++  5664	USB dial 3 name "NCA 3" # NCA-3
++ 10039	USB dial 3 name "NCA 3" # NCA-3
++ 13303	USB dial 3 name "NCA 3" # NCA-3
++ 17958	USB dial 3 name "NCA 3" # NCA-3
+
+# East/South Asia
+
+18.0 3016 USB dial 3 name "EA 1" # EA-1
++  6571	USB dial 3 name "EA 1" # EA-1
++  8897	USB dial 3 name "EA 1" # EA-1
++ 10042	USB dial 3 name "EA 1" # EA-1
++ 17958	USB dial 3 name "EA 1" # EA-1
+
++  3470	USB dial 3 name "SEA 1/3" # SEA-1/3
++  6556	USB dial 3 name "SEA 1/3" # SEA-1/3
++ 10066	USB dial 3 name "SEA 1/3" # SEA-1/3
++ 11396	USB dial 3 name "SEA 1/3" # SEA-1/3
++ 13318	USB dial 3 name "SEA 1/3" # SEA-1/3
++ 17907	USB dial 3 name "SEA 1/3" # SEA-1/3
+
++  3485	USB dial 3 name "SEA/EA" # SEA-2/EA-2
++  5649	USB dial 3 name "SEA/EA" # SEA-2/EA-2
++  5655	USB dial 3 name "SEA/EA" # SEA-2/EA-2
++  8942	USB dial 3 name "SEA/EA" # SEA-2/EA-2
++ 11396	USB dial 3 name "SEA/EA" # SEA-2/EA-2
++ 13309	USB dial 3 name "SEA/EA" # SEA-2/EA-2
++ 17907	USB dial 3 name "SEA/EA" # SEA-2/EA-2
+
+# Company Radio
+
+19.0 3010 USB dial 3 name "Berne" # Berne
++  3013	USB dial 3 name "San Fran" # ARINC San Fransisco, Honolulu
++  3482	USB dial 3 name "Portis" # Portishead
++  3485	USB dial 3 name "St Johns" # Rainbow St Johns
++  3494	USB dial 3 name "New York" # ARINC New York
+#  4550	USB dial 3 name "Gulf Mex" # ARINC Gulf Mexico
++  4654	USB dial 3 name "Berne" # Berne
++  4670	USB dial 3 name "Berne" # Berne
+#  4702	USB dial 3 name "Berne" # Berne
+#  4807	USB dial 3 name "Portis" # Portishead
++  5529	USB dial 3 name "Houston" # Houston
++  5604	USB dial 3 name "St Johns" # Rainbow St Johns
++  5610	USB dial 3 name "Portis" # Portishead
++  6526	USB dial 3 name "New York" # ARINC New York, Berne
++  6634	USB dial 3 name "Portis" # Portishead
++  6637	USB dial 3 name "Houston" # Houston
++  6640	USB dial 3 name "ARINC" # ARINC New York, San Fransisco, Honolulu
++  6643	USB dial 3 name "Berne" # Berne
+#  6705	USB dial 3 name "Berne" # Berne
+#  6742	USB dial 3 name "Berne" # Berne
+#  6820	USB dial 3 name "Gulf Mex" # ARINC Gulf Mexico
+#  8070	USB dial 3 name "Gulf Mex" # ARINC Gulf Mexico
+#  8170	USB dial 3 name "Portis" # Portishead
++  8819	USB dial 3 name "St Johns" # Rainbow St Johns
++  8843	USB dial 3 name "San Fran" # ARINC San Fransisco
++  8936	USB dial 3 name "Berne" # Berne
++  8960	USB dial 3 name "Portis" # Portishead
+#  9211	USB dial 3 name "Berne" # Berne
++ 10033	USB dial 3 name "Honolulu" # ARINC Honolulu
++ 10069	USB dial 3 name "Berne" # Berne
++ 10075	USB dial 3 name "Houston" # Houston
+# 10291	USB dial 3 name "Portis" # Portishead
++ 11306	USB dial 3 name "Portis" # Portishead
++ 11342	USB dial 3 name "ARINC" # ARINC New York, Honolulu, San Fransisco 
+# 12133	USB dial 3 name "Portis" # Portishead
+# 13205	USB dial 3 name "Berne" # Berne
+# 13266	USB dial 3 name "Berne" # Berne
++ 13285	USB dial 3 name "St Johns" # Rainbow St Johns
++ 13300	USB dial 3 name "San Fran" # ARINC San Fransisco
++ 13324	USB dial 3 name "Berne" # Berne
++ 13330	USB dial 3 name "New York" # ARINC New York, Houston
++ 13348	USB dial 3 name "San Fran" # ARINC San Fransisco, Honolulu
++ 13354	USB dial 3 name "ARINC" # ARINC New York, San Fransisco, Honolulu, Gulf Mexico
+# 13420	USB dial 3 name "St Johns" # Rainbow St Johns
+# 13865	USB dial 3 name "Portis" # Portishead
+# 14890	USB dial 3 name "Portis" # Portishead
+# 15046	USB dial 3 name "Berne" # Berne
+# 15050	USB dial 3 name "Berne" # Berne
+# 15835	USB dial 3 name "Berne" # Berne
+# 17405	USB dial 3 name "Portis" # Portishead
++ 17910	USB dial 3 name "St Johns" # Rainbow St Johns
++ 17925	USB dial 3 name "ARINC" # ARINC New York, San Fransisco, Honolulu
++ 17931	USB dial 3 name "Berne" # Berne
++ 17940	USB dial 3 name "Houston" # Houston
+# 18023	USB dial 3 name "Berne" # Berne
+# 18480	USB dial 3 name "Berne" # Berne
+# 19510	USB dial 3 name "Portis" # Portishead
+# 19554	USB dial 3 name "Berne" # Berne
+# 20035	USB dial 3 name "Berne" # Berne
+# 20065	USB dial 3 name "Portis" # Portishead
+# 20870	USB dial 3 name "Berne" # Berne
+# 21765	USB dial 3 name "Portis" # Portishead
++ 21933	USB dial 3 name "Berne" # Berne
++ 21964	USB dial 3 name "ARINC" # ARINC New York, San Fransisco, Honolulu, Houston
++ 21988	USB dial 3 name "Berne" # Berne
+# 23285	USB dial 3 name "Berne" # Berne
+# 25500	USB dial 3 name "Berne" # Berne

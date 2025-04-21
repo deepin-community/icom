@@ -1,0 +1,295 @@
+_HI_ IS STATION KMI. TRAY_RADS__)3/ ?49-$:-5 34=8:3 049=8$3
+WEATHER FOR ALL MARITIME AND AERONAUTICAL STATIONS. OUR TRANSMITTER_Y__
+W__ LOCATED NEAR DIXON, CALIFO_NIA.
+
+AT+T HIGH SEAS RADIOTELEX BRO_DCLS___REQUENCIES ARE AS _OLLOWS:__
+
+++++++++++++_)9++++++++++++++++++++++++++++++__++_+    ITU CIA_    T  COAST-__/    -5+T STATINB _  __+    _AA_AAAA _     --------   K__OAAAAAAA__A    +
++      405           421_5         WOO         __0_
++      412           4__.5        _WOM         +
++C__   _RQY_N _       4217.5        _KMI         +
++    _         B
+____                           +
+__      626      _    6326.5    __U_ __U _      _+
++      628           6327.5         WOM         +
++      629           6328___  _     W_O         +
++__  _           T  _                 _  _      +
++      831__    ___  8431.5         KMI         +
++      833        _  84(__5__  __ _  29.         +
++      834           8433.0   _  NT_M___       +
++         _ _ __ _ _                           +:_/9_1._.__&4____5+__1)_________
+
+CQ CQ CQ DE WOM WOM WOM
++ + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+THIS IS STATION WOM. THIS RADIOTELEX BROADCAST SERVICE PROVIDES
+UP TO THE MINUTE RADIOTELEPHONE TRAFFIC LIST INFORMATION AND WEATHER
+FOR ALL MARITIME AND AERONAUTICAL STATIONS.  OUR TRANSMITTERS ARE
+LOCATED NEAR 25:52:24N  80:28:59W.
+
+AT+T HIGH SEAS RADIOTELEX BROADCAST FREQUENCIES ARE AS FOLLOWS:
+
++++++++++++++++++++++++++++++++++++++++++++++++++
++    ITU CHAN       COAST-TX    AT+T STATION    +
++    --------       --------    ------------    +
++      405           4212.5         WOO         +
++      412           4215.5         WOM         +
++                                               +
++      628           6327.5         WOM         +
++      629           6328.0         WOO         +
++                                               +
++      831           8431.5         KMI         +
++      833           8432.5         WOM         +
++      834           8433.0         WOO         +
++                                               +
++     1303          12630.0         KMI         +
++     1305          12631.0         WOM         +
++     1307          12632.0         WOO         +
++                                               +
++     1728          16870.0         KMI         +
++                                               +
++     1818          19689.5         KMI         +
++                                               +
++     2297          22424.5         KMI         +
++     2299          22425.5         WOM         +
++     2516          26108.5         KMI         +
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+THESE RADIOTELEX BROADCASTS CAN BE USED TO ACTIVATE AN ALERTING
+SELCAL DEVICE WHEN A TELEPHONE CALL IS WAITING FOR SOMEONE ON
+BOARD THE VESSEL SHOWN IN THE TRAFFPC LIST.  SPECIAL RECEIVING
+EQUIPMENT IS REQUIRED ON BOARD THE VESSEL FOR THIS FUNCTION.
+FOR THE LATEST INFORMATION ABOUT AT+T SELCAL SYSTEMS, CALL COLLECT
+VIA AT+T TO 1-201-644-8046.
+
+TRAFFIC LISTS ARE SENT CONTINUOUSLY. WX AND HIGH SEAS INFORMATION
+SCHEDULED BRAODCASTS ARE AS FOLLOWS:
+
+STATION      WX           INFORMATION
+-------  ------------    --------------
+  KMI    ODD  UTC HR+20   EVEN UTC HR+20
+  WOM    EVEN UTC HR+40   ODD  UTC HR+40
+  WOO    EVEN UTC HR+20   ODD  UTC HR+20
+
+WOM SSB RADIOTELEPHONE FREQUENCIES ARE AS FOLLOWS:
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++                                                                 +
++   CHAN    COAST-TX    SHIP-TX      CHAN    COAST-TX   SHIP-TX   +
++   ----    --------    -------      ----    --------   -------   +
++    209     2490.0     2031.5       1206     13092.0   12245.0   +
++    221     2514.0     2118.0       1208     13098.0   12251.0   +
++    245     2566.0     2390.0       1209     13101.0   12254.0   +
++    247     2442.0     2406.0       1215     13119.0   12272.0   +
++                                    1223     13143.0   12296.0   +
++    403     4363.0     4071.0       1230     13164.0   12317.0   +
++    412     4390.0     4098.0                                    +
++    417     4405.0     4113.0       1601     17242.0   16360.0   +
++    423     4423.0     4131.0       1609     17266.0   16384.0   +
++                                    1610     17269.0   16387.0   +
++    802     8722.0     8198.0       1611     17272.0   16390.0   +
++    805     8731.0     8207.0       1616     17287.0   16405.0   +
++    810     8746.0     8222.0                                    +
++    814     8758.0     8234.0       2215     22738.0   22042.0   +
++    825     8791.0     8267.0       2216     22741.0   22045.0   +
++    831     8809.0     8285.0       2222     22759.0   22063.0   +
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+FOR ADDITIONAL INFORMATION ABOUT ANY OF OUR SERVICES OR A FREE
+BROUCHURE ABOUT AT+T HIGH SEAS AND STATIONS KMI WOM AND WOO PLEASE
+CONTACT US VIA RADIO, LETTER, OR TELEPHONE AT:
+
+AT+T STATION WOM
+1340 N.W. 40TH AVENUE
+FORT LAUDERDALE, FL 33313
+
+COLLECT VIA AT+T 1-305-587-0910
+
+THANKS FOR YOUR INTEREST AND SUPPORT.
+
+-AR-
+
+WOO AT+T RADIOTELEX BROADCAST FREQUENCIES ARE AS FOLLOWS:
++++++++++++++++++++++++++++++++++++++++++++++++++
++    ITU CHAN       COAST-TX    AT+T STATION    +
++    --------       --------    ------------    +
++      405           4212.5         WOO         +
++      62,           6328.0         WOO         +
++      834           8433.0         WOO         +
++     1307          12632.0         WOO         +
++++++++++++++++++++++++++++++++++++++++++++++++++
+THESE RADIOTELEX BROADCASTS CAN BE USED TO ACTIVATE AN ALERTING
+SELCAL DEVICE WHEN A TELEPHONE CALL IS WAITING FOR SOMEONE ON
+BOARD THE VESSEL SHOWN IN THE TRAFFIC LIST.  SPECIAL RECEIVING
+EQUIPMENT IS REQUIRED ON BOARD THE VESSEL FOR THIS FUNCTION.
+FOR THE LATEST INFORMATION ABOUT AT+T SELCAL SYSTEMS, CALL COLLECT
+VIA AT+T TO 1-201-644-8046.
+TRAFFIC LISTS ARE SENT CONTINUOUSLY. WX AND HIGH SEAS INFORMATION
+SCHEDULED BRAODCASTS ARE AS FOLLOWS:
+STATION      WX           INFORMATION
+-------  ------------    --------------
+  KMI    ODD  UTC HR+20   EVEN UTC HR+20
+  WOM    EVEN UTC HR+40   ODD  UTC HR+40
+  WOO    EVEN UTC HR+20   ODD  UTC HR+20
+
+FOR ADDITIONAL INFORMATION ABOUT ANY OF OUR SERVICESOR A FREE
+BROCHURE ABOUT AT+T HIGH SEAS AND STATIONS KMI WOM AND WOO PLEASE
+CONTACT US VIA RADIO, LETTER, OR TELEPHONE AT:
+AT+T STATION WOO                COLLECT VIA AT+T 1-609-597-2201
+P.O. BOX 550                                FAX  1-609-597-6294
+MANAHAWKIN, NJ 08050
+
+-AR-
+
+CQ CQ DE WLO WLO
+INFOMT 04/06/95
+
+WLO RADIO
+MOBILE MARINE RADIO INC
+7700 RINLA AVENUE
+MOBILE ALABAMA 36619 USA
+
+PHONE: 205 666 9042
+TELEX: 50 5444 (KEY CTRL G TO GET OPR)
+===================================
+S H I P   T E L E X   S E R V I C E
+
+HOURS OF SERVICE:        HH 24 CONTINUOUS
+FEC RADIO TFC LISTS/WX:  HH PLUS 35 (SEE TSB FREQUENCIES)
+
+WLO FULL TIME NBDP ARQ CENTER FREQUENCIES
+-------------------------------------------------------------
+ ITU       SHIP       SHIP   :    ITU       SHIP        SHIP
+CHANNEL  TRANSMIT   RECEIVE  :  CHANNEL   TRANSMIT    RECEIVE
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+ 406     4175.0      4213.0 KHZ   1605    16685.5     16809.0 KHZ
+ 410     4177.0      4215.0       1611    16688.5     16812.0
+ 415     4179.5      4217.0       1615    16690.5     16814.0
+ 417     4180.5      4218.0       1625    16695.5     16818.5
+                                  1629    16697.5     16820.5
+ 606     6265.5      6317.0       1640    16703.0     16826.0
+ 610     6267.5      6319.0       1644    16705.0     16828.0
+ 615     6270.0      6321.0       1650    16708.0     16831.0
+ 619     6272.0      6323.0       1654    16710.0     16833.0
+ 624     6274.5      6325.5       1661    16713.5     16836.5
+
+ 806     8379.0      8419.0       1810    18875.0     19685.5
+ 810     8381.0      8421.0
+ 815     8383.5      8423.5       2210    22289.0     22381.0
+ 829     8390.5      8430.5       2215    22291.5     22383.5
+ 832     8392.0      8432.0       2254    22311.0     22403.0
+ 836     8394.0      8434.0       2256    22312.0     22404.0
+                                  2260    22314.0     22406.0
+1205    12479.0     12581.5       2262    22315.0     22407.0
+1211    12482.0     12584.5       2272    22320.0     22412.0
+1215    12484.0     12586.5       2284    22326.0     22418.0
+1225    12489.0     12591.5
+1229    12491.0     12593.5       2510    25177.5     26105.5
+1234    12493.5     12596.0
+1240    12496.5     12599.0
+1251    12502.0     12604.5
+1254    12503.5     12606.0
+1261    12507.0     12609.5
+
+TIME SLOT BROADCAST (TSB) FREQUENCIES:
+FEC: 1995 HURRICANE SEASON 06/01/95 THRU 11/30/95
+4250.0  6344.0  8534.0  12992.0  16997.6  22688.0  KHZ
+CW & FEC: NON-HURRICANE SEASON 12/01/94 THRU 05/31/95
+4343.0  6416.0  8514.0  12886.5  17022.5  22487.0  KHZ
+
+TIME SLOT BROADCASTS (TSB) SCHEDULE:
+-------------------------------------------------------------------
+MORSE CODE 31 WPM                              NON-PAIRED NBDP
+CW MODE - TOT UTC          PRODUCT             FEC MODE - TOT UTC
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+0000 0600 1200 1800  QTC  N ATL HIGH SEAS      0035 0635 1235 1835
+---- ---- ---- ----       N ATL TWO FEC ONLY
+0100 0700 1300 1900  QTC  N PAC HIGH SEAS      0125 0735 1335 1935
+---- ---- ---- ----       N PAC TWO FEC ONLY
+0200 0800 ---- 2000  QTC  WLO FULL INFO PLUS+  0235 0835 ---- 2035
+---- ---- 1400 ----  QTC  RPT GOM/CAR SEA      ---- ---- 1435 ----
+0300 0900 1500 2100  QTC  W CENT N ATL         0335 0935 1535 2135
+0400 1000 1600 2200  QTC  GULF OF MEXICO       0435 1035 1635 2235
+---- ---- ---- ----       GULF LOOP FEC ONLY
+0500 1100 1700 2300  QTC  CARIB SEA/SW NA      0535 1135 1735 2335
+---- ---- ---- ----       GULF STREAM FEC ONLY
+-------------------------------------------------------------------
+WLO FULL INFO BROADCASTS FEC ON TSB FREQUENCIES DAILY AT
+0235  0835  2035  UTC  AFTER FEC TRAFFIC LIST
+SAT+SUN ONLY FREE ARA PRESS SERVICE
+-------------------------------------------------------------------
+10CM SOLAR RADIO FLUX (SRF) INFO PRECEDES TFC LISTS
+SRF UPDATES 1700 UTC   K-INDEX EVERY 3 HR   A-INDEX ONCE DAILY
+-------------------------------------------------------------------
+
+INFOSSB 04/06/95
+
+WLO RADIO
+MOBILE MARINE RADIO INC
+7700 RINLA AVENUE
+MOBILE ALABAMA 36619 USA
+===================================
+S H I P   P H O N E   S E R V I C E
+SSB TELEPHONE OPE: 205 666 3555
+
+TFC LIST TIME:  HH + 00
+WEATHER:  0000 0600 1200 1800 LT
+WEATHER FREQ:  SEE A BELOW
+FIRST CALLING: SEE B BELOW
+
+WLO RADIO SSB RADIOTELEPHONE SUPPRESSED CARRIER FREQUENCIES
+-----------------------------------------------------------------
+   ITU       SHIP       SHIP      :    ITU       SHIP       SHIP
+   CHNL    TRANSMIT   RECEIVE     :    CHNL    TRANSMIT   RECEIVE
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+AB  201     2430.0     2572.0 KHZ      1607    16378.0    17260.0 KHZ
+                                    B  1641    16480.0    17362.0
+A   405     4077.0     4369.0          1643    16486.0    17368.0
+B   414     4104.0     4396.0       A  1647    16498.0    17380.0
+    419     4119.0     4411.0
+    428     4060.0     4351.0
+
+B   607     6218.0     6519.0       B  1807    18798.0    19773.0
+
+B   824     8264.0     8788.0       B  2237    22108.0    22804.0
+    829     8279.0     8803.0  
+    830     8282.0     8806.0          2242    22123.0    22819.0
+A   836     8113.0     8713.0       A  2246    22135.0    22831.0
+
+B  1212    12263.0    13110.0       B  2503    25076.0    26151.0
+   1225    12302.0    13149.0
+   1226    12305.0    13152.0
+   1233    12326.0    13173.0
+A  1235    12332.0    13179.0
+
+END DE WLO AR
+NNNN
+
+(SUNDAY ARA NEWS)
+
+CQ DE WLO
+HELLO
+CW USERS:
+ARA 0200 0800/2000 Z
+ARA2 RERUN AFTER 0400 1000 1600 2200 Z
+ARA3 RERUN 0500 1100 1700 2300 Z
+QRG: 4343.0 6416.0 8514.0 12886.5 17022.5 22487.0 KHZ
+CW WILL CUT OFF AFTER ONE HOUR TO MEET REGULAR SCHEDULE.
+
+FEC USERS:
+ARQ ACCESS _TO _N FILES IS FREE
+WLO SELCALL 1090
+START WLO
+EXCHANGE ABS
+AT GA"? TYPE:  INF"?
+FOLLOW THE INSTRUCTIONS
+
+THANKS
+WLO TEK
+NNNN
+
+ARA1 (INF11) JULY 2,1995
+QTR CW 0200 0800 0200Z
+QRG CW 4343 6416 8514 12886.6 17022.5 22487 KHZ
+QTR FEC: 0235 0835 1435 2035Z
+QRG FEC: 4250.0 6344.0 8534.0 12992.0 16997.6 22688.0 KHZ
+

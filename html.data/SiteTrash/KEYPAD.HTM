@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="HTML Tidy, see www.w3.org">
+		<title>Keypad Commands</title>
+		<link href="scripts/style.css" type="text/css" rel="stylesheet">
+	</head>
+
+	<body>
+		<h3>Keypad Commands</h3>
+		<hr>
+		<p>Following is a list of commands recognized in keypad mode. There are no restrictions on the order of these commands.</p>
+		<dl>
+			<dt><tt>DEL</tt>
+			<dd>Erase the current keypad input line as if it had never been entered.
+			<dt><tt>q</tt>
+			<dd>Exit keypad mode and return to keyboard mode.
+			<dt><tt>s</tt>
+			<dd>Receive on transmit frequency. Used with transmit duplex offset feature. This is the same function as the keyboard <tt>swap</tt> command.
+			<dt><tt>r</tt>
+			<dd>Switch to receive mode as in the <tt>rx</tt> keyboard command.
+			<dt><tt>t</tt>
+			<dd>Switch to transmit mode as in the <tt>tx</tt> keyboard command.
+			<dt><tt>u</tt>
+			<dd>Display the radio time in UTC as in the <tt>utc</tt> keyboard command.
+			<dt><tt>x</tt>
+			<dd>Exchange the contents of VFO A and VFO B as in the <tt>swap</tt> keyboard command.
+		</dl>
+		<h4>Frequency and Mode Settings</h4>
+		<p>The most common operations in keypad mode involve quickly navigating or scanning frequency bands. The easy way to do this is to type the frequency in MHz followed by the <tt>Enter</tt> key. Each <tt>Enter</tt> key, by itself or preceeded by a frequency, displays the current channel, frequency and mode. The display is correct whether programmed in this way or set using the radio controls.</p>
+		<p>Frequency scanning is done using the arrow keys <tt>UP</tt>, <tt>DOWN</tt>, <tt>LEFT</tt> and <tt>RIGHT</tt>. The <tt>UP</tt> key increases the frequency by one step, the <tt>DOWN</tt> key decreases it by one step. The size of the step is determined by the rate, which can be selected from 20 discrete levels, where the rate at each level increases in 1-2.5-5-10-... order from 1 Hz to 5 MHz. The <tt>LEFT</tt> key decreases the level by one, the <tt>RIGHT</tt> key increases it by one.</p>
+		<p>The step and rate values can also be set in keyboard mode, but in keyboard mode the <tt>step</tt> command can set the step to any value which results in a valid frequency for the selected radio. For instance, the step value can be set to 3 kHz when scanning HF aviation bands or 15 kHz when scanning VHF repeater bands.</p>
+		<p>Modes are selected by a single letter: <tt>l</tt> (LSB), <tt>u</tt> (USB), <tt>k</tt> (CW), <tt>a</tt> (AM) and <tt>f</tt> (FM). These work in the same way as the corresponding keyboard mode commands with the default filter selections.</p>
+		<h4>Memory Commands</h4>
+		<p>In these commands the <i>channel</i> argument format is the same as the keyboard memory channel commands. If the argument is missing, the operation applies to the last selected memory bank and channel.</p>
+		<dl>
+			<dt><tt><i>channel</i>c</tt>
+			<dd>Read the memory channel as in the <tt>chan</tt> keyboard command.
+			<dt><tt><i>channel</i>w</tt>
+			<dd>Write the memory channel as in the <tt>write</tt> keyboard command.
+			<dt><tt><i>channel</i>e</tt>
+			<dd>Empty the memory channel as in the <tt>empty</tt> keyboard command.
+		</dl>
+		<h4>Function Keys</h4>
+		<dl>
+			<dt><tt>F1</tt>
+			<dd>Display the antenna selection as in the <tt>ant</tt> keyboard command.
+			<dt><tt>F2</tt>
+			<dd>Display the AGC time constant as in the <tt>agc</tt> keyboard command.
+			<dt><tt>F3</tt>
+			<dd>Display the attenuator selection as in the <tt>agc</tt> keyboard command.
+			<dt><tt>F4</tt>
+			<dd>Display the preamp selection as in the <tt>pamp</tt> keyboard command.
+			<dt><tt>F5</tt>
+			<dd>Display the break selection as in the <tt>break</tt> keyboard command.
+			<dt><tt>F6</tt>
+			<dd>Say the S meter, frequency and mode as in the <tt>say</tt> keyboard command. This works in the 7000 only.
+			<dt><tt>F7</tt>
+			<dd>Display the current meter readings as in the <tt>meter</tt> keyboard command.<dt><tt>F8</tt>
+			<dd>Display the current switches as in the <tt>set</tt> keyboard command.<dt><tt>F9</tt>
+			<dd>Display the currrent controls as in the <tt>ctl</tt> keyboard command.</dl>
+		<hr>
+		<script type="text/javascript" language="javascript" src="scripts/footer.txt"></script>
+	</body>
+
+</html>

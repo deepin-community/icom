@@ -1,0 +1,25 @@
+Description: address FTBFS w/GCC-14 due to -Wint-conversion
+Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1075081
+Author: tony mancill <tmancill@debian.org>
+Forwarded: no
+
+--- a/icom.c
++++ b/icom.c
+@@ -325,7 +325,7 @@
+ 			if (fp_cmd[fp] != NULL) {
+ 				if (fgets(args, LINMAX, fp_cmd[fp]) ==
+ 				    NULL) {
+-					close(fp_cmd[fp]);
++					close((int)fp_cmd[fp]);
+ 					fp--;
+ 					continue;
+ 
+@@ -923,7 +923,7 @@
+ 					break;
+ 			}
+ 		}
+-		close(fp_in);
++		close((int)fp_in);
+ 		pflags &= ~(P_DISP | P_DSPCH);
+ 		break;
+ 

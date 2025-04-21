@@ -1,0 +1,134 @@
+# r8500
+
+# Amateur radio
+
+# w1aw cw practice 1300Z 2000Z 2300Z 0200Z 
+# w1aw cw bulletin 2100Z 0000Z 0300Z
+
+5.0 1817.5 cw name w1aw-cw
++ 3581.5 cw name w1aw-cw
++ 7047.5 cw name w1aw-cw
++ 14047.5 cw name w1aw-cw
++ 18097.5 cw name w1aw-cw
++ 21067.5 cw name w1aw-cw
++ 28067.5 cw name w1aw-cw
+#+ 147.555 fm name w1aw-cw
+
+# w1aw rtty bulletin 2200 0100Z
+
+#+ 3625 rtty name w1aw-rtty
+#+ 7095 rtty name w1aw-rtty
+#+ 14095 rtty name w1aw-rtty
+#+ 180125 rtty name w1aw-rtty
+#+ 21095 rtty name w1aw-rtty
+#+ 28095 rtty name w1aw-rtty
+#+ 147.555 fm name w1aw-rtty
+
+# w1aw lsb bulletin 0145Z
+
++ 1855	lsb name w1aw-phone
++ 3990	lsb name w1aw-phone
++ 7290	lsb name w1aw-phone
++ 14290 usb name w1aw-phone
++ 18160 usb name w1aw-phone
++ 21390 usb name w1aw-phone
++ 28590 usb name w1aw-phone
+# 147.555 fm name w1aw-phone
+
+# bandplan
+
+#+ 1.8	 cw  name cw	# 1.8-1.843 cw
+#+ 1.843 lsb name phone # 1.843-2.0 phone
+#+ 3.5	 cw  name cw	# 3.5-3.58 cw
+#+ 3.58  lsb name rtty	# 3.58-3.62 rtty
+#+ 3.62  lsb name pkt	# 3.62-3.635 packet
+#+ 3.635 lsb name cw	# 3.635-3.75 cw
+#+ 3.75  lsb name phone	# 3.75-4.0 phone
++ 5330.5 usb name 60-1	# 60 M phone 50 W
++ 5346.5 usb name 60-2	# 60 M phone 50 W
++ 5366.5 usb name 60-3	# 60 M phone 50 W
++ 5371.5 usb name 60-4	# 60 M phone 50 W
++ 5403.5 usb name 60-UK	# 60 M phone 50 W UK
+#+ 7.0	 cw  name cw	# 7.0-7.08 cw
+#+ 7.08	 lsb name rtty	# 7.08-7.1 rtty
+#+ 7.1	 lsb name cw	# 7.1-7.15 cw
+#+ 7.15	 lsb name phone	# 7.15-7.3 phone
+#+ 10.1	 cw  name cw	# 10.1-10.13 cw
+#+ 10.13 lsb name rtty	# 10.13-10.14 rtty
+#+ 10.14 lsb name packet # 10.14-10.15 packet
+#+ 14.0	 cw  name cw	# 14.0-14.07 cw
+#+ 14.07 lsb name rtty	# 14.07-14.95 rtty
+#+ 14.095 lsb name packet # 14.095-14.112 packet
+#+ 14.112 cw  name cw	# 14.112-14.15 cw
+#+ 14.15  usb name phone # 14.15-14.35 phone
+#+ 18.068 cw  name cw	# 18.068-18.1 cw
+#+ 18.1	  lsb name rtty	# 18.1-18.105 rtty
+#+ 18.105 lsb name packet # 18.105-18.11 packet
+#+ 18.11 usb name phone	# 18.11-18.168 phone
+#+ 21.0	 cw  name cw	# 21.0-21.2 cw
+#+ 21.2	 usb name phone	# 21.2-21.45 phone
+#+ 24.89 cw  name cw	# 24.89-24.93 cw
+#+ 24.93 usb name phone	# 24.93-24.99 phone
+#+ 28.0	 cw  name cw	# 28.0-28.07 cw
+#+ 28.07 lsb name rtty	# 28.07-29.15 rtty
+#+ 28.15 cw  name cw	# 28.15-29.19 cw
+#+ 28.3	 usb name phone	# 28.3-29.3 phone
+#+ 50.0	 cw  name cw	# 50.0-50.1 cw
+#+ 50.1	 usb name phone	# 50.1-50.6 phone
+#+ 144.0 cw  name cw	# 144-144.1 cw
+#+ 144.1 usb name phone	# 148 phone
+#+ 222.0 usb name cw	# 148 cw
+#+ 420.0 usb name phone	# 450
+
+#+ 902.0	 usb name wifi	# 928
+#+ 1240.0 usb name wifi	# 1300
+
+# FM
+
+#+ 29.52 fm  dial 20 name rpt-in	# 4 channels 
++ 29.62	 fm  dial 20 name rpt-out	# 4 channels 
+
+#+ 52.0	 fm  dial 20 name rpt-in	# 23 channels
++ 52.5	 fm  dial 20 name rpt-out	# 23 channels
+
+#+ 144.6 fm  name rpt-in dial 15 	# 20 channels
++ 145.2	 fm  name rpt-out dial 15 	# 20 channels
+#+ 146.01 fm  name rpt-in dial 15 	# 20 channels
++ 146.61 fm  name rpt-out dial 15 	# 20 channels
+#+ 146.52 fm  name simplex dial 15 	# 20 channels
++ 147.0	 fm  name rpt-out dial 15 	# 20 channels
++ 146.42 fm  name simplex dial 15 	# 20 channels
+#+ 147.6 fm  name rpt-in dial 15 	# 20 channels
+
+#+ 222.25	 name rpt-in dial 20 	# 20 channels
++ 223.4	 name simplex dial 20 	# 20 channels
++ 223.85	 name rpt-out dial 20 	# 20 channels
+#
++ 442.0	 fm  name rpt dial 25 	# 442-445
++ 446.0	 fm  name simplex dial 25 	# 445-447
++ 447.0	 fm  name rpt dial 25 	# 447-450
+#
+#+ 906.0	 fm  name rpt-in dial 25 	# 906-909
++ 918.0	 fm  name rpt-out dial 25 	# 918-921
++ 927.0	 fm  name simplex dial 25 	# 927-928
+
+#+ 29.61 FM	name rpt-out dial 20	# 29.7 repeater output
+
+#  0.53	AM	name MW dial 10		# 1.70 AM broadcast
+# 30.0	FM	name SAFETY dial 20	# 38.9 Public Safety
+# 35.2	FM	name BEEPER dial 20	# 35.7 beeper
+# 43.20	FM	name BEEPER dial 20	# 43.7 beeper
+# 52.52	FM	name rpt-out dial 20	# 53.0 repeater output
+# 53.01	FM	name rpt-out dial 20	# 54.0 repeater output
+# 72.00	FM	name FIXED dial 20	# 76.0 operational fixed
+# 88.0	WFM	name FM dial 100	# 108.0 FM broadcast
+#150.0	FM	name SAFETY dial 20	# 160.0 Public Safety
+#169.0	FM	name SAFETY dial 25	# 172.0 Public Safety
+#223.70	FM	name rpt-out dial 20	# 225.0 repeater output
+#442.0	FM	name rpt-out dial 25	# 445.0 repeater output
+#447.0	FM	name rpt-out dial 25	# 450.0 repeater output
+#450.0	FM	name MOBILE dial 25	# 470.0 land fixed/mobile
+#931.0125 FM	name BEEPER dial 25	# 932.0 beeper
+#1282.0	FM	name rpt-out dial 25	# 1288.0 repeater output
+#+ 145.21	FM	name rpt-out dial 15	# 145.5 repeater output
+#+ 146.61	FM	name rpt-out dial 15	# 147.4 repeater output

@@ -1,0 +1,39 @@
+# Newark area repeaters
+
++  53.0500 FM name "Colora" split -1000 # K3UAV r 107.2
++  53.7100 FM name "Quinton" split -1000 # N2KEJ oe 74.4
++  53.8300 FM name "Port Deposit" split -1000 # N3OUT (CA) 94.8
++  53.9500 FM name "Rising Sun" split -1000 # K3DWB (CA) 94.8
+
++ 145.1900 FM name "Chesapeake City" split dup- # K3NCL aez 162.2 
++ 145.3100 FM name "w3ud" split dup- tsql on # U Delaware ARC
++ 145.4700 FM name "Charlestown" split dup- # N3RCN o(CA)rz 107.2
++ 146.6250 FM name "Pennsville" split dup- # N2KEJ o(CA)er 131.8
++ 146.7000 FM name "Newark" split dup- # W3DRA e
++ 146.7300 FM name "Wilmington" split dup- # W3DRA e
++ 146.7450 FM name "Colora" split dup- # N3NAB a 156.7
++ 146.8500 FM name "Havre de Grace" split dup- # WA3SFJ az 107.2
++ 146.9250 FM name "Rising Sun" split dup- # K3DWB a 156.7
++ 146.9400 FM name "West Chester" split dup- # W3EOC oaelrsWX 131.8
++ 146.9550 FM name "Wilmington" split dup- # WA3UYJ ae
++ 147.1650 FM name "Colora" split dup+ # K3UAV aer 107.2
++ 147.2250 FM name "Wilmington" split dup+ # K3WAJ al
+
++ 442.5000 FM name "Pennsville" split dup+ # WB3IKP oers 114.8
++ 442.9500 FM name "Charlestown" split dup+ # N3RCN oa 103.5
++ 443.0000 FM name "Colora" split dup+ # K3UAV oelr 107.2
++ 443.7000 FM name "Wilmington" split dup+ # W3GQP
++ 444.2500 FM name "Oxford" split dup+ # W3SWR oaeWX 100.0
++ 444.7500 FM name "Havre de Grace" split dup+ # N3KZ oalp
++ 444.9500 FM name "Claymont" split dup+ # KA3JRG a
++ 446.5250 FM name "West Chester"split dup- # W3EOC oaers 100.0
++ 447.3250 FM name "Elkton" split dup- # WA3BXW o(CA)lWX 131.8
++ 447.7250 FM name "Elkton" split dup- # N3XJT oar
++ 448.2750 FM name "Quinton" split dup- # N2KEJ oaesWX 74.4
++ 448.3750 FM name "Wilmington" split dup- # W3DRA 131.8
++ 448.8250 FM name "Delaware City" split dup- # N3HTT 131.8
++ 448.8750 FM name "Oxford" split dup- # W3EOC oaelrsWX 100.0
++ 448.9750 FM name "New London" split dup- # KB3DRX o 107.2
++ 449.0250 FM name "Newark" split dup- # W3DRA 131.8
++ 449.6750 FM name "Cochranville" split dup- # WB3LGG o(CA) RB 94.8
++ 449.8250 FM name "Port Deposit" split dup- # WA3SFJ oaz 131.8

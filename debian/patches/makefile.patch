@@ -1,0 +1,24 @@
+Fix Makefile for build hardening
+--- a/Makefile
++++ b/Makefile
+@@ -9,9 +9,9 @@
+ DEFS=
+ #
+ INCL= -I../include
+-CFLAGS= $(COPTS) $(DEFS) $(INCL)
++CFLAGS+= $(COPTS) $(DEFS) $(INCL)
+ CC= $(COMPILER)
+-LIB= /lib/libm.so
++LIB= -lm
+ #
+ SOURCE= icom.c radio.c packet.c tables.c
+ OBJS= icom.o radio.o packet.o tables.o
+@@ -20,7 +20,7 @@
+ all:	$(PROGRAM)
+ 
+ icom:	$(OBJS)
+-	$(CC) $(COPTS) -o $@ $(OBJS) $(LIB)
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $(OBJS) $(LIB)
+ 
+ install: $(BINDIR)/$(PROGRAM)
+ 

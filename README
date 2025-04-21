@@ -1,0 +1,19 @@
+See the ./html/index.htm page for run-time documentation.
+
+Just about any C compiler can make this stuff. It has been compiled for
+Unix and Windows. Mumble "make" and watch it build.
+
+ICOM radios use a serial interface called CI-V. A number of radios can
+be connected in parallel to a level converter compatible with TTL levels.
+Each radio is selected by an assigned code. You might have to dig out
+the code for some recent radios; it is in the instruction book.
+
+There are a number of example files included for various radios and
+frequency sensibilities. The qsy directory contains a wadge of scripts
+which can be used or modified to automatically tune radios throughout
+the day. There are some for the BBC, now out of date, and some for
+ship coast stations that broadcast weather information, for example.
+Use with the minimuf distribution for ultimate customer satisfaction.
+
+Dave Mills, w3hcf
+23 September 2002

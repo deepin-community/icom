@@ -1,0 +1,7 @@
+# 7000 setup
+
+radio 7000
+utc set
+restore * 7000_rpt
+restore * 7000_arinc
+restore * 7000_bc

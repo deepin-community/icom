@@ -1,0 +1,27 @@
+README for the icom package
+
+
+To connect your radio to your computer, you need a CI-V interface. You
+can buy one from ICOM, or obtain the circuit diagram quite readily on the
+web. The circuit converts from the RS-232 levels of your serial port
+to the TTL levels used by the radio. You can drive several ICOM radios
+using one interface, but you must set unique addresses inside each radio.
+
+The ICOM program uses the device /dev/icom to communicate with your radio.
+You should symbolic link the appropriate serial device to /dev/icom. For
+example, if your CI-V interface is on your second serial port, you should do
+
+	ln -s /dev/ttyS1 /dev/icom
+
+(as root). To run the program as a normal user, you must have access to
+the serial device, which means you need to belong to group `dialout' on
+Debian systems. You can add yourself to that group using the command
+(again as root)
+
+	adduser myusername dialout
+
+
+73,
+Hamish Moffatt VK3SB
+hamish@debian.org
+

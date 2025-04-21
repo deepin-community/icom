@@ -1,0 +1,2964 @@
+10-14 Radionavigation
+        10.2    Omega
+
+14-19.9 Fixed
+        15.1    FUO/HWU Toulon
+        15.3    NLK Jim Creek
+        16      GBR Rugby
+        16.4    JXZ/J33DS Helgeland
+        16.8    FUB Paris
+        17.1    RCI Bolchoi
+        17.3    NAA Cutler
+        18.6    NBA Balboa
+        19      MHW/GQD Anthorn
+        19.6    GBZ Rugby
+
+19.9-20.1 Standard Frequency
+        20      JGZAR Tokyo, WWVL Ft Collins
+
+20.1-59 Fixed
+        20.8    ICV Tavolara
+        21.4    NSS Annapolis
+        22.5    CFH-NAWS Halifax
+        24      NBA Balboa
+        25      RWF Piatigorsk
+        26.1    NPM Honolulu
+        44      VHP Belconnen, VIX2/3/4/5/6/7 Sydney
+        45.8    CFH Halifax
+        46.3    DCF46 Mainflingen
+        46.9    GYC/GLO20 London/Onger
+        50      CFH Halifax, OMA Vinohrady
+        52      GYN1/2 London
+        54.1    NBA Balboa (A7J)
+        54.7    LCH Tryvasshoegda
+        56.4    GLP20 Ongar
+        57.7    LBJ/2/3/4/5/6/7 Harstad
+
+59-61 Standard Frequency
+        60      MSF, WWVB Ft Collins
+
+61-70 Fixed
+        64.5    GBY20/MHU2/3/4/5/6 Rugby/Portishead
+        65.9    NST/GXH/AOK/...
+        67      SLZ/1
+
+70-90 Fixed, Radiolocation
+        73.6    CFH Halifax (F1)
+        75      HBG Prangins, WCC Chatham
+        77.5    DCF77 Mainflingen
+        78.2    GYA2/3/4/5 London
+        80.3    GYC/GLO20 London/Onger
+        81      GYN1/2 London
+        81.7    NBA Balboa (F1)
+        86.6    SMA3/7/SAW
+        88      NSS Annapolis
+
+90-110 Radionavigation
+        91.2    FTH42/FTA91 Paris/Lyon
+        100     LORAN-C, RES Moscow
+
+110-130 Fixed, Maritime Mobile, Radiolocation
+        112.9   North Atlantic, WSL Amagansett
+        115     NPG San Fransisco
+        115.3   CFH-L Halifax
+        122     NSS Annapolis (F1)
+        122.5   OUA23/32 Fredrikshaven
+        123     NST/GXH/AOK/...
+        123.3   CFH-L Halifax
+        124.1   North Atlantic
+        125     WCC Chatham
+        126.2   Central Pacific, KPH Bolinas
+        128.3   NBL (A7J)
+
+130-160 Fixed, Maritime Mobile
+        130.4   North Atlantic, WCC Chatham
+        131.1   NPM Honolulu
+        131.8   FYA31 Lyon (A4)
+        132.1   North Atlantic
+        133.2   CFH Halifax (A4)
+        134.1   WCC Chatham
+        134.5   NSS Annapolis
+        134.6   North Atlantic
+        136.5   FYA31 Lyon (A4)
+        137     North Atlantic
+        137.7   South Atlantic
+        138     FUC Chebourg
+        139     DCF39 Mainflingen (A4), TBA2/3/4 Ankara
+        141.4   OUA23/32 Fredrikshaven
+        143     Calling
+        146.8   North Atlantic
+        147.3   DDH21/47/DDJ9/DFH23H1/DDN2/DGO46/L3 Pinneborg
+        147.5   North Atlantic, WCC Chatham
+        147.9   Central Pacific, KPH Bolinas, NBA Balboa
+        149.6   Alaska (ACS)
+        152     Ship Working
+        153     Gulf of Mexico, Puerto Rico, Ship Working
+        154     Ship Working
+        155     Ship Working
+        156     Ship Working
+        157     Ship Working
+        158     Ship Working
+
+160-190 Broadcasting (Region 1 only), Fixed
+        164     Allouis (BC)
+        185     NSS Annapolis
+
+190-275 Aeronautical Radionavigation, Broadcasting (Region 1 only)
+        192     CONSOLAN SFI San Fransisco
+        194     CONSOLAN TUK Nantucket
+        266     CONSOLAN Bushmills
+
+275-285 Aeronautical Radionavigation, Broadcasting (Region 1 only),
+                Maritime Radionavigation
+
+285-325 Maritime Radionavigation
+        303     CONSOLAN LUGO Oteroad Rey
+        311     CONSOLAN Seville
+        319     CONSOLAN Stavanger
+
+325-405 Aeronautical Radionavigation
+
+405-415 Maritime Radionavigation
+        410     Gulf of Mexico, Radio Direction Finding
+
+415-435 Aeronautical Radionavigation, Maritime Mobile
+        416     KEA Alaska, KUB Alaska, WPA Port Arthur
+        418     CMB Havana, CTU2/CTV/2/7/CTU8 Monsanto/Lisbon, GNF North
+                Foreland, North Atlantic, South Pacific, WSL Amagansett,
+                ZRY/2/4/5/6/7
+        420     FUO Toulon, Gulf of Mexico, NMC San Fransisco, WPD Tampa
+        421     PCH Scheveningen
+        422     USCG
+        425     Ship Working
+        426     Central Pacific, OST/3/32/5/52/6/62 Ostende
+        428     Central Atlantic, NMG New Orleans, WMH Baltimore
+        429     OXB
+        430     NMV Jacksonville, VAR St Johns
+        431     WAX Miami
+        432     DHS Ruegen
+        433     CLQ Havana
+        434     Gulf of Mexico, South Atlantic
+        435     OST/3/32/5/52/6/62 Ostende, PPR Rio de Janeiro
+
+435-490 Maritime Mobile
+        436     Central Pacific, North Atlantic, WCC Chatham
+        438     CFH-L Halifax, GLD Lands End, Gulf of Mexico, WLO Mobile
+        440     NMA Miami, NMO Honolulu, NMW West Port
+        441     CNP Casablanca, GCC Cullercoats, ZSC Presse
+        442     North Atlantic
+        444     CUB Funchal, DAN Norddeich, FUE Brest, Ship/Government
+                working
+        445     EAO Palma Mallorca
+        447     CFH Halifax, GLV Anglesey
+        449     ONT
+        450     FFB Boulogne, SAG Goeteborg
+        451     XFU Vera Cruz
+        454     Ship Working
+        455     GRY Wooferton?
+        456     NOY Galveston
+        457     Aeronautical Mobile (sea outside USA)
+        458     GND Stonehaven
+        460     Central Pacific, KPH Bolinas, North Atlantic, WSC
+                Tuckerton
+        461     PCH Scheveningen
+        464     GNI Niton, KOK Los Angeles, NOQ Mobile, OXP, South
+                Atlantic, South Pacific
+        466     NMJ Ketchikan, NMN Portsmouth, NMR San Juan, NRV
+        468     Ship Working
+        470     NBA Balboa
+        472     EAR La Coruna, NMF Boston, NMQ Long Beach, North
+                Atlantic, South Atlantic, UJO, WOE Lantana
+        474     DAM Norddeich, DAN Norddeich
+        476     CLA Havana, Central Pacific, EAP C de Palos, KFS San
+                Fransisco, LGZ Farsunde, North Atlantic, UJY Iman, ZBM
+        478     Gulf of Mexico, WNU Slidell
+        480     Ship Working
+        482     Great Lakes, KJQ North Pacific, North Atlantic, North
+                Pacific, South Pacific
+        484     GKZ Humber, Gulf of Mexico, Hawaii, KHK Kahuku, KLC
+                Galveston, NPN Guam, URD Leningrad, VCS Halifax
+        486     FFU Le Conquet, NMY New York, Puerto Rico, WPR Puerto
+                Rico
+        487     UKB, UNF
+        488     North Pacific, South Atlantic, WAX Miami
+        489     GMH
+        490     OBC Callao
+
+490-510 Distress and Calling
+        500     CLA Havana, CLM Santiago, CNP Casablanca, CTH/33/38
+                Horta, CTV, CUB Funchal, CUL Lisbon, DAN Norddeich, DAO
+                Kiel, DHS Ruegen, Distress and Calling, EAC/2 Cadiz,
+                EAF/2/3 Vigo, EAO Palma Mallorca, EAP C de Palos, EAR La
+                Coruna, EAS C Mayor, EJM Malin Head, FAP, FFB Boulogne,
+                FFC Cayenne, FFM Marseille, FFU Le Conquet, GCC
+                Cullercoats, GIL Infracombe, GKR Wick, GKZ Humber, GLD
+                Lands End, GLV Anglesey, GND Stonehaven, GNF North
+                Foreland, GNG, GNI Niton, GNK, GPK Portpatrick, GXH
+                Thurso, GXP, IAR Rome, KLC Galveston, KOK Los Angeles,
+                KPH Bolinas, LGA Alesund, LGZ Farsunde, NBA Balboa, NMA
+                Miami, NMF Boston, NMG New Orleans, NMN Portsmouth, NMR
+                San Juan, NMV Jacksonville, NMY New York, NOQ Mobile,
+                NOW, NOY Galveston, NPG San Fransisco,
+                OST/3/32/5/52/6/62 Ostende, OXB, PCH Scheveningen, SAG
+                Goeteborg, SPE, UDB/URD Leningrad, VAI Vancouver, VAR St
+                Johns, VCC, VCF, VCK, VCS Halifax, VFN, VPN Nassau, VRT
+                Bermuda, WAX Miami, WCC Chatham, WLO Mobile, WMH
+                Baltimore, WNU Slidell, WOE Lantana, WPA Port Arthur,
+                WSC Tuckerton, WSL Amagansett, XFU Vera Cruz, ZBM, ZDK
+
+510-535 Aeronautical Radionavigation, Maritime Mobile
+        512     Alternate Calling/Working
+        519     GIL Infracombe
+        522     RUVE/URB2/UDO2/RWWM Klaipeda
+
+535-1605 Broadcasting
+
+1605-1715 Aeronautical Radionavigation, Fixed, Land Mobile,
+                Radiolocation
+        1606    Remote Pickup (BC)
+        1610    Police
+        1614    Industrial (Petroleum)
+        1618    Police
+        1622    Remote Pickup (BC)
+        1626    Police
+        1628    Industrial (Motion Picture), Industrial (Petroleum)
+        1630    Fire
+        1634    Police
+        1638    Radionavigation
+        1642    Police
+        1646    Remote Pickup (BC)
+        1650    Police
+        1652    Industrial (Motion Picture), Industrial (Petroleum)
+        1658    Police
+        1666    Police
+        1674    Police
+        1676    Industrial (Forest Products), Industrial (Petroleum)
+        1680    DHJ58 Flensberg
+        1682    Police
+        1690    Police
+        1696    FRS (F1)
+        1698    Police
+        1700    Industrial (Forest Products), Industrial (Petroleum)
+        1706    Police
+        1708    Radionavigation
+        1714    Police, UMV
+
+1715-1800 Fixed, Land Mobile, Radiolocation
+        1720    DHS Ruegen
+        1722    Police
+        1730    Police
+        1750.5  Disaster (A1)
+        1751.5  Disaster (A1)
+        1752.5  Disaster (A1)
+        1753.5  Disaster (A1)
+        1754.5  Disaster (A1)
+        1755.5  Disaster (A1)
+        1756.5  Disaster (A1)
+        1757.5  Disaster (A1)
+        1761.5  Disaster scene
+        1768.5  Disaster (A3)
+        1775.5  Disaster (A3)
+        1782.5  Disaster (A3)
+        1789.5  Disaster (A3)
+        1792    Carribou Isl
+        1796.5  Disaster (A3)
+
+1800-2000 Amateur, Radionavigation
+        1830    DHJ59 Wilhelmshaven
+        1869    Humber R
+
+2000-2035 Maritime Mobile
+        2003    Intership (Great Lakes
+
+2035-2065 Maritime Mobile (coast)
+        2036    North Atlantic, WCC Chatham
+        2037.5  Central Pacific, KFS San Fransisco
+        2039    South Atlantic
+        2040.5  North Atlantic
+        2042    Gulf of Mexico
+        2043.5  South Atlantic
+        2045    Central Pacific, KPH Bolinas
+        2046.5  North Atlantic
+        2048    Gulf of Mexico, WNU Slidell
+        2049.5  Gulf of Mexico, South Pacific
+        2051    North Atlantic, South Atlantic
+        2052.5  Alaska (calling), Gulf of Mexico, Hawaii, Puerto Rico
+        2054    North Atlantic
+        2055.5  Gulf of Mexico, South Pacific
+        2057    South Atlantic
+        2058.5  North Pacific
+        2060    North Atlantic
+        2061.5  Central Pacific, KFS San Fransisco
+        2063    Central Atlantic, Gulf of Mexico, North Pacific
+        2065    Limited coast
+
+2065-2068.5 Maritime Mobile (telephony)
+
+2068.5-2078.5 Maritime Mobile (ship)
+        2071    TTY/FAX Special Systems
+        2076    TTY/FAX Special Systems
+
+2078.5-2089.5 Maritime Mobile (telephony)
+        2079    Limited coast
+        2082.5  Intership
+        2086    Louisville (simplex), Memphis (simplex), Pittsburgh
+                (simplex), St Louis (simplex)
+
+2089.5-2092.5 Maritime Mobile (ship calling)
+        2091    Calling (Region 2)
+
+2092.5-2107 Maritime Mobile
+        2096.5  Limited coast
+
+2107-2170 Fixed, Land Mobile, Maritime Mobile
+        2142    Intership (Pacific)
+
+2170-2194 Distress and Calling
+        2182    Distress and Calling
+
+2194-2300 Fixed, Land Mobile, Maritime Mobile
+        2203    Intership (Gulf of Mexico)
+        2212    Forest Conservation
+        2226    Forest Conservation
+        2236    Forest Conservation
+        2244    Forest Conservation
+        2292    Industrial (Motion Picture), Industrial (Petroleum),
+                Industrial (Power), Industrial (Special Industrial)
+
+2300-2495 Broadcasting (tropical), Fixed, Land Mobile, Maritime Mobile
+        2326    Police
+        2358    OUA23/32 Fredrikshaven
+        2366    Police
+        2371    Civil Air Patrol
+        2374    Civil Air Patrol
+        2382    Police
+        2390    Police
+        2398    Industrial (Forest Products), Industrial (Motion
+                Picture), Industrial (Petroleum), Industrial (Power),
+                Industrial (Special Industrial)
+        2400    Baltimore (simplex)
+        2406    Police
+        2411    LIF Floroe
+        2414    Police
+        2422    Police
+        2430    Police
+        2432.5  MTN Portsmouth
+        2442    Astoria, Miami, Police
+        2450    Boston, Galveston, Lake Allatoona-Lake Sidney Lanier,
+                Norfolk-Quantico, Police, San Fransisco-Eureka, WOU
+                Marshfield
+        2458    Police
+        2466    Los Angeles-San Diego, Police, Tampa, WFA Madeira Beach
+        2474    Police
+        2482    New Orleans, New York, Police, Seattle, WOX New York
+        2490    Miami, Police
+
+2495-2505 Radio Astronomy, Standard Frequency
+        2500    FFH Paris, JJY Tokyo, MSF, OMA Vinohrady, RAT Moscow,
+                RCH Tashkent, WWV Ft Collins, WWVH Kihei Maui, ZLFS
+                Lower Hutt
+
+2505-2850 Fixed, Land Mobile, Maritime Mobile
+        2506    Agana, Boston, Delcambre, San Fransisco-Eureka, St
+                Thomas
+        2514    Great Lakes, Miami
+        2522    Los Angeles-San Diego, New York, Seattle, WOX New York
+        2530    Galveston, Kahuku, Palmyra Island, San Juan
+        2538    Corpus Christi, Norfolk-Quantico, WGB Virginia Beach
+        2550    Great Lakes, Miami, Tampa, WGB Virginia Beach
+        2558    New Orleans, New York, WAQ Ocean Gate, WEH Newcastle,
+                Wilmington-Baltimore
+        2559    DER Bonn
+        2566    Boston, Charleston-Jacksonville, Coos Bay, Los Angeles-
+                San Diego, WJO Sullivan I, WNJ Jacksonville
+        2572    Mobile, WOO Ocean Gate
+        2573    CTU2/CTV/2/7/CTU8 Monsanto/Lisbon
+        2576    PBC32/34/36/38/312/317/322 Goeree
+        2581    PBC32/34/36/38/312/317/322 Goeree
+        2582    Great Lakes, Hilo
+        2585    Ponce
+        2586    OYE Roenne
+        2589.5  NST/GXH/AOK/...
+        2590    New York, WOX New York
+        2598    Astoria-Portland, Los Angeles-San Diego, New Orleans,
+                WAK New Orleans
+        2614    DAM Norddeich, DAN Norddeich
+        2626.5  CLA Havana
+        2638    Intership
+        2666    DHS Ruegen
+        2670    Coast Guard, NMK Cape May, NMN Portsmouth, NMV
+                Jacksonville, NMX, USCG
+        2678    Georgetown, LBJ/2/3/4/5/6/7 Harstad
+        2680    4XZ Haifa
+        2686    Coast Guard
+        2718    DHJ58 Flensberg
+        2726    Special Emergency
+        2738    Intership, Lake Dallas-Lake Texhoma (simplex), Oban R
+        2740    SPE/SPB Szczecin
+        2770    EBA Madrid
+        2775    DAM Norddeich, DAO Kiel
+        2782    Lake Mead (simplex), Louisville (simplex), Memphis
+                (simplex), Pittsburgh (simplex), St Louis (simplex)
+        2784    The Dalles-Umatilla (simplex)
+        2789    FUE Brest
+        2792    LBG Bergen
+        2795    EBD Cartegena
+        2803    IDR Rome
+        2804    Police Zone and Interzone
+        2808    CCS Santiago, Police Zone and Interzone
+        2809    PEB50
+        2810    PEB50
+        2812    Police Zone and Interzone
+        2830    Intership (Gulf of Mexico)
+
+2850-3025 Aeronautical Mobile (R)
+        2851    Barnaul NCA-2, Flight Test, Irkutsk NCA-2, Khanty
+                Mansiysk NCA-2, Kirensk NCA-2
+        2854    Brasilia SAT-2, Dakar SAT-2, Recife SAT-2
+        2860    Antanarivo VOLMET-AFI, Brazzaville VOLMET-AFI,
+                Johannesburg VOLMET-AFI, Nairobi VOLMET-AFI
+        2861    Melanesia Common
+        2863    Auckland VOLMET-PAC, Hong Kong VOLMET-PAC, Honolulu
+                VOLMET-PAC, Tokyo VOLMET-PAC
+        2866    Alaska
+        2869    Honolulu CEP-5, San Fransisco CEP-5, VOLMET-Russian
+        2875    Alaska C/SE
+        2878    Accra AFI-4, Johannesburg AFI-4, Kano AFI-4
+        2881    Brasilia VOLMET-SAM, Buenos Aires VOLMET-SAM, Lima
+                VOLMET-SAM
+        2887    Caracas CAR-A, Merida CAR-A, Miami CAR-A, New York CAR-
+                A, Panama City CAR-A, San Juan CAR-A
+        2899    Gander NAT-B/C, New York NAT-B/C, Reykjavik NAT-B/C,
+                Santa Maria NAT-B/C, Shannon NAT-B/C
+        2911    Alaska Aleutian, Alaska C/SE
+        2932    Anchorage NP-3/4, Beijing NP-3, Cold Bay NP-3/4,
+                Khabarovsk NP-3, Pyongyang NP-3/4, Seoul NP-3, Shanghai
+                NP-3, Tokyo NP-3
+        2944    Alma Ata MID-3, Antofagasta SW-SAM, Asuncion SW-SAM,
+                Bogota NW-SAM, Buenos Aires SW-SAM, Dushanbe MID-3,
+                Easter Island SW-SAM, Kuybyshev MID-3, La Paz SW-SAM,
+                Lima NW/SW-SAM, Montevideo SW-SAM, Moscow MID-3, Panama
+                City NW-SAM, Punta Arenas SW-SAM, Quito NW-SAM, Santiago
+                SW-SAM
+        2950    Merida VOLMET-CAR, Miami VOLMET-CAR, Port of Spain
+                VOLMET-CAR
+        2956    Alaska Aleutian, Baghdad VOLMET-MID, Bahrain VOLMET-MID,
+                Basrah VOLMET-MID, Beirut VOLMET-MID, Cairo VOLMET-MID,
+                Istanbul VOLMET-MID, Tehran VOLMET-MID
+        2965    Bangkok VOLMET-SEA, Bombay VOLMET-SEA, Calcutta VOLMET-
+                SEA, Karachi VOLMET-SEA, Singapore VOLMET-SEA, Sydney
+                VOLMET-SEA
+        2971    Bodo NAT-D, Cambridge NAT-D, Churchill NAT-D, Frobisher
+                NAT-D, Gander NAT-D, Reykjavik NAT-D, Shannon NAT-D,
+                Sondrestrom NAT-D
+        2992    Ankara MID-1, Baghdad MID-1, Bahrain MID-1, Cairo MID-1,
+                Jeddah MID-1, Odessa MID-1, Tehran MID-1
+        2998    Biak CWP-1/2, Guam CWP-2, Hong Kong CWP-1, Honolulu CWP-
+                2, Manila CWP-1, Naha CWP-1/2, Port Moresby CWP-1/2,
+                Prague VOLMET-EUR, Pyongyang CWP-1, Seoul CWP-1,
+                Shanghai CWP-1, Tel Aviv VOLMET-EUR, Tokyo CWP-1/2, Wake
+                Island CWP-2
+        3004    Chulmani NCA-3, Flight Test, Irkutsk NCA-3, Khabarovsk
+                NCA-3, Kirensk NCA-3, Pyongyang NCA-3, Ulan Bator NCA-3
+        3007    Bangkok (Thai Airways), Havana (Cubana), Seoul (KAL),
+                Sidney (Qantas)
+        3008    SW Pacific Islands
+        3010    Amsterdam (KLM), Athens (Olympic), Bogota (Avianca),
+                Brussels (Sabena), Buenos Aires (Aerolineas Argentinas),
+                Frankfurt (Lufthansa), Paris (Air France), Rio de
+                Janeiro (Varig), Tel Aviv (El Al)
+        3013    San Fransisco/Honolulu LDOC
+        3016    Beijing EA-1, Canton EA-1, Gander NAT-A, Irkutsk EA-1,
+                Kumming EA-1, Lanchau EA-1, Lisbon NAT-A, New York NAT-
+                A, Pyongyang EA-1, San Juan NAT-A, Santa Maria NAT-A,
+                Seoul EA-1, Shanghai EA-1, Shannon NAT-A, Ulan Bator EA-
+                1, Urumchi EA-1
+        3019    Khanty Mansiysk NCA-1, Moscow NCA-1
+
+3025-3155 Aeronautical Mobile (OR)
+        3039    IDR Rome
+        3045    Air Force MARS
+        3046    Canadian Military
+        3060    Cartwheel, Cemetary, Eagle Farm, Gangbuster
+        3067    Krauton AFB, McClellan AFB
+        3070    HOT Tocumen
+        3078    Andrews AFB, Lajes AFB, Loring AFB
+        3081    Lajes AFB
+        3085    Cyprus Combine
+        3093.5  FDC Dijon
+        3095    RAF Rescue
+        3102    Luqa RAFB, Upavon RAFB
+        3116    VOLMET-Russian
+        3144    Andrews AFB
+
+3155-3200 Fixed, Land Mobile, Maritime Mobile
+        3170    OLB5 Prague
+        3185    FDC Dijon, KWN90 Washington
+        3189    YND3 Managua
+        3195    SMA3/7/SAW
+
+3200-3400 Broadcasting (tropical), Fixed, Land Mobile, Maritime Mobile
+        3201    Special Emergency
+        3205    Air Force MARS
+        3210    UBN/UDC/UBC Jdanov
+        3225    GKX Portishead, GYU3 Gibralter
+        3228    MTN Portsmouth
+        3230    OVK Aarhus
+        3241    NAS Traverse City
+        3258    0A
+        3268    NPG-FC/FM San Fransisco
+        3281    Flight Test, Lighter-than air craft
+        3287    CFH-NAWS Halifax (calling), CKN Vancouver
+        3299    Air Force MARS
+        3300    YWU
+        3310    KRH50 Washington
+        3315    Air Force MARS
+        3330    CHU Ottowa
+        3370    TEN2 Las Palmas (F1)
+        3400    DHJ49 Bonn
+
+3400-3500 Aeronautical Mobile (R)
+        3407    VOLMET-Russian
+        3413    Honolulu CEP-5, San Fransisco CEP-5, Shannon VOLMET-EUR
+        3419    Algiers AFI-2, Kano AFI-2
+        3443    Flight Test
+        3449    Alaska Common
+        3452    Abidjan AFI-1, Brasilia SAT-1, Casablanca AFI-1, Dakar
+                AFI-1, Dakar SAT-1, Lisbon AFI-1, Recife SAT-1
+        3460    SW Pacific Islands
+        3461    Khabaraovsk VOLMET-NCA, Kiev VOLMET-NCA, Moscow VOLMET-
+                NCA, Novosibirsk VOLMET-NCA, Tashkent VOLMET-NCA,
+                Vnukovo VOLMET-NCA
+        3467    Abadan MID-2, Addis Ababa AFI-3, Alma Ata MID-2,
+                Auckland SP-6, Bahrain MID-2, Bombay AFI-3, Bombay MID-
+                2, Cairo AFI-3, Delhi MID-2, Dushanbe MID-2, Easter
+                Island SP-7, Honolulu SP-7, Jeddah AFI-3, Karachi MID-2,
+                Nadi SP-6/7, Nairobi AFI-3, Sydney SP-6, Tahiti SP-7,
+                Tehran MID-2, Tripoli AFI-3, Urumchi MID-2
+        3470    Alaska C/SE, Bangkok SEA-1, Calcutta SEA-1, Canton SEA-
+                1, Cocos Island SEA-1, Colombo SEA-1, Darwin SEA-3,
+                Djakarta SEA-3, Kumming SEA-1, Madras SEA-1, Manila SEA-
+                3, Perth SEA-3, Singapore SEA-1, Singapore SEA-3, Sydney
+                SEA-3
+        3476    Bombay INO-1, Cocos Island INO-1, Johannesburg INO-1,
+                Nairobi INO-1, Perth INO-1, Salisbury INO-1
+        3479    Asuncion SE-SAM, Belem NE/C-SAM, Bogota C-SAM, Brasilia
+                C-SAM, Buenos Aires SE-SAM, Caracas NE-SAM, La Paz SE-
+                SAM, Leningrad EUR-A, Montevideo SE-SAM, Moscow EUR-A,
+                Murmansk EUR-A, Odessa EUR-A
+        3485    Bangkok SEA-2, Gander VOLMET-NAT, Hong Kong SEA-2,
+                Irkutsk EA-2, Manila SEA-2, New York VOLMET-NAT,
+                Pyongyang EA-2, Singapore SEA-2, Ulan Bator EA-2
+        3494    New York/San Juan LDOC
+        3497    London (British Airways)
+
+3500-4000 Amateur
+        3540    URD Leningrad
+        3620    CTD/7 Ponta Delgado, UJY Iman
+        3690    JWT Stavanger
+        3778    Humber R
+        3822.5  IMA24/25 Rome
+        3827.5  KWN90 Washington
+        3828    KWS78 Washington
+        3830    0A, RSL2
+        3832    GYN1/2 London
+        3833    FDY
+        3837.5  CTO22/23 Ponta Delgada
+        3910    MQY Chatham
+        3920    KRL
+        3929    MKL
+        3930    MQD Plymouth
+        3970    UU21/31/41/51
+        3996    Cemetary, Gangbuster
+
+4000-4063 Fixed
+        4008.5  MARS (LSB)
+        4010    NPG San Fransisco
+        4013    MARS (LSB)
+        4017    MARS (LSB)
+        4020    MARS (LSB), OVG4/8/12 Fredrikshaven
+        4022.5  TEL5 Las Palmas (F1)
+        4025    MARS (LSB)
+        4035    MARS (A1), MARS (LSB)
+        4040    MARS (LSB)
+        4050    FDY
+        4055    JWT Stavanger
+        4063    WCM Pittsburgh
+
+4063-4146.6 Maritime Mobile (ship telephony)
+        4067.8  WJG Memphis
+        4069.2  Louisville (simplex)
+        4088.4  Memphis (simplex)
+        4110.1  KOM Hawaii
+        4115.7  WFN Louisville
+        4125    Limited coast
+        4136.3  Simplex
+        4139.5  Simplex
+        4143.6  Limited coast
+
+4146.6-4170 Maritime Mobile (special systems)
+
+4170-4179.8 Maritime Mobile (ship SITOR)
+        4175    0A
+
+4179.8-4188 Maritime Mobile (ship calling)
+        4187.6  SELCAL ship SITOR
+
+4188-4219.4 Maritime Mobile (ship working)
+
+4219.4-4349.4 Maritime Mobile (coast working)
+        4228    Central Pacific
+        4232    6WW Dakar, FUF Ft de France, FUG La Regine, FUM Papeete,
+                HWN
+        4233    DHS Ruegen
+        4234    CTU2/CTV/2/7/CTU8 Monsanto/Lisbon, GXO Mauritius
+        4235    ICB Genova, VAI Vancouver
+        4236    UDH/UKB Riga
+        4238    4XO Haifa, BFM, MTN Portsmouth, North Atlantic, South
+                Pacific, WCC Chatham
+        4239    SVA Athens
+        4241    4XZ Haifa, LF-/LG- Rogoland
+        4242    DAL Norddeich, ZSD Durban
+        4242.5  DHS Ruegen, PPR Rio de Janeiro
+        4244    IDR Rome, PPR Rio de Janeiro, Puerto Rico
+        4245    EBB Ferrol Caudill, UFN Novosibirsk, VTP3/4/5/6
+                Vizagotapam
+        4246    PPA25, ZRH/2/3/4/5/6 Simonstown
+        4247    Central Pacific, KPH Bolinas, ZRH/2/3/4/5/6 Simonstown
+        4249    CCM Maga
+        4250    PCH Scheveningen, South Atlantic, XFL, XFU Vera Cruz,
+                ZLP2/4/5/6 Wellington
+        4252    TAH Istanbul
+        4253    OXZ Lyngby, UXN/UGE Arkhangelsk
+        4255    CCM Maga
+        4256    CCM Maga, Gulf of Mexico
+        4259    HEB Berne
+        4260    TBA2/3/4 Ankara, ZLO
+        4261    ZSC Presse
+        4262    SAB/SAG Goeteborg
+        4263    FFP2/3/7 Ft de France
+        4264    BCY Taipei
+        4265    CCS Santiago, DAM Norddeich
+        4266.5  DHS Ruegen
+        4267.9  GKG Portishead
+        4268    LPD Gral Pacheco, North Atlantic
+        4269    UFN Novosibirsk
+        4270    FDC Dijon
+        4271    CCV Valpariso, CFH Halifax, IDR Rome, OFJ Helsinki
+        4274    Central Pacific, GKB Portishead, GKH Portishead, Gulf of
+                Mexico
+        4275    AJU (USA)
+        4277    AJU (USA), UJO, VRT Bermuda
+        4278    CTP Palhais
+        4279    DHJ59 Wilhelmshaven, GYR2/3/4/5 Malta, LPD Gral Pacheco
+        4280    GBY20/MHU2/3/4/5/6 Rugby/Portishead, IDQ/2/3/6 Rome, VHP
+                Belconnen
+        4283    4XZ Haifa, CFH Halifax, KOK Los Angeles, South Pacific,
+                UQK Riga
+        4286    GKA Portishead, VCS Halifax
+        4289    PWZ Rio de Janeiro
+        4292    CUL Lisbon, GZO Hong Kong, IAR Rome, South Atlantic
+        4294    WAX Miami
+        4295    6VA Dakar, FUF Ft de France, GZC/2/3/4/5 Mauritius,
+                Hawaii, South Atlantic
+        4297    EBC Cadiz
+        4303    OXZ Lyngby
+        4305    6WW Dakar
+        4306    SPE/SPB Szczecin
+        4307    CKN Vancouver
+        4308    DAN Norddeich
+        4310    Gulf of Mexico, UPW2, WNU Slidell
+        4311    EBA Madrid
+        4312    6WW Dakar
+        4313    9VG Singapore, DHS Ruegen, UDB/URD Leningrad
+        4316    GKM/GKW/GKN/GKF Portishead, Great Lakes
+        4317    CTU2/CTV/2/7/CTU8 Monsanto/Lisbon, EBD Cartegena,
+                ZSC/6/9/21/33 Cape Town
+        4319    GYR2/3/4/5 Malta, OXZ Lyngby
+        4320    IAR Rome
+        4321    GYA2/3/4/5 London
+        4322    Gulf of Mexico, WPA Port Arthur
+        4325    FUB Paris, LF-/LG- Rogoland, URD Leningrad
+        4328    FFL St Lys
+        4331    North Atlantic, WCC Chatham, WSC Tuckerton
+        4332.5  UNM
+        4334    GYS3/4/5/6 Singapore, PJC Curacao, UDH/UKB Riga
+        4336    GKK/GKA4 Portishead
+        4337    NMF Boston, SPA/SPH Gdynia
+        4338    FUB Paris
+        4340    CTP Palhais, XSQ Canton
+        4341    CCS Santiago
+        4343    North Atlantic, OSN26/28/212/44 Ostende, SVA Athens, WSL
+                Amagansett, XXV/2/3/28/W31 Luanda
+        4344.5  GKS Portishead
+        4345    OSN26/28/212/44 Ostende
+        4346    CWA Cerrito, Central Atlantic, NMC San Fransisco, North
+                Atlantic, WMH Baltimore
+        4347    5BA Nocosia
+        4349    EAD/2/EDZ4 Aranjuez, North Pacific
+
+4349.4-4357.4 Maritime Mobile (coast SITOR)
+        4351    GKE
+        4352    NBA Balboa, YVG La Guaira, ZRQ/2/3/4/5
+        4353    ZRY/2/4/5/6/7
+        4354    NBA Balboa
+        4355    CLA Havana, XFM
+        4356.5  CFH-L Halifax
+        4357    SELCAL coast SITOR
+        4357.4  KMI Dixon
+
+4357.4-4438 Maritime Mobile (coast telephony)
+        4358    KFS San Fransisco
+        4360    PBC32/34/36/38/312/317/322 Goeree
+        4363.8  WOM Ojus
+        4366.7  KGN Delcambre
+        4367.8  St Louis (simplex)
+        4369.8  WAK New Orleans
+        4371    Miami, San Fransisco-Eureka
+        4382.2  WBL Buffalo, WLC Rogers City, WMI Lorain
+        4383.8  Alaska (ACS), Alaska Common
+        4385.3  WOO Ocean Gate
+        4387    Pittsburgh (simplex)
+        4388.4  WOO Ocean Gate
+        4390.2  New York, San Fransisco-Eureka
+        4391.5  WOM Ojus
+        4392    CUB Funchal
+        4393.4  NMC San Fransisco (SSB)
+        4397.7  WLO Mobile (SSB)
+        4399.8  Mobile, San Fransisco-Eureka
+        4400.5  BC relay (VOA)
+        4403    Alaska, New York
+        4403.2  Miami
+        4403.9  KMI Dixon, WOO Ocean Gate
+        4407    KMI Dixon, WOM Ojus
+        4410.1  WBL Buffalo, WGK St Louis, WLC Rogers City, WMI Lorain
+        4412.6  Delcambre, Mobile
+        4413.2  WLO Mobile (SSB)
+        4415.8  Great Lakes, Kahuku
+        4419    New Orleans, Tampa
+        4419.4  Limited coast
+        4420    CMR/CBY Havana/Pascual
+        4422.2  Miami, New York
+        4422.5  WOO Ocean Gate
+        4425.4  Corpus Christi, Galveston
+        4425.6  WOM Ojus
+        4428.6  Alaska, Great Lakes, New York
+        4428.7  AMVER, USCG WX
+        4434.9  Simplex
+
+4438-4650 Fixed, Mobile
+        4451    YWU
+        4455    FUB Paris
+        4460    GYN1/2 London
+        4462.5  GYN1/2 London
+        4464.5  Civil Air Patrol
+        4465    SXA Athens
+        4467.5  Civil Air Patrol
+        4478    VIX2/3/4/5/6/7 Sydney
+        4480    VIX2/3/4/5/6/7 Sydney
+        4495    Bernadine
+        4497.5  Cemetary, Eagle Farm, Gangbuster
+        4500    VNG Melbourne
+        4504.5  Civil Air Patrol
+        4505    YNA2 Managua (F1)
+        4507.5  Civil Air Patrol
+        4515    NKA Asmara
+        4516    CTU2/CTV/2/7/CTU8 Monsanto/Lisbon
+        4525    DIZ Nauen, Democrat, MKE Akrotiri, NPM Honolulu
+        4545    Cemetary, Gangbuster
+        4548.5  NBA Balboa
+        4560    Cemetary, Eagle Farm, Gangbuster
+        4563    JWT Stavanger
+        4565    BC relay (RFE)
+        4582    Civil Air Patrol
+        4585    Civil Air Patrol, NST/GXH/AOK/...
+        4587    KRH50 Washington
+        4590    FUJ/4/6/8/9 Noumea
+        4596.5  Air Force MARS, Civil Air Patrol
+        4599.5  Civil Air Patrol
+        4602.5  Civil Air Patrol
+        4613    Cemetary, Gangbuster
+        4615    Cemetary, Gangbuster, IDR Rome
+        4623    NST/GXH/AOK/...
+        4626    KRH50 Washington
+        4627    Civil Air Patrol
+        4630    Civil Air Patrol
+        4637.5  Industrial (Motion Picture), Industrial (Petroleum),
+                Industrial (Power), Industrial (Special Industrial)
+
+4650-4700 Aeronautical Mobile (R)
+        4654    Berne (Swissair)
+        4663    Khabaraovsk VOLMET-NCA, Kiev VOLMET-NCA, Moscow VOLMET-
+                NCA, Novosibirsk VOLMET-NCA, Tashkent VOLMET-NCA,
+                Vnukovo VOLMET-NCA
+        4666    Biak CWP-1/2, Guam CWP-2, Hong Kong CWP-1, Honolulu CWP-
+                2, Manila CWP-1, Naha CWP-1/2, Port Moresby CWP-1/2,
+                Pyongyang CWP-1, Seoul CWP-1, Shanghai CWP-1, Tokyo CWP-
+                1/2, Wake Island CWP-2
+        4669    Alma Ata MID-3, Antofagasta SW-SAM, Asuncion SW-SAM,
+                Bogota NW-SAM, Buenos Aires SW-SAM, Dushanbe MID-3,
+                Easter Island SW-SAM, Kuybyshev MID-3, La Paz SW-SAM,
+                Lima NW/SW-SAM, Montevideo SW-SAM, Moscow MID-3, Panama
+                City NW-SAM, Punta Arenas SW-SAM, Quito NW-SAM, Santiago
+                SW-SAM
+        4675    Bodo NAT-D, Cambridge NAT-D, Churchill NAT-D, Frobisher
+                NAT-D, Gander NAT-D, Reykjavik NAT-D, Shannon NAT-D,
+                Sondrestrom NAT-D
+        4678    Barnaul NCA-2, Irkutsk NCA-2, Khanty Mansiysk NCA-2,
+                Kirensk NCA-2
+        4687    Amsterdam (KLM), Bangkok (Thai Airways), Rome (Alitalia)
+
+4700-4750 Aeronautical Mobile (OR)
+        4721    FDY
+        4722    Westraden R
+        4725    Migraine, Outway, Retail
+        4730    Cyprus Combine
+        4733    IEA20 Rome
+        4742    Cyprus Combine, Gibralter RAFB, Luqa RAFB, Scott AFB,
+                Upavon RAFB
+        4744    Outway, San Pablo AFB
+        4745    0A
+        4746    Canadian Military, Elmendorf AFB, Lajes AFB, McClellan
+                AFB, McDill AFB
+        4750    FDY
+
+4750-4995 Broadcasting (tropical), Fixed
+        4880    DBT/DBU/3/DBV/DBW/DBX/DBZ/3 Koenigwustern
+        4955    FDC Dijon, NPN Guam
+        4985    WKA23 New Orleans (F1)
+
+4995-5005 Standard Frequency
+        4996    Novosibirsk
+        5000    BPV Shanghai, IAM Rome, IBF Turin, JJY Tokyo, LOL Buenos
+                Aires, MSF, RAT Moscow, RWM Moscow, WWV Ft Collins, WWVH
+                Kihei Maui, ZUO Johannesburg
+        5004    RID Irkutsk
+
+5005-5060 Broadcasting (tropical), Fixed
+        5015    CTU2/CTV/2/7/CTU8 Monsanto/Lisbon
+        5025    FDY
+        5052    NST/GXH/AOK/...
+
+5060-5450 Fixed
+        5075    UU21/31/41/51
+        5085    Telco New York (AT&T)
+        5097    CFH-NAWS Halifax
+        5110    KKN44 Washington, Telco New York (AT&T)
+        5135    Police Zone and Interzone
+        5140    Police Zone and Interzone
+        5167    NST/GXH/AOK/...
+        5244    HMF15/HMN56/HMF32/HML36 Pyongyang
+        5320    KWN90 Washington
+        5390    BC relay (RFE), DHJ59 Wilhelmshaven
+        5399    Telco Tel Aviv
+        5415    LVO Corrientes
+        5426    KRH50 Washington
+        5430    BPV Shanghai, CTO22/23 Ponta Delgada
+        5448.5  NBA Balboa
+
+5450-5680 Aeronautical Mobile (R)
+        5451    Flight Test
+        5469    Flight Test
+        5472    Alaska Common
+        5484    Alaska C/SE
+        5490    Alaska Common
+        5493    Accra AFI-4, Johannesburg AFI-4, Kano AFI-4
+        5496    Alaska Aleutian
+        5498    Melanesia Common
+        5499    Antanarivo VOLMET-AFI, Brazzaville VOLMET-AFI,
+                Johannesburg VOLMET-AFI, Nairobi VOLMET-AFI
+        5526    Asuncion SE-SAM, Belem NE/C-SAM, Bogota C-SAM, Brasilia
+                C-SAM, Buenos Aires SE-SAM, Caracas NE-SAM, La Paz SE-
+                SAM, Montevideo SE-SAM
+        5529    Brussels (Sabena), Houston (Universal Aviation), Houston
+                LDOC, Madrid/Las Palmas (Iberia), Moscow (Aeroflot)
+        5532    Amsterdam (KLM), Johannesburg (SAA), Rome (Alitalia)
+        5535    London (British Airways)
+        5538    Bahrain (Gulf Air), Beirut (MEA)
+        5541    Rio de Janeiro (Varig), Stockholm (SAS)
+        5544    Havana (Cubana), Jeddah (Saudia)
+        5547    Honolulu CEP-5, San Fransisco CEP-5
+        5550    Caracas CAR-A, Merida CAR-A, Miami CAR-A, New York CAR-
+                A, Panama City CAR-A, San Juan CAR-A
+        5565    Brasilia SAT-2, Dakar SAT-2, Recife SAT-2
+        5568    Central America Common
+        5571    Flight Test
+        5574    Honolulu CEP-5, San Fransisco CEP-5
+        5580    Merida VOLMET-CAR, Miami VOLMET-CAR, Port of Spain
+                VOLMET-CAR
+        5589    Baghdad VOLMET-MID, Bahrain VOLMET-MID, Basrah VOLMET-
+                MID, Beirut VOLMET-MID, Cairo VOLMET-MID, Istanbul
+                VOLMET-MID, Tehran VOLMET-MID
+        5598    Gander NAT-A, Lisbon NAT-A, New York NAT-A, San Juan
+                NAT-A, Santa Maria NAT-A, Shannon NAT-A
+        5601    Brasilia VOLMET-SAM, Buenos Aires VOLMET-SAM, Lima
+                VOLMET-SAM
+        5616    Gander NAT-B/C, New York NAT-B/C, Reykjavik NAT-B/C,
+                Santa Maria NAT-B/C, Shannon NAT-B/C
+        5628    Anchorage NP-3/4, Beijing NP-3, Cold Bay NP-3/4,
+                Khabarovsk NP-3, Pyongyang NP-3/4, Seoul NP-3, Shanghai
+                NP-3, Tokyo NP-3
+        5631    Alaska
+        5634    Bombay INO-1, Cocos Island INO-1, Johannesburg INO-1,
+                Nairobi INO-1, Perth INO-1, Salisbury INO-1
+        5640    Shannon VOLMET-EUR
+        5643    Auckland SP-6, Easter Island SP-7, Honolulu SP-7, Nadi
+                SP-6/7, Sydney SP-6, Tahiti SP-7
+        5646    Khanty Mansiysk NCA-1, Moscow NCA-1
+        5649    Bangkok SEA-2, Hong Kong SEA-2, Irkutsk EA-2, Manila
+                SEA-2, Pyongyang EA-2, Singapore SEA-2, Ulan Bator EA-2
+        5652    Algiers AFI-2, Kano AFI-2
+        5655    Bangkok SEA-2, Hong Kong SEA-2, Irkutsk EA-2, Manila
+                SEA-2, Pyongyang EA-2, Singapore SEA-2, Ulan Bator EA-2
+        5658    Abadan MID-2, Addis Ababa AFI-3, Alma Ata MID-2, Bahrain
+                MID-2, Bombay AFI-3, Bombay MID-2, Cairo AFI-3, Delhi
+                MID-2, Dushanbe MID-2, Jeddah AFI-3, Karachi MID-2,
+                Nairobi AFI-3, Tehran MID-2, Tripoli AFI-3, Urumchi MID-
+                2
+        5661    Leningrad EUR-A, Moscow EUR-A, Murmansk EUR-A, Odessa
+                EUR-A
+        5664    Chulmani NCA-3, Irkutsk NCA-3, Khabarovsk NCA-3, Kirensk
+                NCA-3, Pyongyang NCA-3, Ulan Bator NCA-3
+        5666    Melanesia Common
+        5667    Ankara MID-1, Baghdad MID-1, Bahrain MID-1, Cairo MID-1,
+                Jeddah MID-1, Odessa MID-1, Tehran MID-1
+        5676    Khabaraovsk VOLMET-NCA, Kiev VOLMET-NCA, Moscow VOLMET-
+                NCA, Novosibirsk VOLMET-NCA, Tashkent VOLMET-NCA,
+                Vnukovo VOLMET-NCA
+
+5680-5730 Aeronautical Mobile (OR)
+        5688    MQD Plymouth, McDill AFB
+        5690    Lahr Military
+        5692    NAS Brooklyn
+        5695.5  RAF Rescue
+        5696    NAS Elizabeth City, NAS San Diego, NAS Traverse City
+        5700    Air Force One, Andrews AFB, Looking Glass, McClellan
+                AFB, Migraine, Retail
+        5703    Krauton AFB, Silver Dollar
+        5705    FDY
+        5710    MEM, McClellan AFB
+        5714    MRB Malta
+        5722    Missionary, Overwork
+
+5730-5950 Fixed
+        5738    ONQ27 (A!)
+        5745    AEZ7 Asmara, BC relay (VOA)
+        5750    SOF
+        5765    Telco St Georges Bermuda (C&W)
+        5775    Telco Abidjan
+        5785    NAU Puerto Rico
+        5790    BC relay (RFE)
+        5792    GFT26/27/29 Bracknell
+        5811    JWT Stavanger, LBJ/2/3/4/5/6/7 Harstad
+        5828    Telco Dakar
+        5830    PEB50
+        5833    NAU Puerto Rico
+        5845    BC relay (RFE)
+        5870    NAM Norfolk, NSS Annapolis
+        5872    BC relay (BBC)
+        5876    DDH21/47/DDJ9/DFH23H1/DDN2/DGO46/L3 Pinneborg
+        5905    BC relay (VOA)
+        5910    Andrews AFB
+        5915    ZLZ22/20/ZLX22/31/37
+        5916.5  NST/GXH/AOK/...
+        5920    SXA Athens
+
+5950-6200 Broadcasting
+        6147.5  St Louis (simplex)
+
+6200-6224.6 Maritime Mobile (ship telephony)
+        6200.8  Memphis (simplex)
+        6209.3  WJG Memphis
+        6210.4  Simplex
+        6212.4  WGK St Louis
+        6213.5  Simplex
+        6218.6  Limited coast
+        6221.6  Limited coast
+
+6224.6-6256 Maritime Mobile (special systems)
+
+6256-6269.8 Maritime Mobile (ship SITOR)
+
+6269.8-6282 Maritime Mobile (ship calling)
+        6272.5  SAB/SAG Goeteborg
+        6281.4  SELCAL ship SITOR
+
+6282-6325.4 Maritime Mobile (ship working)
+
+6325.4-6493.9 Maritime Mobile (coast working)
+        6333.5  North Atlantic
+        6337    North Atlantic
+        6344    North Atlantic
+        6345.5  GBY20/MHU2/3/4/5/6 Rugby/Portishead
+        6348    Central Pacific, FUE Brest, FUF Ft de France, FUM
+                Papeete, HWN, KFS/B San Fransisco
+        6350    UJY Iman
+        6351.5  CTU2/CTV/2/7/CTU8 Monsanto/Lisbon, GZC/2/3/4/5
+                Mauritius, North Atlantic, VAI Vancouver
+        6354    PZN4 Paramaribo, UDB/URD Leningrad, URD Leningrad
+        6355    OFJ Helsinki, South Pacific
+        6361    FUB Paris
+        6362    6XS Diego Saurez, GYA2/3/4/5 London
+        6365.5  Central Pacific, FUB Paris, IRM Rome, KFS/A San
+                Fransisco, USZ Dikson
+        6369    GKA Portishead, GKM/GKW/GKN/GKF Portishead, Gulf of
+                Mexico, PPA25
+        6371    VPS25 CD Aguilar
+        6374    TBO2/3
+        6376    IQH Naples, North Atlantic, WCC Chatham
+        6377.5  EBA Madrid
+        6379.5  8PO Barbados, GKB Portishead, GKV Portishead,
+                ZSC/6/9/21/33 Cape Town
+        6382    TBA2/3/4 Ankara
+        6383    6VA Dakar, EAD/2/EDZ4 Aranjuez, NMC San Fransisco
+        6385    CKN Vancouver
+        6386    UJY Iman
+        6386.5  AQP2/3/4 Karachi, CFH Halifax, GYX Malta, HKC
+                Buenaventura
+        6389.6  WAX Miami
+        6389.7  South Atlantic
+        6390    CTP Palhais, IDQ/2/3/6 Rome
+        6393.5  CUB Funchal, CUG Ponta Delgada, CUL Lisbon
+        6395    CFH-L Halifax, TBA2/3/4 Ankara
+        6396    CCS Santiago, EBD Cartegena
+        6397    OSN46/412/416
+        6399    EBD Cartegena
+        6400.5  EAD/2/EDZ4 Aranjuez, UMV
+        6401.5  EAD/2/EDZ4 Aranjuez
+        6404    PCH Scheveningen
+        6407    IAR Rome
+        6407.5  GBY20/MHU2/3/4/5/6 Rugby/Portishead, Hawaii, South
+                Atlantic, UXN/UGE Arkhangelsk
+        6410    IAR Rome, UDH/UKB Riga
+        6411    9LL Freetown, KLB Seattle, North Pacific,
+                OST/3/32/5/52/6/62 Ostende, SVA Athens, South Atlantic,
+                WOE Lantana
+        6414.5  North Atlantic
+        6416    URL
+        6418    IAR12/67 Rome, IQX Trieste, North Atlantic,
+                OSN26/28/212/44 Ostende
+        6419    CCS Santiago
+        6420    OSN26/28/212/44 Ostende, UJQ, VTP3/4/5/6 Vizagotapam
+        6421.5  FFL St Lys
+        6428.5  NPG San Fransisco, NPM Honolulu, VHP Belconnen,
+                VIX2/3/4/5/6/7 Sydney
+        6432    LF-/LG- Rogoland
+        6435    CLQ Havana
+        6435.5  DAN Norddeich, GBY20/MHU2/3/4/5/6 Rugby/Portishead, Gulf
+                of Mexico, PWZ Rio de Janeiro, WPA Port Arthur
+        6439    OXZ Lyngby, UFN Novosibirsk
+        6441    DZG Manila
+        6445    CKN Vancouver
+        6446    Gulf of Mexico, OXZ Lyngby, WLO Mobile
+        6448    XXU23/26/33 Mindelo Cape Verde
+        6449.5  CFH-L Halifax, IDR Rome
+        6451.8  Pittsburgh (simplex)
+        6455    Louisville (simplex)
+        6456.5  DAL Norddeich
+        6460    SPE/SPB Szczecin
+        6463.5  KOK Los Angeles, South Pacific
+        6465    VIS26/5/6/42 Sydney
+        6467    JCS/JCU Chosi, LF-/LG- Rogoland, ZSC/6/9/21/33 Cape Town
+        6470    UXN/UGE Arkhangelsk
+        6470.5  GYI London
+        6472.5  GKY2/3/4/5 Portishead
+        6474    Great Lakes
+        6475.5  DAM Norddeich
+        6477.5  CFH-NAWS Halifax, CLS La Fe Prince, Central Pacific, KPH
+                Bolinas
+        6478    CLQ Havana, ZSC Presse
+        6478.5  EBK Las Palmas, SVA Athens
+        6481    CCS Santiago, GYS3/4/5/6 Singapore
+        6483    PWZ Rio de Janeiro, UFB Odessa
+        6484.5  Central Atlantic
+        6485.5  JCS/JCU Chosi
+        6487    NST/GXH/AOK/..., XXV/2/3/28/W31 Luanda
+        6488    Central Pacific, KPH Bolinas, VRT Bermuda
+        6491.5  PJC Curacao, VCS Halifax
+
+6493.9-6506.4 Maritime Mobile (coast SITOR)
+        6494    ZRH/2/3/4/5/6 Simonstown
+        6495    GYR2/3/4/5 Malta, Gulf of Mexico, WNU Slidell
+        6496.5  OST/3/32/5/52/6/62 Ostende
+        6498.5  CFH-NAWS Halifax, EAF/2/3 Vigo, EAT2 Tenerife
+        6500.5  CLA Havana
+        6502    CRX21/23/28/26 Laurenco Marques, GZX2/3/4/5/6 Mauritius,
+                WSC Tuckerton
+        6504    OSN26/28/212/44 Ostende, OSN46/412/416
+        6505    Cemetary, Eagle Farm, Gangbuster
+        6505.5  CLA Havana, EAC/2 Cadiz, ZRQ/2/3/4/5
+        6506    SELCAL coast SITOR
+        6506.4  AMVER, USCG WX
+
+6506.4-6525 Maritime Mobile (coast telephony)
+        6509    9VG Singapore, XXU23/26/33 Mindelo Cape Verde
+        6510    GKK/GKA4 Portishead, UFH
+        6512.5  SVA Athens, TFA Reykjavik
+        6515.7  WCM Pittsburgh
+        6516    KFS San Fransisco
+        6518.6  Simplex
+        6518.8  WFN Louisville
+        6519.5  WMH Baltimore
+        6521.8  NMC San Fransisco (SSB)
+        6521.9  Limited coast
+        6522.5  SXA Athens, SXV/8
+
+6525-6685 Aeronautical Mobile (R)
+        6526    New York (test), Red Cross AX
+        6532    Biak CWP-1/2, Guam CWP-2, Hong Kong CWP-1, Honolulu CWP-
+                2, Manila CWP-1, Naha CWP-1/2, Port Moresby CWP-1/2,
+                Pyongyang CWP-1, Seoul CWP-1, Shanghai CWP-1, Tokyo CWP-
+                1/2, Wake Island CWP-2
+        6535    Abidjan AFI-1, Brasilia SAT-1, Casablanca AFI-1, Dakar
+                AFI-1, Dakar SAT-1, Lisbon AFI-1, PWZ Rio de Janeiro,
+                Recife SAT-1
+        6536    NPM Honolulu
+        6545    IDC Cagliari
+        6550    Flight Test
+        6556    Bangkok SEA-1, Calcutta SEA-1, Canton SEA-1, Cocos
+                Island SEA-1, Colombo SEA-1, Darwin SEA-3, Djakarta SEA-
+                3, Kumming SEA-1, Madras SEA-1, Manila SEA-3, Perth SEA-
+                3, Singapore SEA-1, Singapore SEA-3, Sydney SEA-3
+        6562    Biak CWP-1/2, Guam CWP-2, Hong Kong CWP-1, Honolulu CWP-
+                2, Manila CWP-1, Naha CWP-1/2, Port Moresby CWP-1/2,
+                Pyongyang CWP-1, Seoul CWP-1, Shanghai CWP-1, Tokyo CWP-
+                1/2, Wake Island CWP-2
+        6571    Beijing EA-1, Canton EA-1, Irkutsk EA-1, Kumming EA-1,
+                Lanchau EA-1, Pyongyang EA-1, Seoul EA-1, Shanghai EA-1,
+                Ulan Bator EA-1, Urumchi EA-1
+        6575    Algiers VOLMET-AFI, Dakar VOLMET-AFI, Kano VOLMET-AFI,
+                Khartoum VOLMET-AFI, SW Pacific Islands
+        6577    Caracas CAR-A, Merida CAR-A, Miami CAR-A, New York CAR-
+                A, Panama City CAR-A, San Juan CAR-A
+        6580    Alaska Aleutian, Alaska C/SE, Prague VOLMET-EUR, Tel
+                Aviv VOLMET-EUR
+        6586    Wellbeing
+        6592    Barnaul NCA-2, Irkutsk NCA-2, Khanty Mansiysk NCA-2,
+                Kirensk NCA-2
+        6598    Leningrad EUR-A, Moscow EUR-A, Murmansk EUR-A, Odessa
+                EUR-A
+        6604    Alaska C/SE, Gander VOLMET-NAT, New York VOLMET-NAT
+        6617    VOLMET-Russian
+        6631    Alma Ata MID-3, Dushanbe MID-3, Kuybyshev MID-3, Moscow
+                MID-3
+        6637    Athens (Olympic), Frankfurt (Lufthansa), Paris (Air
+                France), Sidney (Qantas), Tel Aviv (El Al), Tokyo (JAL)
+        6638    VOLMET-Russian
+        6640    New York/San Juan LDOC, San Fransisco/Honolulu LDOC
+        6643    Berne (Swissair), Buenos Aires (Aerolineas Argentinas)
+        6649    Antofagasta SW-SAM, Asuncion SW-SAM, Bogota NW-SAM,
+                Buenos Aires SW-SAM, Easter Island SW-SAM, La Paz SW-
+                SAM, Lima NW/SW-SAM, Montevideo SW-SAM, Panama City NW-
+                SAM, Punta Arenas SW-SAM, Quito NW-SAM, Santiago SW-SAM
+        6676    Bangkok VOLMET-SEA, Bombay VOLMET-SEA, Calcutta VOLMET-
+                SEA, Karachi VOLMET-SEA, Singapore VOLMET-SEA, Sydney
+                VOLMET-SEA
+        6679    Auckland VOLMET-PAC, Hong Kong VOLMET-PAC, Honolulu
+                VOLMET-PAC, Tokyo VOLMET-PAC
+
+6685-6765 Aeronautical Mobile (OR)
+        6686    Crest, Oasis
+        6690    MSF, Upavon RAFB
+        6692    Cheese Bobcat (JPN combine), Houston
+        6693    VOLMET-Russian
+        6697    Ivanhoe, MQY Chatham (USB), Missionary
+        6700.5  Rasberry (Bermuda, Miramar, Jacksonville, Cecil)
+        6705    Canadian Military
+        6706    XXU23/26/33 Mindelo Cape Verde
+        6708    Cyprus Combine
+        6715    Andrews AFB, Loring AFB
+        6716    Woodbridge Rescue
+        6720    Belmont, Caveman, Derail, Fanfare, Fastcharger, Hexagon,
+                Ivanhoe, Overlord, Overwork, YVG La Guaira
+        6723    Rasberry (Bermuda, Miramar, Jacksonville, Cecil)
+        6725    Rasberry (Bermuda, Miramar, Jacksonville, Cecil)
+        6727    Charleston, Gladhand, McClellan AFB, Scott AFB
+        6728    MQY Chatham
+        6730    VOLMET-Russian
+        6731    Krauton AFB, San Pablo AFB, Seabell
+        6734    Cheese Bobcat (JPN combine)
+        6737    LBJ/2/3/4/5/6/7 Harstad
+        6738    Elmendorf AFB, Lajes AFB, McClellan AFB
+        6742    Caveman, Coral Hills (Keflavik?)
+        6745    Miharik Combine (Bahrein, Ceylon, Kuwait)
+        6750    Krauton AFB, Lajes AFB, McDill AFB
+        6753    Canadian Military, Fireside, Looking Glass, Rasputin
+        6756    Andrews AFB, Liberty, NASA Houston (Apollo 14)
+        6757    MKL
+        6761    Bread, Democrat, Migraine, Outway, Retail
+
+6765-7000 Fixed
+        6765.4  USCG WX
+        6785    WKA36
+        6789    KRH50 Washington
+        6817    MEM
+        6818    CWE94/CWO4/9CWD40 Cerrito
+        6820    OLW2 Prague
+        6825    Telco Teheran
+        6830    PGL
+        6839    CBY Pascua
+        6851    CBY Pascua
+        6854    CMR/CBY Havana/Pascual
+        6855    Telco Georgetown Guyana (C&W)
+        6862    GYN1/2 London
+        6863    Telco St Georges Bermuda (C&W)
+        6866    Cheese Bobcat (JPN combine)
+        6867.5  IDR Rome
+        6874    BC relay (VOA)
+        6890    BC relay (RFE)
+        6895    PBC32/34/36/38/312/317/322 Goeree
+        6896    AFA Camp Springs (Aerospace Comm Co) (SSB)
+        6913    DHJ59 Wilhelmshaven
+        6925    KKN50 Washington
+        6945    HBX76/HBO88 Geneve
+        6953    Silver Dollar
+        6955    0A
+        6960    IDR Rome
+        6975    BC relay (DW)
+        6982    Range1/2
+        6995    BC relay (RFE)
+        6997    McClellan AFB
+
+7000-7100 Amateur
+        7094.5  FDY
+
+7100-7300 Amateur, Broadcasting (Region 1 only)
+
+7300-8195 Fixed
+        7316    Air Force MARS
+        7329    Air Force MARS
+        7335    CHU Ottowa
+        7350    Telco Mexico City
+        7351    CTH/33/38 Horta
+        7353    CTU2/CTV/2/7/CTU8 Monsanto/Lisbon
+        7404    Telco Warszawa
+        7428    FTH42/FTA91 Paris/Lyon
+        7441    NCI Naples
+        7480    Police Zone and Interzone
+        7485    Telco New York (AT&T)
+        7494    DGE/DFG Elmshorn/Bonames
+        7497.5  EAY22/49 Basile
+        7500    VNG Melbourne
+        7504    NST/GXH/AOK/...
+        7519    FDY
+        7540    Telco Moscow
+        7558.5  Telco New York (AT&T)
+        7565    Telco New York (AT&T)
+        7566    Telco New York (AT&T)
+        7570    DRU5, KRH50 Washington
+        7575    Telco Ft Lauderdale (AT&T)
+        7580    Telco Monrovia
+        7600    RMQ4, YNA2 Managua (F1), ZLZ22/20/ZLX22/31/37
+        7610    IMA24/25 Rome
+        7634.5  Telco Paris
+        7646    DDH21/47/DDJ9/DFH23H1/DDN2/DGO46/L3 Pinneborg
+        7651    BC relay (VOA)
+        7655    FIT75 Paris
+        7660    UU21/31/41/51
+        7661    9RS77 Kisangani
+        7662    FDY
+        7705    NST/GXH/AOK/...
+        7726    FDY
+        7727    KRH50 Washington
+        7741    Telco Amsterdam
+        7766.5  BC relay (VOA)
+        7773    BC relay (VOA)
+        7792    GXO Mauritius
+        7805    Police Zone and Interzone
+        7828    FDY
+        7830    KKN44 Washington
+        7935    Police Zone and Interzone
+        7936.5  Telco Havana
+        7955    Andrews AFB
+        7960    OMZ
+        7978    Telco New York (AT&T)
+        7987    AEZ Asmara (LSB)
+        7987.5  JWT Stavanger, LBJ/2/3/4/5/6/7 Harstad
+        7991    BC relay (BBC)
+        7997    FDY
+        8000    FDY, FUB Paris
+        8060    VKS3/5/49/74/93/VKH70
+        8061.5  CCS Santiago
+        8068    BC relay (DW)
+        8075    Telco Paris
+        8080    RCI/RCC
+        8090    NAM Norfolk, NSS Annapolis
+        8115    WHZ Balboa
+        8125    BC relay (Tirana)
+        8148    OVG4/8/12 Fredrikshaven
+        8150    NPN Guam
+        8152    EAY22/49 Basile
+        8177.5  SDO/SAB/SAG Varberg/Goeteborg
+
+8195-8297.3 Maritime Mobile (ship telephony)
+        8201.2  WJG Memphis
+        8207.6  Pittsburgh (simplex)
+        8210.8  St Louis (simplex)
+        8213.6  WCM Pittsburgh
+        8246    Memphis (simplex)
+        8249.2  Great Lakes
+        8281.2  Simplex
+        8284.2  Simplex
+        8291.1  Limited coast
+        8294.2  Limited coast
+
+8297.3-8300 Maritime Mobile (ship SITOR)
+
+8300-8343.5 Maritime Mobile (special systems)
+
+8343.5-8357.8 Maritime Mobile (ship SITOR)
+
+8357.8-8359.8 Maritime Mobile (ship working)
+
+8359.8-8376 Maritime Mobile (ship calling)
+        8364    Lifeboats
+        8375.2  SELCAL ship SITOR
+
+8376-8435.4 Maritime Mobile (ship working)
+
+8435.4-8704.4 Maritime Mobile (coast working)
+        8445    Central Pacific, Gulf of Mexico
+        8453    Gulf of Mexico, South Atlantic
+        8457    Puerto Rico
+        8459    LZW Varna
+        8461    CUB Funchal, ZRY/2/4/5/6/7
+        8462    CUB Funchal, SXV/8
+        8463    CKN Vancouver
+        8464    OSN26/28/212/44 Ostende
+        8465    5BA Nocosia, NMN Portsmouth, NRV
+        8466    EAF/2/3 Vigo, NMF Boston, NMR San Juan, UJY Iman
+        8469    CUG Ponta Delgada, CUL Lisbon, EAF/2/3 Vigo, GKR Wick
+        8470    NMA Miami, ZRQ/2/3/4/5
+        8471    NMR San Juan, UAX, UXN/UGE Arkhangelsk
+        8473    Gulf of Mexico
+        8474    EAT2 Tenerife
+        8476    PPE2 Rio de Janeiro, UAH/UNS Tallin, VTP3/4/5/6
+                Vizagotapam
+        8477    CLQ Havana, UAH/UNS Tallin
+        8478    OST/3/32/5/52/6/62 Ostende, TIM Limon, VHP Belconnen,
+                VIX2/3/4/5/6/7 Sydney
+        8479    HZY Dhahran
+        8480    CLQ Havana
+        8481    VIS26/5/6/42 Sydney
+        8482    SPA/SPH Gdynia
+        8483    DAN Norddeich
+        8485    UBN/UDC/UBC Jdanov
+        8486    IDQ/2/3/6 Rome, South Atlantic, WOE Lantana
+        8490    AQP2/3/4 Karachi, CUL Lisbon, XSQ Canton
+        8492    DHJ59 Wilhelmshaven, PPA25
+        8494    GYA2/3/4/5 London
+        8498    SAB/SAG Goeteborg
+        8501    GBY20/MHU2/3/4/5/6 Rugby/Portishead
+        8502    Central Atlantic, North Atlantic, XSG Shanghai,
+                ZSL/2/3/4/5/6/7 Simonstown
+        8503.5  GBY20/MHU2/3/4/5/6 Rugby/Portishead
+        8504    ZLP Awarua
+        8506    NPN Guam
+        8510    FFL St Lys, FFS6/8 St Lys
+        8512    DAL Norddeich, VHP Belconnen
+        8513    XSQ Canton
+        8514    North Atlantic, PBC32/34/36/38/312/317/322 Goeree, WSL
+                Amagansett
+        8515    UMV
+        8516    CLS La Fe Prince, GKC Portishead
+        8518    4XZ Haifa
+        8521    VIS26/5/6/42 Sydney
+        8522    FFL St Lys, FFS6/8 St Lys
+        8525    South Atlantic, WAX Miami
+        8526    CTU2/CTV/2/7/CTU8 Monsanto/Lisbon, FFP2/3/7 Ft de France
+        8528    LF-/LG- Rogoland
+        8530    IAR Rome, NSS Annapolis, SVA Athens, UFR2, UXN/UGE
+                Arkhangelsk
+        8531    XVG4 Vietnam
+        8534    GZO Hong Kong, Great Lakes
+        8535    UFW, UTA
+        8537    SVA Athens
+        8541    RUVE/URB2/UDO2/RWWM Klaipeda
+        8542    Hawaii, KHK Kahuku, PKI Djakarta
+        8545    UQK Riga
+        8546    GKA Portishead, KLB Seattle
+        8550    6XS Diego Saurez, FFS6/8 St Lys, Gulf of Mexico, PWZ Rio
+                de Janeiro, WPA Port Arthur
+        8551    AJU (USA)
+        8552    CTP Palhais, GKK/GKA4 Portishead
+        8554    FUF Ft de France
+        8556    UJY Iman
+        8557    SPE/SPB Szczecin
+        8558    CCV Valpariso, Central Pacific, GKB Portishead, GKL
+                Portishead, IDR Rome, KFS/A San Fransisco
+        8562    PCH Scheveningen
+        8564    LZL Bourgas
+        8565    CQW2 Luanda
+        8566    CFH Halifax, GYU3 Gibralter, UQK Riga
+        8568    DZR Manila
+        8570    CFH-L Halifax, Gulf of Mexico, IDR Rome, WAX Miami, WNU
+                Slidell
+        8571    UOP
+        8573    CLA Havana
+        8574    HKC Buenaventura, LF-/LG- Rogoland, NMC San Fransisco
+        8575    UDB/URD Leningrad, URD Leningrad
+        8576    IDR Rome
+        8577    ZSD Durban
+        8578    NGR Kato Soli, SUH Alexandria
+        8580    UDK2 Murmansk
+        8581    XSW Kaohsiung
+        8581.6  GKK/GKA4 Portishead, GKM/GKW/GKN/GKF Portishead
+        8582    North Pacific, XSW Kaohsiung
+        8583    ZRH/2/3/4/5/6 Simonstown, ZRQ/2/3/4/5
+        8586    North Atlantic, UJO, WCC Chatham
+        8588    DZG Manila
+        8590    KOK Los Angeles, South Pacific
+        8591    GKY2/3/4/5 Portishead
+        8594    GYR2/3/4/5 Malta
+        8597    VIP4/3
+        8598    OXZ Lyngby, ZLO
+        8602    HEB Berne
+        8604    NBA Balboa, ZRH/2/3/4/5/6 Simonstown
+        8606    JOS Nagasaki, South Pacific
+        8608    LZL Bourgas, LZW Varna
+        8610    6WW Dakar, CCM Maga, North Atlantic, UXN/UGE
+                Arkhangelsk, WSC Tuckerton
+        8614    CKN Vancouver, NBA Balboa, VWB2/3/4/5/6/7/8/0 Bombay
+        8615    UDH/UKB Riga
+        8618    Central Pacific, EAD/2/EDZ4 Aranjuez, KPH Bolinas
+        8620    UBN/UDC/UBC Jdanov
+        8622    EAD/2/EDZ4 Aranjuez, PCH Scheveningen
+        8626    CTU2/CTV/2/7/CTU8 Monsanto/Lisbon, GXO Mauritius
+        8630    6WW Dakar, GYS3/4/5/6 Singapore, North Atlantic, WCC
+                Chatham
+        8634    PPR Rio de Janeiro, VTG3/4/5/6/7 Bombay
+        8638.5  DAM Norddeich
+        8641    GYA2/3/4/5 London
+        8642    CTU2/CTV/2/7/CTU8 Monsanto/Lisbon, Central Pacific,
+                EAD/2/EDZ4 Aranjuez, KPH Bolinas, South Pacific,
+                VTP3/4/5/6 Vizagotapam, XXV/2/3/28/W31 Luanda
+        8644    VTP3/4/5/6 Vizagotapam
+        8646    GZW Gibralter, LPD Gral Pacheco, SAB/SAG Goeteborg
+        8647    JDC Chosi Siishib
+        8648    DHJ59 Wilhelmshaven
+        8650    ICB Genova, NMO Honolulu
+        8652    CTP Palhais, OST/3/32/5/52/6/62 Ostende
+        8652.5  PZN4 Paramaribo
+        8654    JCS/JCU Chosi, PCH Scheveningen
+        8656    IQH Naples
+        8657    UJQ
+        8658    North Atlantic, North Pacific, WSL Amagansett
+        8659    SXA Athens
+        8660    DHS Ruegen, UDH/UKB Riga
+        8662    CFH-L Halifax, TAH Istanbul
+        8664    IQH Naples
+        8666    6WW Dakar, Gulf of Mexico, HKB Barranquilla, KLC
+                Galveston, SPA/SPH Gdynia
+        8670    IAR Rome
+        8673    DAF Norddeich
+        8674    GYA2/3/4/5 London
+        8675    FFP2/3/7 Ft de France
+        8678    LF-/LG- Rogoland, ZLP2/4/5/6 Wellington
+        8679    IQX Trieste
+        8682    EAD/2/EDZ4 Aranjuez, NMC San Fransisco, TXZ8 Djibouti
+        8684    IRM Rome
+        8685    UFB Odessa
+        8686    CNP Casablanca, North Atlantic, South Atlantic, WMH
+                Baltimore, ZSC/6/9/21/33 Cape Town
+        8687    SVA Athens, URD Leningrad
+        8688    9VG Singapore
+        8690    3DP3 Fiji, 6VA Dakar, CLQ Havana, TFA Reykjavik, UMV
+        8692    SVA Athens
+        8694    4XO Haifa, PJC Curacao
+        8698    FJP8 Noumea, UDK2 Murmansk
+        8700    YUZ Rijeka
+        8702    CLA Havana, ODR Beirut, OSN46/412/416
+        8703    UXN/UGE Arkhangelsk
+        8704    CKN Vancouver, SVA Athens, YVG La Guaira
+
+8704.4-8718.9 Maritime Mobile (coast SITOR)
+        8706    4XZ Haifa
+        8709    UAT Moskow, VCS Halifax
+        8710    9YL Trinidad and Tobago, GNV Bahrein, NMG New Orleans,
+                NMR San Juan, VPN Nassau
+        8712    DHS Ruegen, YUZ Rijeka
+        8713.5  KFS/B San Fransisco
+        8715    UQK Riga
+        8716    EBA Madrid
+        8718    8PO Barbados, 9VG Singapore, VRT Bermuda, ZSC Presse
+        8718.5  SELCAL coast SITOR
+
+8718.9-8815 Maritime Mobile (coast telephony)
+        8720    UBF2 Aian Khabarov
+        8721    PPE2 Rio de Janeiro
+        8722    6WW Dakar, FUG La Regine, UFN Novosibirsk, UJY Iman, VAI
+                Vancouver, WLO Mobile, WOM Ojus, ZLW4/5/6 Wellington
+        8725.1  WFN Louisville
+        8726    CPD Potosi, GZC/2/3/4/5 Mauritius, NOK, OFJ Helsinki,
+                UFN Novosibirsk
+        8728    NIK Argentia, NMF Boston, NMF/NIK Boston/Argentia, NMQ
+                Long Beach
+        8728.2  KMI Dixon
+        8730    XSQ Canton
+        8731    YVG La Guaira
+        8731.3  WOM Ojus
+        8737.5  WGK St Louis
+        8738    VPS25 CD Aguilar
+        8740.6  KOM Hawaii, WOO Ocean Gate
+        8743.7  KMI Dixon
+        8746.8  WOM Ojus
+        8749.9  WOO Ocean Gate
+        8759.2  KMI Dixon
+        8760.8  NMC San Fransisco (SSB)
+        8762.3  WOO Ocean Gate
+        8764    Coast Guard (WX)
+        8765.4  AMVER
+        8770.4  Halifax
+        8780    Louisville (simplex)
+        8783.2  Great Lakes
+        8784    KMI Dixon
+        8790.2  WLO Mobile (SSB)
+        8793.3  WOM Ojus
+        8796.4  WBL Buffalo, WLC Rogers City, WMI Lorain, WOO Ocean Gate
+        8805.7  WLO Mobile (SSB)
+        8808.8  WLO Mobile (SSB)
+        8811.9  WOM Ojus
+        8812    Santa Maria
+
+8815-8965 Aeronautical Mobile (R)
+        8819    VOLMET-Russian
+        8822    Flight Test
+        8825    Gander NAT-A, Lisbon NAT-A, New York NAT-A, San Juan
+                NAT-A, Santa Maria NAT-A, Shannon NAT-A
+        8828    Auckland VOLMET-PAC, Hong Kong VOLMET-PAC, Honolulu
+                VOLMET-PAC, Tokyo VOLMET-PAC
+        8843    Honolulu CEP-5, San Fransisco CEP-5
+        8855    Alaska Aleutian, Asuncion SE-SAM, Belem NE/C-SAM, Bogota
+                C-SAM, Brasilia C-SAM, Buenos Aires SE-SAM, Caracas NE-
+                SAM, La Paz SE-SAM, Montevideo SE-SAM
+        8861    Abidjan AFI-1, Brasilia SAT-1, Casablanca AFI-1, Dakar
+                AFI-1, Dakar SAT-1, Lisbon AFI-1, Recife SAT-1
+        8864    Gander NAT-B/C, New York NAT-B/C, Reykjavik NAT-B/C,
+                Santa Maria NAT-B/C, Shannon NAT-B/C
+        8867    Auckland SP-6, Easter Island SP-7, Honolulu SP-7, Nadi
+                SP-6/7, Sydney SP-6, Tahiti SP-7
+        8876    Alaska C/SE
+        8879    Bombay INO-1, Cocos Island INO-1, Johannesburg INO-1,
+                Nairobi INO-1, Perth INO-1, Salisbury INO-1
+        8888    VOLMET-Russian
+        8891    Bodo NAT-D, Cambridge NAT-D, Churchill NAT-D, Frobisher
+                NAT-D, Gander NAT-D, Reykjavik NAT-D, Shannon NAT-D,
+                Sondrestrom NAT-D
+        8894    Algiers AFI-2, Kano AFI-2
+        8896    Algiers VOLMET-AFI, Dakar VOLMET-AFI, Kano VOLMET-AFI,
+                Khartoum VOLMET-AFI
+        8897    Beijing EA-1, Canton EA-1, Irkutsk EA-1, Kumming EA-1,
+                Lanchau EA-1, Pyongyang EA-1, Seoul EA-1, Shanghai EA-1,
+                Ulan Bator EA-1, Urumchi EA-1
+        8903    Accra AFI-4, Biak CWP-1/2, Guam CWP-2, Hong Kong CWP-1,
+                Honolulu CWP-2, Johannesburg AFI-4, Kano AFI-4, Manila
+                CWP-1, Naha CWP-1/2, Port Moresby CWP-1/2, Pyongyang
+                CWP-1, Seoul CWP-1, Shanghai CWP-1, Tokyo CWP-1/2, Wake
+                Island CWP-2
+        8917    Melanesia Common
+        8918    Ankara MID-1, Baghdad MID-1, Bahrain MID-1, Cairo MID-1,
+                Caracas CAR-A, Jeddah MID-1, Merida CAR-A, Miami CAR-A,
+                New York CAR-A, Odessa MID-1, Panama City CAR-A, San
+                Juan CAR-A, Tehran MID-1
+        8921    Dusseldorf (LTU), London (British Airways), Sidney
+                (Qantas)
+        8924    Amsterdam (KLM), Brussels (Sabena), Moscow (Aeroflot),
+                Rio de Janeiro (Varig), SW Pacific Islands, Tel Aviv (El
+                Al)
+        8927    Bangkok (Thai Airways), Havana (Cubana), Jeddah (Saudia)
+        8930    Stockholm (SAS)
+        8933    Johannesburg (SAA)
+        8936    Berne (Swissair)
+        8939    VOLMET-Russian
+        8942    Bangkok SEA-2, Hong Kong SEA-2, Irkutsk EA-2, Manila
+                SEA-2, Pyongyang EA-2, Singapore SEA-2, Ulan Bator EA-2
+        8945    Baghdad VOLMET-MID, Bahrain VOLMET-MID, Basrah VOLMET-
+                MID, Beirut VOLMET-MID, Cairo VOLMET-MID, Istanbul
+                VOLMET-MID, Tehran VOLMET-MID
+        8951    Alma Ata MID-3, Dushanbe MID-3, Kuybyshev MID-3, Moscow
+                MID-3
+        8957    Shannon VOLMET-EUR
+        8964    Looking Glass, Old Smokey, Rasputin, San Pablo AFB,
+                Scott AFB, Silver Dollar
+
+8965-9040 Aeronautical Mobile (OR)
+        8967    Andrews AFB, Argentina, Cheese Bobcat (JPN combine), Gan
+                Area Combine, Lajes AFB, Thule AFB
+        8972    Beergarden, Caveman, Hurricane, Jargon, Neckware,
+                Spangle, Spanish Point, Spittle, Stockholm (SAS), Wafer
+        8976    Argentina, Ivanhoe, Jehovah, Neckware, Utah Rig
+        8980    Cheese Bobcat (JPN combine), Hawkins, Lantern Chief
+                (Apollo 14), McCord AFB, Neckware, St Pierre
+        8982    Missionary
+        8984    Berlin (Interflug), Calvary, NAS Elizabeth City, NAS San
+                Fransisco, Puerto Rico (USCG)
+        8985    Cyprus Combine
+        8987    FDY
+        8989    Elmendorf AFB, Loring AFB, McClellan AFB, McDill AFB,
+                San Pablo AFB
+        8990    Cheese Bobcat (JPN combine), VOLMET-Russian
+        8992    Drainage
+        8993    Coral Hills (Keflavik?), McDill AFB
+        8996    Lahr Military
+        8997    Coral Hills (Keflavik?), Hurricane, Spanish Point,
+                Woodpecker
+        9002    Belmont, Fanfare, Fastcharger, River, Seabell
+        9006    Cape radio ckt 2 (Apollo 14), Hawkins, Lantern Chief
+                (Apollo 14), Stevenville
+        9014    Charleston, Gull, Scott AFB
+        9018    Air Force One, Andrews AFB
+        9023    Peterson
+        9024    Andrews AFB
+        9025    Bingle Court, Darby Scortch, Dockyard, Golden Gate, June
+                Bug, Luqa RAFB, MKE Akrotiri, MQY Chatham
+        9027    Democrat, Looking Glass, Migraine, Outway, Retail
+        9031    Krauton AFB
+        9032    Gibralter RAFB, Luqa RAFB, Upavon RAFB
+        9036    MQY Chatham (USB)
+        9040    MQD Plymouth
+
+9040-9500 Fixed
+        9050    NPG-FC/FM San Fransisco, NPM Honolulu
+        9055    CUA43/47/48/69/90 Alfragide
+        9060    NKA Asmara
+        9061.5  PDC
+        9062    DBT/DBU/3/DBV/DBW/DBX/DBZ/3 Koenigwustern
+        9077.5  Havana (ATC-LDOC)
+        9080    Telco Addis Ababa
+        9090    BC relay (RFE)
+        9111.5  AEZ7 Asmara
+        9153    Telco Paris
+        9160    ACA Panama (LSB)
+        9210    BC relay (DW)
+        9258    CUA43/47/48/69/90 Alfragide
+        9277.5  NPG San Fransisco
+        9290    Telco Athens
+        9297.6  DDH21/47/DDJ9/DFH23H1/DDN2/DGO46/L3 Pinneborg
+        9318    NST/GXH/AOK/...
+        9351    BPV Shanghai
+        9375    Telco Rome
+        9419    CUA43/47/48/69/90 Alfragide
+        9440    HMF15/HMN56/HMF32/HML36 Pyongyang
+
+9500-9775 Broadcasting
+        9717    BC relay (BBC)
+
+9775-9995 Fixed
+        9850    Telco Rome
+        9854    Telco Abidjan
+        9875    HMF15/HMN56/HMF32/HML36 Pyongyang
+        9980    Telco New York (AT&T)
+
+9995-10005 Radio Astronomy, Standard Frequency
+        9996    Novosibirsk, RTA
+        10000   ATA New Delhi, BPV Shanghai, JJY Tokyo, LOL Buenos
+                Aires, MSF, RNM Moscow, RWM Moscow, WWV Ft Collins, WWVH
+                Kihei Maui, ZUO Johannesburg
+        10004   RID Irkutsk
+
+10005-10100 Aeronautical Mobile (R)
+        10017   Central America Common
+        10018   Abadan MID-2, Addis Ababa AFI-3, Alma Ata MID-2, Bahrain
+                MID-2, Bombay AFI-3, Bombay MID-2, Cairo AFI-3, Delhi
+                MID-2, Dushanbe MID-2, Jeddah AFI-3, Karachi MID-2,
+                Nairobi AFI-3, Tehran MID-2, Tripoli AFI-3, Urumchi MID-
+                2
+        10024   Antofagasta SW-SAM, Asuncion SW-SAM, Bogota NW-SAM,
+                Buenos Aires SW-SAM, Easter Island SW-SAM, La Paz SW-
+                SAM, Lima NW/SW-SAM, Montevideo SW-SAM, Panama City NW-
+                SAM, Punta Arenas SW-SAM, Quito NW-SAM, Santiago SW-SAM
+        10027   Madrid/Las Palmas (Iberia), Rome (Alitalia)
+        10030   Buenos Aires (Aerolineas Argentinas), Moscow (Aeroflot)
+        10039   Chulmani NCA-3, Irkutsk NCA-3, Khabarovsk NCA-3, Kirensk
+                NCA-3, Pyongyang NCA-3, Ulan Bator NCA-3
+        10042   Beijing EA-1, Canton EA-1, Irkutsk EA-1, Kumming EA-1,
+                Lanchau EA-1, Pyongyang EA-1, Seoul EA-1, Shanghai EA-1,
+                Ulan Bator EA-1, Urumchi EA-1
+        10045   Flight Test
+        10048   Anchorage NP-3/4, Beijing NP-3, Cold Bay NP-3/4,
+                Khabarovsk NP-3, Pyongyang NP-3/4, Seoul NP-3, Shanghai
+                NP-3, Tokyo NP-3
+        10051   Gander VOLMET-NAT, New York VOLMET-NAT
+        10057   Antanarivo VOLMET-AFI, Brazzaville VOLMET-AFI,
+                Johannesburg VOLMET-AFI, Nairobi VOLMET-AFI
+        10066   Alaska Aleutian, Bangkok SEA-1, Calcutta SEA-1, Canton
+                SEA-1, Cocos Island SEA-1, Colombo SEA-1, Darwin SEA-3,
+                Djakarta SEA-3, Kumming SEA-1, Madras SEA-1, Manila SEA-
+                3, Perth SEA-3, Singapore SEA-1, Singapore SEA-3, Sydney
+                SEA-3
+        10069   Berne (Swissair), Rio de Janeiro (Varig)
+        10072   London (British Airways), Seoul (KAL)
+        10075   Beirut (MEA), Houston (Universal Aviation), Houston LDOC
+        10078   Athens (Olympic), Brussels (Sabena), Frankfurt
+                (Lufthansa), Sidney (Qantas)
+        10084   Leningrad EUR-A, Moscow EUR-A, Murmansk EUR-A, Odessa
+                EUR-A
+        10087   Brasilia VOLMET-SAM, Buenos Aires VOLMET-SAM, Lima
+                VOLMET-SAM
+        10090   Khabaraovsk VOLMET-NCA, Kiev VOLMET-NCA, Moscow VOLMET-
+                NCA, Novosibirsk VOLMET-NCA, Tashkent VOLMET-NCA,
+                Vnukovo VOLMET-NCA
+        10093   New York (test)
+        10096   Asuncion SE-SAM, Barnaul NCA-2, Belem NE/C-SAM, Bogota
+                C-SAM, Brasilia C-SAM, Buenos Aires SE-SAM, Caracas NE-
+                SAM, Irkutsk NCA-2, Khanty Mansiysk NCA-2, Kirensk NCA-
+                2, La Paz SE-SAM, Montevideo SE-SAM
+        10100   Telco San Juan
+
+10100-11175 Fixed
+        10135   Telco Rome
+        10153   Andrews AFB
+        10190   BC relay (RFE)
+        10225   KWN90 Washington
+        10230   Telco Paris
+        10250   Telco Havana
+        10295   Telco New York (AT&T), Telco Paris
+        10308   OLD/OLG4 Prague
+        10455   BC relay (VOA), Telco Jeddah
+        10468   PGL
+        10479   Belmont, Cemetary, Eagle Farm, Gangbuster, Seabell
+        10488   Telco Tel Aviv
+        10540   Telco New York (AT&T)
+        10550   Telco New York (AT&T)
+        10563   FTK56A Paris
+        10605   Telco Hamilton Barbados (C&W)
+        10620   BC relay (DW)
+        10635   Telco St Georges Bermuda (C&W)
+        10635.5 Telco Amsterdam
+        10637.5 KKN50 Washington
+        10680   KRH50 Washington
+        10690   AFA Camp Springs (Aerospace Comm Co) (SSB)
+        10696   AFA Camp Springs (Aerospace Comm Co) (SSB)
+        10714   AEZ Asmara (LSB)
+        10730   Telco Monrovia
+        10775   FTK77 Paris
+        10870   BC relay (VOA)
+        10885   Telco New York (AT&T)
+        10945   AEZ7 Asmara, CFH-NAWS Halifax
+        11000   DBT/DBU/3/DBV/DBW/DBX/DBZ/3 Koenigwustern
+        11004   Telco Paris
+        11009   CNO96/97/98 Casablanca
+        11015   CTU2/CTV/2/7/CTU8 Monsanto/Lisbon
+        11031   NBA Balboa
+        11039   DDH21/47/DDJ9/DFH23H1/DDN2/DGO46/L3 Pinneborg
+        11045   Telco New York (AT&T)
+        11052   DDH21/47/DDJ9/DFH23H1/DDN2/DGO46/L3 Pinneborg
+        11075   BC relay (RFE)
+        11080   NBA Balboa
+        11118   Andrews AFB
+        11130   ZLZ22/20/ZLX22/31/37
+        11135   PBC32/34/36/38/312/317/322 Goeree
+
+11175-11275 Aeronautical Mobile (OR)
+        11176   McClellan AFB
+        11179   McDill AFB
+        11180   MQY Chatham
+        11182   MQY Chatham (USB), Scott AFB
+        11185   Cheese Bobcat (JPN combine)
+        11195   Cyprus Combine
+        11200   Westraden R
+        11204   Cheese Bobcat (JPN combine)
+        11209   Canadian Military
+        11215   Lima (EA)
+        11220   Outway, Retail
+        11222   Stockholm (SAS)
+        11226   Andrews AFB
+        11228   McDill AFB
+        11229   Innsbruck AFB, Keflavik AFB, Krauton AFB, San Pablo AFB,
+                Seabell
+        11230   HMF15/HMN56/HMF32/HML36 Pyongyang
+        11233   Scott AFB
+        11234   Cyprus Combine, Gan Area Combine, Gibralter RAFB, Upavon
+                RAFB
+        11236   Elmendorf AFB, Loring AFB, McClellan AFB
+        11237   Cyprus Combine, Johannes Combine, Miharik Combine
+                (Bahrein, Ceylon, Kuwait)
+        11239   Migraine
+        11240   German Military
+        11243   Bernadine, Civilian, Gibson, Hackberry, Location,
+                Looking Glass, Nugget, Parkway, Seabell
+        11246   McDill AFB
+        11249   Canadian Military
+        11255   Belmont, Fanfare, Hexagon
+        11263   Belmont, Derail, Fanfare, Fastcharger, Tophand
+        11265   Canadian Military, Lahr Military
+        11266   German Military
+        11267   Ivanhoe
+        11271   Lajes AFB
+        11272   Upavon RAFB
+
+11275-11400 Aeronautical Mobile (R)
+        11279   Algiers VOLMET-AFI, Bodo NAT-D, Cambridge NAT-D,
+                Churchill NAT-D, Dakar VOLMET-AFI, Frobisher NAT-D,
+                Gander NAT-D, Kano VOLMET-AFI, Khartoum VOLMET-AFI,
+                Reykjavik NAT-D, Shannon NAT-D, Sondrestrom NAT-D,
+                VOLMET-Russian
+        11282   Honolulu CEP-5, San Fransisco CEP-5
+        11288   Flight Test
+        11291   Brasilia SAT-2, Dakar SAT-2, Recife SAT-2
+        11300   Abadan MID-2, Addis Ababa AFI-3, Alma Ata MID-2, Bahrain
+                MID-2, Bombay AFI-3, Bombay MID-2, Cairo AFI-3, Delhi
+                MID-2, Dushanbe MID-2, Jeddah AFI-3, Karachi MID-2,
+                Nairobi AFI-3, Tehran MID-2, Tripoli AFI-3, Urumchi MID-
+                2
+        11306   Flight Test
+        11315   Merida VOLMET-CAR, Miami VOLMET-CAR, Port of Spain
+                VOLMET-CAR
+        11319   SW Pacific Islands, VOLMET-Russian
+        11342   New York/San Juan LDOC
+        11345   Bogota (Avianca), Stockholm (SAS)
+        11348   San Fransisco/Honolulu LDOC
+        11351   Paris (Air France)
+        11354   Bahrain (Gulf Air), Johannesburg (SAA)
+        11357   Alaska C/SE
+        11360   Antofagasta SW-SAM, Asuncion SW-SAM, Bogota NW-SAM,
+                Buenos Aires SW-SAM, Easter Island SW-SAM, La Paz SW-
+                SAM, Lima NW/SW-SAM, Montevideo SW-SAM, Panama City NW-
+                SAM, Punta Arenas SW-SAM, Quito NW-SAM, Santiago SW-SAM
+        11363   Alaska Aleutian
+        11375   Alma Ata MID-3, Dushanbe MID-3, Kuybyshev MID-3, Moscow
+                MID-3
+        11378   Prague VOLMET-EUR, Tel Aviv VOLMET-EUR
+        11384   Biak CWP-1/2, Guam CWP-2, Hong Kong CWP-1, Honolulu CWP-
+                2, Manila CWP-1, Naha CWP-1/2, Port Moresby CWP-1/2,
+                Pyongyang CWP-1, Seoul CWP-1, Shanghai CWP-1, Tokyo CWP-
+                1/2, Wake Island CWP-2
+        11387   Bangkok VOLMET-SEA, Bombay VOLMET-SEA, Calcutta VOLMET-
+                SEA, Karachi VOLMET-SEA, Singapore VOLMET-SEA, Sydney
+                VOLMET-SEA
+        11396   Bangkok SEA-1, Bangkok SEA-2, Calcutta SEA-1, Canton
+                SEA-1, Caracas CAR-A, Cocos Island SEA-1, Colombo SEA-1,
+                Darwin SEA-3, Djakarta SEA-3, Hong Kong SEA-2, Irkutsk
+                EA-2, Kumming SEA-1, Madras SEA-1, Manila SEA-2, Manila
+                SEA-3, Merida CAR-A, Miami CAR-A, New York CAR-A, Panama
+                City CAR-A, Perth SEA-3, Pyongyang EA-2, San Juan CAR-A,
+                Singapore SEA-1, Singapore SEA-2, Singapore SEA-3,
+                Sydney SEA-3, Ulan Bator EA-2
+
+11400-11700 Fixed
+        11402   HBX76/HBO88 Geneve
+        11472   Telco St Georges Bermuda (C&W)
+        11515   Telco Hamilton Barbados (C&W)
+        11662.5 MLU Gibralter
+11700-11975 Broadcasting
+        11770   Alpha Sierra (NC), Fairbanks, Morgantown, Schoolboy,
+                Yellocab
+        11802   NBA Balboa
+
+11975-12330 Fixed
+        11991.5 CCS Santiago
+        11995   KKN44 Washington
+        11999   Telco Gothaab
+        12000   VNG Melbourne
+        12022.5 KKN50 Washington
+        12076   BC relay (BBC)
+        12135   NSS Annapolis
+        12250   RCG77/RSU31
+        12307   OBC Callao
+        12329   OVG4/8/12 Fredrikshaven
+
+12330-12439.5 Maritime Mobile (ship telephony)
+        12333.1 WCM Pittsburgh, WJG Memphis
+        12379   Memphis (simplex), Pittsburgh (simplex)
+        12421   Simplex
+        12424.5 Simplex
+        12428   Simplex
+        12429.2 Limited coast
+        12432.3 Limited coast
+        12435.4 Limited coast
+
+12439.5-12491 Maritime Mobile (special systems)
+
+12491-12526.8 Maritime Mobile (ship SITOR)
+
+12526.8-12539.6 Maritime Mobile (ship working)
+
+12539.6-12564 Maritime Mobile (ship calling)
+        12562.3 SELCAL ship SITOR
+        12562.8 SELCAL ship SITOR
+
+12564-12652.3 Maritime Mobile (ship working)
+
+12652.3-13070.8 Maritime Mobile (coast working)
+        12660   Gulf of Mexico, South Atlantic
+        12691   6XS Diego Saurez, NST/GXH/AOK/..., South Pacific
+        12693   URD Leningrad
+        12695.5 KFS/B San Fransisco
+        12700   NMR San Juan, Puerto Rico, ZSC/6/9/21/33 Cape Town
+        12701   FUJ/4/6/8/9 Noumea
+        12702   CKN Vancouver, DHS Ruegen
+        12704.5 Gulf of Mexico, WLO Mobile, XXV/2/3/28/W31 Luanda
+        12706   UQK Riga, UYK
+        12707   9VG Singapore
+        12708.5 FJP8 Noumea
+        12709   8PO Barbados, GKR Wick, LSA4/5 Press, VRT Bermuda, ZSC
+                Presse
+        12712   OSN26/28/212/44 Ostende
+        12713.5 GKK/GKA4 Portishead, UXN/UGE Arkhangelsk
+        12714   GKM/GKW/GKN/GKF Portishead
+        12717   EBA Madrid
+        12718   NMN Portsmouth, ZLO
+        12718.5 NMR San Juan, NMY New York, ZPJ25
+        12721   SPA/SPH Gdynia
+        12723   SPA/SPH Gdynia
+        12724   ZRY/2/4/5/6/7
+        12725   6XS Diego Saurez
+        12727.5 LF-/LG- Rogoland
+        12730   NMC San Fransisco, UMV
+        12732   HKB Barranquilla, TAH Istanbul, UBN/UDC/UBC Jdanov,
+                UXN/UGE Arkhangelsk
+        12738   PPA25
+        12740   ZLP Awarua
+        12741   ZRH/2/3/4/5/6 Simonstown, ZRQ/2/3/4/5
+        12743   NMC San Fransisco, NOR San Diego, PPM28
+        12745.5 North Atlantic
+        12746   NRV
+        12748   CLQ Havana
+        12750   CWA Cerrito, VHP Belconnen
+        12753   GXM Singapore
+        12753.5 OXZ Lyngby
+        12754   UJO
+        12754.5 PWZ Rio de Janeiro
+        12755   SAB/SAG Goeteborg
+        12760   IRM Rome
+        12763.5 DAM Norddeich, DAN Norddeich
+        12765   CCS Santiago
+        12768   PCH Scheveningen
+        12772.5 XFU Vera Cruz, ZSL/2/3/4/5/6/7 Simonstown
+        12781.5 GYS3/4/5/6 Singapore, HKB Barranquilla, YUZ Rijeka
+        12782   OST/3/32/5/52/6/62 Ostende
+        12790.5 GKG Portishead
+        12795   UXN/UGE Arkhangelsk
+        12799.5 PCH Scheveningen
+        12808   KPH Bolinas, VTG3/4/5/6/7 Bombay
+        12808.5 Central Pacific
+        12810   HZY Dhahran
+        12815   RUVE/URB2/UDO2/RWWM Klaipeda
+        12817.5 SAB/SAG Goeteborg
+        12822   GKA Portishead
+        12823   CTP Palhais
+        12826.5 Gulf of Mexico, JCS/JCU Chosi, WNU Slidell
+        12829   CTP Palhais
+        12831   FFP2/3/7 Ft de France
+        12832   HKB Barranquilla
+        12833.5 SVA Athens
+        12835.5 GKB Portishead
+        12838   CCS Santiago
+        12840   Gulf of Mexico, VTP3/4/5/6 Vizagotapam, WPA Port Arthur
+        12841.5 EAD/2/EDZ4 Aranjuez
+        12843   FFL St Lys
+        12843.5 GBY20/MHU2/3/4/5/6 Rugby/Portishead
+        12844   UOP
+        12844.5 Central Pacific, KFS/A San Fransisco
+        12852   DZR Manila
+        12853.5 GKG Portishead, HKC Buenaventura, PCH Scheveningen
+        12861   DHS Ruegen
+        12862.5 NBA Balboa
+        12864   6WW Dakar
+        12867   NGP
+        12868   XSG Shanghai, XSM
+        12870   XSG Shanghai
+        12871.5 GRL/GKA2/GKB4/GKC4/5 Portishead
+        12874.5 VCS Halifax
+        12876   LF-/LG- Rogoland, VAI Vancouver
+        12877   UJY Iman, XSQ Canton
+        12878.5 CLQ Havana, JCS/JCU Chosi
+        12880.5 SAB/SAG Goeteborg
+        12882   DZG Manila
+        12883   NBA Balboa
+        12884   IAR Rome
+        12885   Central Atlantic, UJY Iman
+        12886   DZK Manila
+        12888   EAD/2/EDZ4 Aranjuez
+        12889   NMH Washington
+        12889.5 IDQ/2/3/6 Rome
+        12894   6WW Dakar, NBA Balboa
+        12895   UDH/UKB Riga
+        12898.5 DAN Norddeich
+        12906   UMV
+        12907.5 GBY20/MHU2/3/4/5/6 Rugby/Portishead, KLB Seattle, North
+                Pacific, VHP Belconnen, VIX2/3/4/5/6/7 Sydney
+        12912   FFL St Lys, SAB/SAG Goeteborg, South Pacific
+        12914   CFH-L Halifax
+        12916.5 North Pacific, OXZ Lyngby
+        12919   CLS La Fe Prince, UFN Novosibirsk
+        12921   CKN Vancouver, GYA2/3/4/5 London, GZC/2/3/4/5 Mauritius,
+                GZX2/3/4/5/6 Mauritius
+        12925.5 6WW Dakar, North Atlantic, WCC Chatham
+        12930   UAT Moskow
+        12934.5 EAD/2/EDZ4 Aranjuez, NMF Boston
+        12939   SPE/SPB Szczecin
+        12942.5 SVA Athens
+        12943.5 CUG Ponta Delgada, CUL Lisbon, LOL Buenos Aires,
+                ZLP2/4/5/6 Wellington
+        12945   GYS3/4/5/6 Singapore
+        12947   ZRH/2/3/4/5/6 Simonstown
+        12948   North Atlantic, WSC Tuckerton
+        12950   UFB Odessa
+        12952.5 South Atlantic, VIS26/5/6/42 Sydney, WMH Baltimore
+        12960   CCV Valpariso
+        12961.5 LF-/LG- Rogoland, North Atlantic
+        12962.5 ZRH/2/3/4/5/6 Simonstown, ZRQ/2/3/4/5
+        12965.5 Central Pacific
+        12966   NPG San Fransisco, NPG-FC/FM San Fransisco, NPM
+                Honolulu, NSS Annapolis, PCH Scheveningen
+        12970.5 SUH Alexandria, South Atlantic, WOE Lantana
+        12974   OSN26/28/212/44 Ostende
+        12975   IQX Trieste
+        12978   ICB Genova
+        12984   4XZ Haifa, CFH-L Halifax
+        12988.5 GZC/2/3/4/5 Mauritius, LPD Gral Pacheco, YIR Basrah
+        12993   KOK Los Angeles, South Pacific
+        12994   VIP4/3
+        12995   IQH Naples, ROT Moscow
+        12996   IAR12/67 Rome
+        12997.5 North Atlantic, WSL Amagansett
+        13001   IAR Rome
+        13002   CTU2/CTV/2/7/CTU8 Monsanto/Lisbon, Central Pacific, KPH
+                Bolinas
+        13005   DHS Ruegen
+        13006.5 GKH Portishead, GKK/GKA4 Portishead, JOR Nagasaki
+        13011   AQP2/3/4 Karachi, IAR Rome, South Atlantic, WAX Miami
+        13015.5 IAR Rome, URD Leningrad
+        13020   GKC Portishead, GKT5/6 Portishead, North Atlantic
+        13024.5 HEB Berne, North Atlantic, WSL Amagansett
+        13027   DAF Norddeich, DAL Norddeich
+        13028   ZSD Durban
+        13029   GXO Mauritius, Hawaii, KHK Kahuku, SVA Athens,
+                ZRH/2/3/4/5/6 Simonstown
+        13030   UDB/URD Leningrad, URD Leningrad
+        13033.5 GXO Mauritius, GZV Mauritius, North Atlantic, South
+                Pacific, WCC Chatham
+        13038   Gulf of Mexico, KLC Galveston
+        13040   UDK2 Murmansk
+        13042.5 CRX21/23/28/26 Laurenco Marques, PJC Curacao
+        13045   JDC Chosi Siishib
+        13046   PZN4 Paramaribo
+        13047   SVA Athens
+        13051.5 4XO Haifa, Gulf of Mexico, WPD Tampa
+        13052.5 EBA Madrid
+        13055   UJQ
+        13056   ZLW4/5/6 Wellington
+        13059   GFC
+        13060.5 North Atlantic
+        13062.5 CLA Havana, DHS Ruegen
+        13066   EAD/2/EDZ4 Aranjuez
+        13067.5 OST/3/32/5/52/6/62 Ostende
+        13069.5 JOS Nagasaki, TFA Reykjavik
+        13070   UDH/UKB Riga
+
+13070.8-13100.8 Maritime Mobile (coast SITOR)
+        13074   PJK34/38/312, UMV
+        13075   6VA Dakar
+        13078.5 LZW Varna, WSL Amagansett
+        13085   5BA Nocosia, HWN
+        13087.5 HKB Barranquilla, OFJ Helsinki
+        13092   CLA Havana, JOU Nagasaki
+        13093   EAT2 Tenerife
+        13096.5 FFS6/8 St Lys
+        13100   SELCAL coast SITOR, TIM Limon
+        13100.5 SELCAL coast SITOR
+        13100.8 KMI Dixon
+
+13100.8-13200 Maritime Mobile (coast telephony)
+        13101   DHS Ruegen, JWT Stavanger, LOL Buenos Aires, ODR Beirut
+        13103.9 KMI Dixon, WFN Louisville, WGK St Louis
+        13105.5 GYR2/3/4/5 Malta, GYX Malta, JCT Chosi, OFJ Helsinki,
+                PPR Rio de Janeiro
+        13107   KMI Dixon, WOO Ocean Gate
+        13110   RCI/RCC
+        13113.2 AMVER, USCG WX
+        13114.5 KFS San Fransisco
+        13116.3 WOM Ojus
+        13122.5 WOM Ojus
+        13125.6 WOM Ojus
+        13128.7 WOO Ocean Gate
+        13131.8 WOO Ocean Gate
+        13134.9 WLO Mobile (SSB)
+        13144.2 WOM Ojus
+        13158   Louisville (simplex), St Louis (simplex)
+        13165   Wellington (A3)
+        13165.9 KOM Hawaii
+        13169   WOM Ojus
+        13175.2 WLO Mobile (SSB)
+        13178.3 WLO Mobile (SSB)
+        13184.5 WOO Ocean Gate
+        13187.6 KMI Dixon
+        13190.7 KMI Dixon, WOO Ocean Gate
+
+13200-13260 Aeronautical Mobile (OR)
+        13201   Elmendorf AFB, Loring AFB, McClellan AFB
+        13204   Fireside, Rasputin
+        13205   Berne (Swissair), Gibralter RAFB, Luqa RAFB, Upavon RAFB
+        13214   Krauton AFB, San Pablo AFB, Seabell
+        13215   Air Force One, Andrews AFB
+        13221   JAX Control
+        13230   NRY (A2)
+        13231   Lahr Military
+        13241   Migraine, Retail
+        13244   Gladhand, McDill AFB
+        13247   Andrews AFB
+
+13260-13360 Aeronautical Mobile (R)
+        13261   Antanarivo VOLMET-AFI, Brazzaville VOLMET-AFI, Honolulu
+                CEP-5, Johannesburg VOLMET-AFI, Nairobi VOLMET-AFI, San
+                Fransisco CEP-5
+        13264   Shannon VOLMET-EUR
+        13266   Red Cross AX
+        13270   Gander VOLMET-NAT, New York VOLMET-NAT
+        13273   Algiers AFI-2, Auckland SP-6, Easter Island SP-7,
+                Honolulu SP-7, Kano AFI-2, Nadi SP-6/7, Sydney SP-6,
+                Tahiti SP-7
+        13279   Brasilia VOLMET-SAM, Buenos Aires VOLMET-SAM,
+                Khabaraovsk VOLMET-NCA, Kiev VOLMET-NCA, Lima VOLMET-
+                SAM, Moscow VOLMET-NCA, Novosibirsk VOLMET-NCA, Tashkent
+                VOLMET-NCA, Vnukovo VOLMET-NCA
+        13282   Auckland VOLMET-PAC, Hong Kong VOLMET-PAC, Honolulu
+                VOLMET-PAC, Tokyo VOLMET-PAC
+        13288   Abadan MID-2, Addis Ababa AFI-3, Alma Ata MID-2, Bahrain
+                MID-2, Bombay AFI-3, Bombay MID-2, Cairo AFI-3, Delhi
+                MID-2, Dushanbe MID-2, Jeddah AFI-3, Karachi MID-2,
+                Leningrad EUR-A, Moscow EUR-A, Murmansk EUR-A, Nairobi
+                AFI-3, Odessa EUR-A, Tehran MID-2, Tripoli AFI-3,
+                Urumchi MID-2
+        13291   Bodo NAT-D, Cambridge NAT-D, Churchill NAT-D, Frobisher
+                NAT-D, Gander NAT-B/C, Gander NAT-D, New York NAT-B/C,
+                Reykjavik NAT-B/C, Reykjavik NAT-D, Santa Maria NAT-B/C,
+                Shannon NAT-B/C, Shannon NAT-D, Sondrestrom NAT-D
+        13294   Accra AFI-4, Anchorage NP-3/4, Beijing NP-3, Cold Bay
+                NP-3/4, Johannesburg AFI-4, Kano AFI-4, Khabarovsk NP-3,
+                Pyongyang NP-3/4, Seoul NP-3, Shanghai NP-3, Tokyo NP-3
+        13297   Asuncion SE-SAM, Beijing EA-1, Belem NE/C-SAM, Bogota C-
+                SAM, Brasilia C-SAM, Buenos Aires SE-SAM, Canton EA-1,
+                Caracas CAR-A, Caracas NE-SAM, Irkutsk EA-1, Kumming EA-
+                1, La Paz SE-SAM, Lanchau EA-1, Merida CAR-A, Miami CAR-
+                A, Montevideo SE-SAM, New York CAR-A, Panama City CAR-A,
+                Pyongyang EA-1, San Juan CAR-A, Seoul EA-1, Shanghai EA-
+                1, Ulan Bator EA-1, Urumchi EA-1
+        13300   Biak CWP-1/2, Guam CWP-2, Hong Kong CWP-1, Honolulu CWP-
+                2, Manila CWP-1, Naha CWP-1/2, Port Moresby CWP-1/2,
+                Pyongyang CWP-1, Seoul CWP-1, Shanghai CWP-1, Tokyo CWP-
+                1/2, Wake Island CWP-2
+        13303   Chulmani NCA-3, Irkutsk NCA-3, Khabarovsk NCA-3, Kirensk
+                NCA-3, Pyongyang NCA-3, Ulan Bator NCA-3
+        13306   Bombay INO-1, Cocos Island INO-1, Gander NAT-A,
+                Johannesburg INO-1, Lisbon NAT-A, Nairobi INO-1, New
+                York NAT-A, Perth INO-1, Salisbury INO-1, San Juan NAT-
+                A, Santa Maria NAT-A, Shannon NAT-A
+        13309   Bangkok SEA-2, Hong Kong SEA-2, Irkutsk EA-2, Manila
+                SEA-2, Pyongyang EA-2, Singapore SEA-2, Ulan Bator EA-2
+        13312   Ankara MID-1, Baghdad MID-1, Bahrain MID-1, Cairo MID-1,
+                Flight Test, Jeddah MID-1, Odessa MID-1, Tehran MID-1
+        13315   Brasilia SAT-2, Dakar SAT-2, Khanty Mansiysk NCA-1,
+                Moscow NCA-1, Recife SAT-2
+        13318   Bangkok SEA-1, Calcutta SEA-1, Canton SEA-1, Cocos
+                Island SEA-1, Colombo SEA-1, Darwin SEA-3, Djakarta SEA-
+                3, Kumming SEA-1, Madras SEA-1, Manila SEA-3, Perth SEA-
+                3, Singapore SEA-1, Singapore SEA-3, Sydney SEA-3
+        13324   Berne (Swissair), Dusseldorf (LTU), Tokyo (JAL)
+        13327   Athens (Olympic), Buenos Aires (Aerolineas Argentinas),
+                Frankfurt (Lufthansa)
+        13330   Houston LDOC, New York/San Juan LDOC
+        13333   London (British Airways), Seoul (KAL)
+        13336   Amsterdam (KLM), Bogota (Avianca), Rome (Alitalia)
+        13339   Bahrain (Gulf Air), Havana (Cubana), Jeddah (Saudia)
+        13342   Jeddah (Saudia), Stockholm (SAS)
+        13345   Moscow (Aeroflot)
+        13348   San Fransisco/Honolulu LDOC
+        13351   Brussels (Sabena), Paris (Air France), Tel Aviv (El Al)
+        13354   Honolulu CEP-5, San Fransisco CEP-5
+        13355   Telco Berlin DDR
+        13356   New York (test)
+        13357   Abidjan AFI-1, Brasilia SAT-1, Casablanca AFI-1, Dakar
+                AFI-1, Dakar SAT-1, Lisbon AFI-1, Recife SAT-1
+        13358   OLI4/OLH9 (intruder)
+
+13360-14000 Fixed
+        13370   CWE94/CWO4/9CWD40 Cerrito, Telco Oakland (AT&T)
+        13372   CWE94/CWO4/9CWD40 Cerrito, Telco Rome
+        13375   Telco Berlin DDR
+        13376   Telco Ft Lauderdale (AT&T)
+        13380   NPN Guam, NPO/NDT
+        13390   Telco Oakland (AT&T)
+        13400   Telco New York (AT&T)
+        13428   Telco Oakland (AT&T)
+        13440   Telco Berlin DDR
+        13491   RCG77/RSU31
+        13498   IDR Rome
+        13530   NPN Guam
+        13538   OLI4/OLH9 (intruder)
+        13560   Industrial Scientific and Medical Equipment
+        13561   FDY
+        13563.5 IDR Rome
+        13568   DDH21/47/DDJ9/DFH23H1/DDN2/DGO46/L3 Pinneborg
+        13585   YAY4
+        13655   NPG-FC/FM San Fransisco, NPM Honolulu
+        13750   Telco Guantanamo Bay Cuba (AAC&R)
+        13873   FTN87 Pontoise
+        13893   YVR Caracas
+        13900   5YC Nairobi
+        13905   Telco Paris
+        13910   PPS74
+        13921.1 DDH21/47/DDJ9/DFH23H1/DDN2/DGO46/L3 Pinneborg
+        13945   FDY
+        13950   DBT/DBU/3/DBV/DBW/DBX/DBZ/3 Koenigwustern
+        13980   LCO/LFT/LHK Jeloey
+
+14000-14350 Amateur
+
+14350-14990 Fixed
+        14357   HBL
+        14360   AEZ Asmara (LSB), KWN90 Washington, KWS78 Washington,
+                Telco St Georges Bermuda (C&W)
+        14364   Telco New York (AT&T)
+        14365   Telco Oakland (AT&T)
+        14367   AEZ Asmara (LSB)
+        14410   DBT/DBU/3/DBV/DBW/DBX/DBZ/3 Koenigwustern
+        14420   CBY Pascua
+        14448   Telco Gothaab
+        14454   Telco Gothaab
+        14458   DDH21/47/DDJ9/DFH23H1/DDN2/DGO46/L3 Pinneborg
+        14460   DBT/DBU/3/DBV/DBW/DBX/DBZ/3 Koenigwustern
+        14462   HBX76/HBO88 Geneve
+        14470   HBL
+        14517   NAU Puerto Rico
+        14524   AEZ Asmara (LSB)
+        14527   BC relay (VOA)
+        14530   AEZ Asmara (LSB)
+        14540   Telco New York (AT&T)
+        14670   CHU Ottowa
+        14748   Telco New York (AT&T)
+        14806   AEZ Asmara (LSB)
+        14808   Telco Dakar
+        14830   WEO/WER/WES/WEU New York
+        14850   ZLZ/ZLX (A1)
+        14905   AEA Rhein Main (LSB)
+        14950   ZLZ22/20/ZLX22/31/37
+        14960   Telco Moscow
+
+14990-15010 Radio Astronomy, Standard Frequency
+        14996   Novosibirsk, RTA
+        15000   BPV Shanghai, JJY Tokyo, LOL Buenos Aires, RNM Moscow,
+                RWM Moscow, WWV Ft Collins, WWVH Kihei Maui
+        15004   RID Irkutsk
+
+15010-15100 Aeronautical Mobile (OR)
+        15015   Air Force One, Andrews AFB, McDill AFB
+        15025   COL Havana, MQY Chatham
+        15031   McClellan AFB
+        15035   Canadian Military, Looking Glass, Retail
+        15036   Miharik Combine (Bahrein, Ceylon, Kuwait)
+        15041   Democrat, Migraine, Outway, Retail
+        15046   Cyprus Combine
+        15048   Andrews AFB
+        15054   Overwork
+        15095   Loring AFB
+
+15100-15450 Broadcasting
+        15283   Louisville (simplex)
+
+15450-16460 Fixed
+        15500   AEA Rhein Main (LSB)
+        15526   AEZ Asmara (LSB)
+        15540   ACA Panama (A1), KKN50 Washington, Telco Moscow
+        15656   RCC4
+        15704   CUA43/47/48/69/90 Alfragide
+        15710   Telco Tel Aviv
+        15752   BC relay (VOA)
+        15770   SPE/SPB Szczecin
+        15772   SNN23
+        15775   BC relay (RFE)
+        15786   Pauline (LSB)
+        15793   Telco New York (AT&T)
+        15798   Telco New York (AT&T)
+        15833   Telco Tuolon
+        15852   BC relay (BBC)
+        15907   BC relay (BBC)
+        15917   AEZ7 Asmara, KKN44 Washington
+        15920   CFH-NAWS Halifax
+        15925   NPN Guam
+        15987   WEO/WER/WES/WEU New York
+        16003   UDK2 Murmansk
+        16018.8 Gulf of Mexico
+        16065   BC relay (RFE)
+        16130   GXO Mauritius
+        16150   KRH50 Washington
+        16157   Telco Havana
+        16162   KKN44 Washington
+        16180   NSS Annapolis
+        16237   Pauline (LSB)
+        16270   Telco New York (AT&T)
+        16294   Telco Monrovia
+        16317   CQF57 Bissau
+        16358   DES/DEU Koenigswustern
+        16415   Telco Paris
+        16457.5 NPG-FC/FM San Fransisco, NPM Honolulu
+
+16460-16596.4 Maritime Mobile (ship telephony)
+        16488   Memphis (simplex), Pittsburgh (simplex)
+        16518.9 WCM Pittsburgh, WJG Memphis
+        16565   Simplex
+        16568.5 Simplex
+        16572   Simplex
+        16587.1 Limited coast
+        16590.2 Limited coast
+        16593.3 Limited coast
+
+16596.4-16660 Maritime Mobile (special systems)
+
+16660-16705.8 Maritime Mobile (ship SITOR)
+
+16705.8-16719.8 Maritime Mobile (ship working)
+
+16719.8-16748.8 Maritime Mobile (ship calling)
+
+16748.8-16859.4 Maritime Mobile (ship working)
+        16749.9 SELCAL ship SITOR
+        16750.4 SELCAL ship SITOR
+        16847.3 Central Pacific
+
+16859.4-17196.9 Maritime Mobile (coast working)
+        16861.7 South Atlantic
+        16871.3 Gulf of Mexico
+        16880.9 South Pacific
+        16904.9 North Atlantic
+        16918.8 GBY20/MHU2/3/4/5/6 Rugby/Portishead, South Atlantic, VHP
+                Belconnen, VIX2/3/4/5/6/7 Sydney
+        16920.8 CLS La Fe Prince, OXZ Lyngby
+        16924   OFJ Helsinki
+        16928   LF-/LG- Rogoland
+        16928.4 GYS3/4/5/6 Singapore
+        16933.2 WCC Chatham
+        16942.5 YUZ Rijeka
+        16944.8 CFH-L Halifax
+        16945.5 EAT2 Tenerife
+        16947.5 6VA Dakar, 8PO Barbados, VIP4/3, VRT Bermuda
+        16947.8 TUA9 Abidjan
+        16948.4 VCS Halifax
+        16950   NPG-FC/FM San Fransisco
+        16952   LCO/LFT/LHK Jeloey, LF-/LG- Rogoland, PPE2 Rio de
+                Janeiro
+        16954.4 GKC Portishead, GKT5/6 Portishead
+        16956   AQR2/3/5 Chittagong
+        16956.5 HZY Dhahran, URD Leningrad
+        16957.5 FUF Ft de France
+        16960   CUL Lisbon, UMV
+        16960.4 CLQ Havana, JOU Nagasaki, PWZ Rio de Janeiro
+        16964   SPA/SPH Gdynia, ZRH/2/3/4/5/6 Simonstown
+        16964.4 ZRQ/2/3/4/5
+        16965   DHS Ruegen
+        16966   SVA Athens
+        16968.8 North Atlantic, WCC Chatham
+        16973.6 North Atlantic, WCC Chatham
+        16974   SPE/SPB Szczecin
+        16978.4 FUF Ft de France, GZC/2/3/4/5 Mauritius, Hawaii, KHK
+                Kahuku
+        16980   DAM Norddeich
+        16983.2 PPA25, URD Leningrad
+        16987   ZRH/2/3/4/5/6 Simonstown
+        16988   GYR2/3/4/5 Malta, ZRQ/2/3/4/5
+        16990   USR2
+        16992.8 UAT Moskow
+        16997   UDH/UKB Riga
+        16997.6 North Atlantic, WSL Amagansett
+        17001.5 XSQ Canton
+        17002   XSG Shanghai
+        17002.4 HKB Barranquilla, NMR San Juan, NMT, NMY New York
+        17004   URD Leningrad, ZRH/2/3/4/5/6 Simonstown
+        17005   UJY Iman
+        17006   XSQ Canton
+        17007.2 KLB Seattle, North Pacific, PCH Scheveningen
+        17011   NST/GXH/AOK/...
+        17012.5 ZLO
+        17015   UJQ
+        17016.8 Central Pacific, KPH Bolinas, OST/3/32/5/52/6/62 Ostende
+        17018   ZRY/2/4/5/6/7
+        17020   FFS6/8 St Lys, UDK2 Murmansk
+        17021.6 North Atlantic, WSL Amagansett
+        17022   TAH Istanbul
+        17026   Central Pacific, KFS/A San Fransisco
+        17027   FFL St Lys
+        17030   GZV Mauritius
+        17030.5 GXB, GXO Mauritius
+        17040   UFB Odessa
+        17040.8 FFL St Lys, FFS6/8 St Lys
+        17043.2 JCS/JCU Chosi
+        17045.6 LPD Gral Pacheco
+        17047.2 PBC32/34/36/38/312/317/322 Goeree
+        17048   DAF Norddeich
+        17053.6 GYA2/3/4/5 London
+        17055   UFB Odessa
+        17055.2 CTU2/CTV/2/7/CTU8 Monsanto/Lisbon, GZX2/3/4/5/6
+                Mauritius
+        17064   UFW
+        17064.8 6XS Diego Saurez, EAD/2/EDZ4 Aranjuez, KOK Los Angeles,
+                South Pacific
+        17066   UAT Moskow
+        17068   OXZ Lyngby
+        17069.6 SPE/SPB Szczecin
+        17072   GKG Portishead, GKK/GKA4 Portishead
+        17074.4 LF-/LG- Rogoland
+        17079.2 SAB/SAG Goeteborg
+        17084   IQX Trieste
+        17085   UBN/UDC/UBC Jdanov
+        17088   CRX21/23/28/26 Laurenco Marques, KPH Bolinas
+        17088.8 Central Pacific, South Pacific
+        17093.6 North Atlantic, South Atlantic
+        17094   SVA Athens
+        17098   UXN/UGE Arkhangelsk
+        17098.4 GKA Portishead, GKM/GKW/GKN/GKF Portishead
+        17100   DHS Ruegen, UFN Novosibirsk
+        17103.2 PCH Scheveningen
+        17105   IRM Rome, WWD Point Loma
+        17107   XSG Shanghai
+        17108   FUF Ft de France
+        17112.8 GKB Portishead, JCS/JCU Chosi
+        17117.6 Gulf of Mexico, WNU Slidell
+        17119   PRS5
+        17127.2 ZLP2/4/5/6 Wellington
+        17134   UMV
+        17136   DZR Manila
+        17136.8 GKM/GKW/GKN/GKF Portishead, NBA Balboa
+        17137   RUVE/URB2/UDO2/RWWM Klaipeda
+        17141.6 UBN/UDC/UBC Jdanov
+        17143.5 DAN Norddeich
+        17146.4 4XO Haifa, CLA Havana
+        17147.2 NRV
+        17148   HKB Barranquilla
+        17150   GXM Singapore
+        17151   NMN Portsmouth
+        17151.2 NMC San Fransisco
+        17155   6WW Dakar
+        17159   PWZ Rio de Janeiro
+        17160   IAR Rome, URL
+        17160.8 IAR Rome, IAR12/67 Rome, PWZ Rio de Janeiro, South
+                Atlantic, WOE Lantana
+        17161.4 VIS26/5/6/42 Sydney
+        17164   SPA/SPH Gdynia
+        17165   ZRY/2/4/5/6/7
+        17165.6 CLA Havana, LF-/LG- Rogoland
+        17170   UDK2 Murmansk
+        17170.4 Gulf of Mexico, PJC Curacao, South Atlantic, ZLW4/5/6
+                Wellington
+        17172.4 Gulf of Mexico, IAR Rome, UOP, WLO Mobile
+        17173.2 EAC/2 Cadiz
+        17175.2 VAI Vancouver
+        17176   DZG Manila, JCT Chosi
+        17177.5 DAL Norddeich
+        17180   6XS Diego Saurez, FUG La Regine, LOL Buenos Aires
+        17181   UDH/UKB Riga
+        17184.4 EAD/2/EDZ4 Aranjuez
+        17184.8 KFS/B San Fransisco
+        17185.5 EAX4 Parets Valles
+        17187   OST/3/32/5/52/6/62 Ostende
+        17189   SVA Athens
+        17189.6 CLQ Havana, XXV/2/3/28/W31 Luanda
+        17190   CTN7 Apulia
+        17194   SVA Athens
+        17194.4 PPR Rio de Janeiro
+        17196   6WW Dakar
+
+17196.9-17232.9 Maritime Mobile (coast SITOR)
+        17197   HEB Berne
+        17199.2 PKI Djakarta, WAX Miami
+        17206   6WW Dakar
+        17208.8 CWA Cerrito, KLC Galveston
+        17210   UXN/UGE Arkhangelsk
+        17215   6WW Dakar, LZW Varna
+        17217   ICB Genova
+        17218   XSQ Canton
+        17218.4 CFH-L Halifax
+        17220   UXN/UGE Arkhangelsk
+        17225   SPA/SPH Gdynia
+        17228   CKN Vancouver
+        17230   6WW Dakar, DHS Ruegen
+        17230.5 UMN Adler, UMV
+        17232   SELCAL coast SITOR
+        17232.5 SELCAL coast SITOR
+        17232.8 IAR Rome
+        17232.9 KOM Hawaii, WOM Ojus
+
+17232.9-17360 Maritime Mobile (coast telephony)
+        17236   KMI Dixon
+        17237.6 PCH Scheveningen
+        17239.1 KMI Dixon
+        17241   UAT Moskow
+        17242.4 WSC Tuckerton
+        17245.3 WOO Ocean Gate
+        17246.5 UDH/UKB Riga
+        17247.2 NMC San Fransisco, NMG New Orleans
+        17251.5 WLO Mobile (SSB)
+        17253   OSN46/412/416
+        17257.7 WOM Ojus
+        17260.8 WOM Ojus
+        17279.4 KMI Dixon
+        17283   St Louis (simplex)
+        17283.9 WOM Ojus
+        17288   NPG San Fransisco
+        17291.8 WFN Louisville, WGK St Louis, WOO Ocean Gate
+        17304.2 KMI Dixon
+        17307.3 AMVER, USCG WX
+        17310.4 WOO Ocean Gate
+        17325.9 WOO Ocean Gate
+        17329   WLO Mobile (SSB)
+        17356.9 WLO Mobile (SSB)
+
+17360-17700 Fixed
+        17370   UFB Odessa
+        17375   URD Leningrad
+        17390   VKS3/5/49/74/93/VKH70
+        17445   BC relay (DW), BC relay (RFE)
+        17505   RCI/RCC
+        17530   NPN Guam
+        17590   NBA Balboa
+        17605   CLQ Havana
+        17640   Telco Oakland (AT&T)
+        17666   Telco Gothaab
+        17669   YVR Caracas
+        17672   Telco Gothaab
+        17697.5 NBA Balboa
+
+17700-17900 Broadcasting
+
+17900-17970 Aeronautical Mobile (R)
+        17904   Anchorage NP-3/4, Auckland SP-6, Beijing NP-3, Biak CWP-
+                1/2, Cold Bay NP-3/4, Easter Island SP-7, Guam CWP-2,
+                Hong Kong CWP-1, Honolulu CEP-5, Honolulu CWP-2,
+                Honolulu SP-7, Khabarovsk NP-3, Manila CWP-1, Nadi SP-
+                6/7, Naha CWP-1/2, Port Moresby CWP-1/2, Pyongyang CWP-
+                1, Pyongyang NP-3/4, San Fransisco CEP-5, Seoul CWP-1,
+                Seoul NP-3, Shanghai CWP-1, Shanghai NP-3, Sydney SP-6,
+                Tahiti SP-7, Tokyo CWP-1/2, Tokyo NP-3, Wake Island CWP-
+                2
+        17907   Antofagasta SW-SAM, Asuncion SE-SAM, Asuncion SW-SAM,
+                Bangkok SEA-1, Bangkok SEA-2, Belem NE/C-SAM, Bogota C-
+                SAM, Bogota NW-SAM, Brasilia C-SAM, Buenos Aires SE-SAM,
+                Buenos Aires SW-SAM, Calcutta SEA-1, Canton SEA-1,
+                Caracas CAR-A, Caracas NE-SAM, Cocos Island SEA-1,
+                Colombo SEA-1, Darwin SEA-3, Djakarta SEA-3, Easter
+                Island SW-SAM, Hong Kong SEA-2, Irkutsk EA-2, Kumming
+                SEA-1, La Paz SE-SAM, La Paz SW-SAM, Lima NW/SW-SAM,
+                Madras SEA-1, Manila SEA-2, Manila SEA-3, Merida CAR-A,
+                Miami CAR-A, Montevideo SE-SAM, Montevideo SW-SAM, New
+                York CAR-A, Panama City CAR-A, Panama City NW-SAM, Perth
+                SEA-3, Punta Arenas SW-SAM, Pyongyang EA-2, Quito NW-
+                SAM, San Juan CAR-A, Santiago SW-SAM, Singapore SEA-1,
+                Singapore SEA-2, Singapore SEA-3, Sydney SEA-3, Ulan
+                Bator EA-2
+        17916   Athens (Olympic), Paris (Air France), Seoul (KAL),
+                Stockholm (SAS)
+        17919   Buenos Aires (Aerolineas Argentinas), Rio de Janeiro
+                (Varig)
+        17922   London (British Airways), Sidney (Qantas)
+        17925   Houston LDOC, New York/San Juan LDOC, San
+                Fransisco/Honolulu LDOC
+        17928   Bogota (Avianca), Buenos Aires (Aerolineas Argentinas)
+        17931   Bahrain (Gulf Air), Berne (Swissair), Frankfurt
+                (Lufthansa)
+        17934   Havana (Cubana)
+        17940   Amsterdam (KLM), Brussels (Sabena), Houston (Universal
+                Aviation), Madrid/Las Palmas (Iberia), Moscow
+                (Aeroflot), Rome (Alitalia), Tel Aviv (El Al)
+        17946   Bodo NAT-D, Cambridge NAT-D, Churchill NAT-D, Frobisher
+                NAT-D, Gander NAT-A, Gander NAT-B/C, Gander NAT-D,
+                Lisbon NAT-A, New York NAT-A, New York NAT-B/C,
+                Reykjavik NAT-B/C, Reykjavik NAT-D, San Juan NAT-A,
+                Santa Maria NAT-A, Santa Maria NAT-B/C, Shannon NAT-A,
+                Shannon NAT-B/C, Shannon NAT-D, Sondrestrom NAT-D
+        17955   Abidjan AFI-1, Brasilia SAT-1, Brasilia SAT-2,
+                Casablanca AFI-1, Dakar AFI-1, Dakar SAT-1, Dakar SAT-2,
+                Lisbon AFI-1, Recife SAT-1, Recife SAT-2
+        17958   Barnaul NCA-2, Chulmani NCA-3, Irkutsk NCA-2, Irkutsk
+                NCA-3, Khabarovsk NCA-3, Khanty Mansiysk NCA-1, Khanty
+                Mansiysk NCA-2, Kirensk NCA-2, Kirensk NCA-3, Moscow
+                NCA-1, Pyongyang NCA-3, Ulan Bator NCA-3
+        17961   Abadan MID-2, Accra AFI-4, Addis Ababa AFI-3, Algiers
+                AFI-2, Alma Ata MID-2, Alma Ata MID-3, Bahrain MID-2,
+                Bombay AFI-3, Bombay INO-1, Bombay MID-2, Cairo AFI-3,
+                Cocos Island INO-1, Delhi MID-2, Dushanbe MID-2,
+                Dushanbe MID-3, Jeddah AFI-3, Johannesburg AFI-4,
+                Johannesburg INO-1, Kano AFI-2, Kano AFI-4, Karachi MID-
+                2, Kuybyshev MID-3, Leningrad EUR-A, Moscow EUR-A,
+                Moscow MID-3, Murmansk EUR-A, Nairobi AFI-3, Nairobi
+                INO-1, Odessa EUR-A, Perth INO-1, Salisbury INO-1,
+                Tehran MID-2, Tripoli AFI-3, Urumchi MID-2
+        17964   Flight Test
+
+17970-18030 Aeronautical Mobile (OR)
+        17975   Retail
+        17988   GZO Hong Kong
+        17993   Andrews AFB
+        17995   Canadian Military
+        18009   JAX Control
+        18019   Rasputin, San Pablo AFB
+        18023   Berne (Swissair), Red Cross AX
+
+18030-19990 Fixed
+        18033   NDT Totsuka, NPN Guam
+        18036.5 CCS Santiago
+        18104   SOT26 Warszawa
+        18175   Telco Stockholm
+        18275   BC relay (VOA)
+        18303   OLD/OLG4 Prague
+        18330   Telco Paris
+        18359   KWN90 Washington
+        18386   OMZ
+        18468   KKN50 Washington, Telco Karachi
+        18496   SNN2
+        18614   Telco Gothaab
+        18619   Telco Amsterdam
+        18620   Telco Gothaab
+        18624   Telco Rome
+        18626   Telco Gothaab
+        18631   Telco Rome
+        18632   Telco Rome
+        18637   Telco Rome
+        18640   Telco Kabul
+        18700   DGS70/DAM Elmshorn/Norddeich
+        18805   Telco Paris
+        18840   Telco Havana
+        18924   Telco New York (AT&T)
+        18933.2 North Atlantic
+        19080   Telco New York (AT&T)
+        19240   DBT/DBU/3/DBV/DBW/DBX/DBZ/3 Koenigwustern
+        19262.5 BC relay (VOA)
+        19298   Telco New York (AT&T)
+        19330   Telco Rome
+        19435   Telco Rome
+        19520   Telco Rome
+        19592   Telco Rome
+        19678   Telco Rome
+        19723.5 BC relay (VOA)
+        19796   CUC8/9 Alfragide
+        19810   CUC8/9 Alfragide
+        19820   Telco New York (AT&T)
+        19881   EAV988 Aranjuez
+        19933   Telco Rome
+        19934   Telco Rome
+
+19990-20010 Radio Astronomy, Standard Frequency
+        20000   RNM Moscow, WWV Ft Collins, WWVH Kihei Maui
+
+20010-21000 Fixed
+        20020   Telco Kampala
+        20053   Telco Addis Ababa
+        20122   KKN44 Washington
+        20147   AEZ Asmara (LSB)
+        20202   EAY22/49 Basile
+        20215   BC relay (RFE)
+        20225   NSS Annapolis
+        20235   Telco Jeddah
+        20250   Pauline (LSB)
+        20290   Telco Cairo
+        20300   GYA2/3/4/5 London
+        20575   NPM Honolulu
+        20624   Pauline (LSB)
+        20630   LCO/LFT/LHK Jeloey
+        20640   Andrews AFB
+        20708   Telco New York (AT&T)
+        20710   BC relay (RFE)
+        20827   Telco Tel Aviv
+        20900   Telco Paris
+        20920   Telco New York (AT&T)
+
+21000-21450 Amateur
+
+21450-21750 Broadcasting
+
+21750-21850 Fixed
+        21760   NPN Guam
+        21796   CUA43/47/48/69/90 Alfragide
+
+21850-21870 Radio Astronomy
+
+21870-22000 Aeronautical Mobile (R)
+        21931   Flight Test
+        21940   Paris (Air France)
+        21943   Bahrain (Gulf Air), Beirut (MEA), Johannesburg (SAA)
+        21945   Havana (Cubana)
+        21946   London (British Airways)
+        21949   Seoul (KAL)
+        21952   Rome (Alitalia), Tel Aviv (El Al)
+        21955   Buenos Aires (Aerolineas Argentinas), Rio de Janeiro
+                (Varig)
+        21958   Moscow (Aeroflot)
+        21964   Houston LDOC, New York/San Juan LDOC, San
+                Fransisco/Honolulu LDOC
+        21967   Madrid/Las Palmas (Iberia)
+        21970   Seoul (KAL), Sidney (Qantas)
+        21973   Amsterdam (KLM)
+        21979   Athens (Olympic), Frankfurt (Lufthansa)
+        21988   Berne (Swissair)
+        21991   Rio de Janeiro (Varig)
+        21994   Jeddah (Saudia)
+        21997   Stockholm (SAS)
+
+22000-22139.5 Maritime Mobile (ship telephony)
+        22094.5 Simplex
+        22098   Simplex
+        22101.5 Simplex
+        22105   Simplex
+        22108.5 Simplex
+        22124   Limited coast
+        22127.1 Limited coast
+        22130.2 Limited coast
+        22133.3 Limited coast
+        22136.4 Limited coast
+
+22139.5-22192 Maritime Mobile (special systems)
+
+22192-22227 Maritime Mobile (ship SITOR)
+
+22227-22250 Maritime Mobile (ship calling)
+        22248   SELCAL ship SITOR
+        22248.5 SELCAL ship SITOR
+
+22250-22310.5 Maritime Mobile (ship working)
+
+22310.5-22561 Maritime Mobile (coast working)
+        22318.5 Gulf of Mexico, South Atlantic
+        22348.5 North Atlantic
+        22366.5 North Atlantic
+        22377   IAR Rome
+        22383   GBY20/MHU2/3/4/5/6 Rugby/Portishead
+        22387   VCS Halifax
+        22393   ZRQ/2/3/4/5
+        22395   CLA Havana, OFJ Helsinki
+        22399   SPA/SPH Gdynia
+        22400   ZRH/2/3/4/5/6 Simonstown
+        22401   NDT Totsuka
+        22403   UJY Iman
+        22404   OXZ Lyngby
+        22407   GKC Portishead, North Atlantic, ZRH/2/3/4/5/6 Simonstown
+        22411   SVA Athens
+        22413   KOK Los Angeles, SAB/SAG Goeteborg, South Pacific
+        22417   SVA Athens
+        22418   GKC Portishead, OXZ Lyngby
+        22419   LPD Gral Pacheco
+        22420   PPA25, URL
+        22422   GYR2/3/4/5 Malta
+        22423   UAT Moskow
+        22425   Central Pacific, KFS/A San Fransisco, LF-/LG- Rogoland
+        22426   AQP2/3/4 Karachi
+        22431   Gulf of Mexico, South Atlantic, WNU Slidell
+        22441   8PO Barbados
+        22446   EAD/2/EDZ4 Aranjuez
+        22448   FUF Ft de France
+        22449   CKN Vancouver, GKB Portishead
+        22450   ROT Moscow
+        22455   ZSL/2/3/4/5/6/7 Simonstown
+        22458   GKG Portishead, OXZ Lyngby, RUVE/URB2/UDO2/RWWM
+                Klaipeda, WAX Miami
+        22467   GKA Portishead, South Pacific
+        22471   EBA Madrid
+        22472   LF-/LG- Rogoland, SVA Athens
+        22473   VIS26/5/6/42 Sydney
+        22476   DAM Norddeich, DAN Norddeich, NRV
+        22479   CUL Lisbon, Central Pacific, GZX2/3/4/5/6 Mauritius, KPH
+                Bolinas
+        22480   DHS Ruegen
+        22481   DHS Ruegen
+        22485   North Atlantic, VIX2/3/4/5/6/7 Sydney, WSL Amagansett
+        22487   Gulf of Mexico
+        22487.5 NMF Boston
+        22488   VHP Belconnen
+        22491   4XO Haifa
+        22495   SPA/SPH Gdynia
+        22503   GKG Portishead, North Atlantic, South Atlantic
+        22505   PRS5, SPE/SPB Szczecin
+        22509   FFL St Lys, FFS6/8 St Lys, Hawaii
+        22512   UAT Moskow, UJA
+        22515   Central Pacific, DAN Norddeich, KFS/B San Fransisco
+        22521   GYS3/4/5/6 Singapore, WCC Chatham
+        22523   FUB Paris
+        22525   IRM Rome
+        22526   GKH Portishead
+        22528.5 GKI Portishead
+        22530   PWZ Rio de Janeiro
+        22533   GZC/2/3/4/5 Mauritius, OST/3/32/5/52/6/62 Ostende, ZLP
+                Awarua
+        22539   North Pacific, PCH Scheveningen
+        22545   GKM/GKW/GKN/GKF Portishead
+        22550   DHS Ruegen
+        22551   CTU2/CTV/2/7/CTU8 Monsanto/Lisbon
+        22556   GYA2/3/4/5 London
+        22557   Central Pacific, KPH Bolinas
+
+22561-22596 Maritime Mobile (coast SITOR)
+        22563   6XS Diego Saurez
+        22566   CTU2/CTV/2/7/CTU8 Monsanto/Lisbon
+        22569   FFL St Lys, FFS6/8 St Lys
+        22575   PCH Scheveningen
+        22581   4XZ Haifa
+        22587   CFH-L Halifax, GZC/2/3/4/5 Mauritius
+        22589   URD Leningrad
+        22591   DAL Norddeich
+        22593   6WW Dakar, NPG-FC/FM San Fransisco, NPM Honolulu
+        22595   HEB Berne, SELCAL coast SITOR
+        22595.5 SELCAL coast SITOR
+        22596   LZS, WOO Ocean Gate
+
+22596-22720 Maritime Mobile (coast telephony)
+        22598   ZSC/6/9/21/33 Cape Town
+        22599   WCC Chatham
+        22600   UOP
+        22602   OST/3/32/5/52/6/62 Ostende
+        22607   SAB/SAG Goeteborg
+        22608.4 WOO Ocean Gate
+        22611   CCS Santiago
+        22615   UDK2 Murmansk
+        22616   GZV Mauritius, UBN/UDC/UBC Jdanov
+        22617   GXO Mauritius
+        22623   IAR Rome
+        22623.9 WOO Ocean Gate
+        22635   NPG San Fransisco
+        22636.3 KMI Dixon
+        22639.4 WOM Ojus
+        22642.5 WOM Ojus
+        22661.1 WOM Ojus
+        22664.2 KMI Dixon
+        22670   ZUD Telco
+        22676.6 WLO Mobile (SSB)
+        22689   WLO Mobile (SSB)
+        22697.7 KMI Dixon
+        22704.5 KMI Dixon, WOO Ocean Gate
+        22707.6 WLO Mobile (SSB)
+
+22720-23200 Fixed
+        22754   GXM Singapore
+        22760   NKA Asmara
+        22764   NAA Cutler
+        22805   Pauline (LSB)
+        22845   VHP Belconnen
+        22919   NST/GXH/AOK/...
+
+23200-23350 Aeronautical Mobile (OR)
+        23285   Berne (Swissair)
+
+23350-24990 Fixed
+        23464   Telco New York (AT&T)
+        23821.5 Telco Rome
+        23891   URD Leningrad
+        23975   KKN50 Washington
+        24020   BC relay (BBC)
+        24450   Pauline (LSB)
+
+24990-25010 Radio Astronomy, Standard Frequency
+        25000   RNM Moscow, WWV Ft Collins
+
+25010-25070 Land Mobile (industrial)
+        25011   SVA Athens
+        25020   Industrial (Petroleum)
+        25040   Industrial (Petroleum)
+        25060   Industrial (Petroleum)
+        25065   OFJ Helsinki
+
+25070-25076 Maritime Mobile (ship calling)
+
+25076-25090.1 Maritime Mobile (ship SITOR)
+        25080   Industrial (Petroleum)
+
+25090.1-25110 Maritime Mobile (ship working)
+        25100   Industrial (Petroleum)
+
+25110-25330 Land Mobile (industrial)
+        25120   Industrial (Petroleum)
+        25135   OST/3/32/5/52/6/62 Ostende
+        25140   Industrial (Petroleum)
+        25160   Industrial (Petroleum)
+        25180   Industrial (Petroleum)
+        25189   Telco Paris
+        25200   Industrial (Petroleum)
+        25202   BC relay (VOA)
+        25210   Telco Brazzaville
+        25220   Industrial (Petroleum)
+        25240   Industrial (Petroleum)
+        25250   ZUD Telco
+        25255   ZUD Telco
+        25260   Industrial (Petroleum)
+        25262   OXZ Lyngby
+        25280   Industrial (Petroleum)
+        25300   Industrial (Petroleum)
+        25308   LF-/LG- Rogoland
+        25320   Industrial (Petroleum)
+        25329   ZUD Telco
+
+25330-25600 Government
+        25383   LF-/LG- Rogoland
+        25387   URD Leningrad
+        25401   SVA Athens
+        25416   URD Leningrad
+        25434   TIM Limon
+        25460   UMV
+        25461   SAB/SAG Goeteborg
+        25545   UMV
+        25562   HKB Barranquilla
+        25570   UXN/UGE Arkhangelsk
+        25590   NSS Annapolis
+        25596   UFB Odessa
+
+25600-26100 Broadcasting
+        25725   URD Leningrad
+        25726   CLQ Havana
+        25801   BC relay (VOA)
+        25860   UAT Moskow, UBN/UDC/UBC Jdanov
+        25900   UFB Odessa
+        26000   BC relay (VOA)
+        26030   IAR Rome
+        26055   UFB Odessa
+        26062.5 URD Leningrad
+        26070   6VA Dakar
+
+26100-26480 Land Mobile (remote pickup)
+        26103.5 4XO Haifa
+        26110   BC relay (DSB), UJQ
+        26129   UAT Moskow
+        26150   UJQ
+        26445   BC relay (LSB)
+
+26480-26950 Government (civil air patrol)
+        26620   Civil Air Patrol
+
+26950-26960 Fixed
+        26955   International Fixed Public
+
+26960-27410 Personal
+        27120   Industrial Scientific and Medical Equipment
+        27235   Industrial
+        27245   Industrial
+        27255   Industrial
+        27265   Industrial
+        27275   Industrial
+        27290   Industrial (Special Industrial)
+        27310   Industrial (Special Industrial)
+        27330   Industrial (Special Industrial)
+        27350   Industrial (Special Industrial)
+        27370   Industrial (Special Industrial)
+        27390   Industrial (Business Radio)
+        27410   Industrial (Business Radio)
+
+27410-27540 Land Mobile
+        27430   Industrial (Business Radio)
+        27450   Industrial (Business Radio)
+        27470   Industrial (Business Radio)
+        27490   Industrial (Business Radio)
+        27510   Industrial (Business Radio)
+        27530   Industrial (Business Radio)
+
+27540-28000 Government
+
+28000-29700 Amateur
+
+29700-29800 Land Mobile
+        29710   Industrial (Forest Products)
+        29730   Industrial (Forest Products)
+        29750   Industrial (Forest Products)
+        29770   Industrial (Forest Products)
+        29790   Industrial (Forest Products)
+
+29800-29890 Fixed
+
+29890-29910 Government
+
+29910-30000 Fixed
+        29916   

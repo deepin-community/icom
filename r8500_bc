@@ -1,0 +1,84 @@
+# R8500 broadcast bank 3
+
+# Time
+
+3.0 3.33 AM dial 5 name "CHU-2"
++ 7.335 AM dial 5 name "CHU-7"
++ 14.64 AM dial 5 name "CHU-14"
+
++ 2.5 AM name "WWV-2"
++ 5 AM dial 5 name "WWV-5"
++ 10 AM dial 5 name "WWV-10"
++ 15 AM dial 5 name "WWV-15"
++ 20 AM dial 5 name "WWV-20"
+
+# weather
+
++ 162.400 FM dial 25 name "NOAA-WX" #
++ 162.425 FM dial 25 name "NOAA-WX" #
++ 162.450 FM dial 25 name "NOAA-WX" #
++ 162.475 FM dial 25 name "NOAA-WX" # Philadelphia, PA
++ 162.500 FM dial 25 name "NOAA-WX" # Sudlersville, MD
++ 162.525 FM dial 25 name "NOAA-WX" #
++ 162.550 FM dial 25 name "NOAA-WX" #
++ 162.575 FM dial 25 name "NOAA-WX" #
+
+# AM radio
+
++ 1150 AM name "WDEL" # Wilmington
++ 1230 AM dial 10 name "none" # Avondale
++ 1260 AM dial 10 name "WNRK" # Newark
++ 1290 AM dial 10 name "WJBR" # Wilmington
++ 1330 AM dial 10 name "WJSS" # Havre de Grace
++ 1380 AM dial 10 name "WTMC" # Wilmington
++ 1450 AM dial 10 name "WILM" # Wilmington
++ 1510 AM dial 10 name "WFAI" # Salem
++ 1520 AM dial 10 name "WCHE" # West Chester
++ 1550 AM dial 10 name "WSER" # Elkton
+
+# FM radio
+
+4.0 88.1 WFM dial 100 name "WMHS" # Pike Creek
++ 88.7 WFM dial 100 name "WLIU" # Lincoln University
++ 89.1 WFM dial 100 name "WXHL" # Christiana
++ 89.9 WFM dial 100 name "WOEL" # Elkton
++ 91.3 WFM dial 100 name "WVUD" # Newark
++ 91.7 WFM dial 100 name "WCUR" # West Chester
++ 91.7 WFM dial 100 name "WMPH" # Wilmington
++ 91.9 WFM dial 100 name "none" # Delaware City
++ 93.7 WFM dial 100 name "WSTW" # Wilmington
++ 94.7 WFM dial 100 name "none" #
++ 97.9 WFM dial 100 name "none" #
++ 98.1 WFM dial 100 name "none" #
++ 98.9 WFM dial 100 name "none" #
++ 99.5 WFM dial 100 name "WJBR" # Wilmington
++ 101.1 WFM dial 100 name "none" #
++ 102.9 WFM dial 100 name "none" #
++ 103.5 WFM dial 100 name "WJYN" #
++ 103.7 WFM dial 100 name "WXCY" # Havre De Grace
++ 104.3 WFM dial 100 name "none" #
++ 104.5 WFM dial 100 name "none" #
++ 105.3 WFM dial 100 name "none" #
++ 105.9 WFM dial 100 name "none" #
++ 945.0 WFM dial 100 name "STL" #
+
+# TV
+
++  65.75 WFM dial 100 name "CBS-3" # KYWV Philadelphia
++  87.75 WFM dial 100 name "ABC-6" # WPVI Philadelphia
++ 197.75 WFM dial 100 name "NBC-10" # WCAU Philadelphia
++ 203.75 WFM dial 100 name "PBS-11" # WNVT Camden
++ 209.75 WFM dial 100 name "PBS-12" # WHYY Wilmington
++ 493.75 WFM dial 100 name "WB-17" # WPHL Philadelphia
++ 523.75 WFM dial 100 name "TV-22" # none
++ 529.75 WFM dial 100 name "PBS-23" # WNJS Camden
++ 565.75 WFM dial 100 name "FOX-29" # WTXF Philadelphia
++ 601.75 WFM dial 100 name "PBS-35" # WYBE Philadelphia
++ 649.75 WFM dial 100 name "TV-43" # WPMT York
++ 679.75 WFM dial 100 name "IN-48" # WGTW Burlington
++ 683.74 WFM dial 100 name "TV-49" # WGCB Red Lion
++ 697.75 WFM dial 100 name "TV-51" # WTVE Reading
++ 733.75 WFM dial 100 name "UPN-57" # WPSG Philadelphia
++ 757.75 WFM dial 100 name "PAX-61" # WPPX Wilmington
++ 781.75 WFM dial 100 name "TV-65" # WUVP Vineland
++ 805.75 WFM dial 100 name "IND-69" #

@@ -1,0 +1,7 @@
+# 756 setup
+
+radio 756
+utc set
+restore * 756_rpt
+restore * 756_arinc
+restore * 756_bc

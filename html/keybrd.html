@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html;charset=iso-8859-1">
+		<meta name="generator" content="HTML Tidy, see www.w3.org">
+		<title>Keyboard and Batch Commands</title>
+		<link href="scripts/style.css" type="text/css" rel="stylesheet">
+	</head>
+
+	<body>
+		<h3>Keyboard and Batch Commands</h3>
+		<p>Following is a list of commands recognized in keyboard and batch modes. Note that the <tt>radio</tt> command must be given before any command that depends on the radio model. Other than this, there are no restrictions on the order of these commands. Note that several commands shown on the <tt>?</tt> help billboard, but not documented here, have not been tested.</p>
+		<p>A command line consists of a string of keyword/argument subcommands executed in order from left to right. Subcommands take on zero, one or more arguments. If the subcommand is the last one on the command line and with no arguments, the general behavior is to display some program or internal radio value. In general, a question mark ? argument invokes a context-sensitive help menu giving all the valid arguments. If one or two arguments, the general behavior is to set some program or internal radio value. Due to variations in the many ICOM radio models, not all the values work in all radios. In such cases use of an unsupported value results in a &quot;radio doesn't do that&quot; message.</p>
+		<p>Following are the basic commands to control the radio, select the operating mode and control various basic functions. The command parser is designed for easy access to the most often used functions, such as changing the frequency or mode. When processing the next subcommand in the command line, the parser first looks up the function in the help menu and executes it if found. Next, it determines if the token is a valid frequency and sets the radio frequency if it is. Numbers below 1000 are interpreted in MHz, while those above 1000 are interpreted in kHz. If not a valid frequency, the parser looks up the mode in the help menu and sets it if found. If not found, the parser ignores it and displays an error message.</p>
+		<h4 id="#pgm">Program Commands</h4>
+		<dl>
+			<dt><tt>radio [ <i>name</i> ]</tt>
+			<dd>Select and initialize the <i>name</i> radio listed on the help menu and display its capabilities, including the upper and lower band limits, number of memory banks and number of memory channels per bank. This must be the first command in keyboard or batch modes. Upon selection the program inspects the radio to set various default options and reads the first memory channel. Note that some ICOM transceivers support noncontiguous band limits, such as .03-200 MHz and 400-470 MHz for the 7000. The band limits displayed depend on which frequency range is active when the radio is selected. If no radios have been selected and no <i>name</i> is present, scan the CI-V bus for all known radios and select any and all that are present. This is useful when multiple radios are in use and for testing. If a radio has been selected and no <i>name</i> is present, display the capabilities of the current selection.
+			<dt><tt>quit</tt>
+			<dd>Exit the program and return control to the shell.
+			<dt><tt>include</tt> <i>file</i>
+			<dd>Read commands from <i>file</i> until the end of file. Files can be nested up to 20 levels.
+			<dt><tt>pad</tt>
+			<dd>Switch to keypad mode.
+			<dt><tt>trace</tt> <i>function</i>
+			<dd>Select the CI-V bus trace function from the list on the help menu.  The <tt>trace all</tt> command displays each CI-V command and response in hex, with prefix <tt>T:</tt> for packets to the radio and <tt>R:</tt> for packets from the radio. 
+			<dt><tt>dump</tt>
+			<dd>Dump the current VFO frequency, mode, duplex and tone settings in hex. Dump related channel data, including the dial step and programmed dial step for the R8500 receiver.
+			<dt><tt>verbose on | off ]</tt>
+			<dd>Select the verbose mode from the list on the help menu.
+		</dl>
+		<h4 id="#io">Basic Control Commands</h4>
+		<dl>
+			<dt><tt>mode</tt> [ <i>mode</i> ]
+			<dd>Select one of the mode/filter combinations listed on the help menu. If no argument is given, report the current selection. For most radio models the mode selection includes a filter selection of wide, medium and narrow.
+			<dt><tt>duplex</tt> [ <i>offset</i> ]
+			<dd>Set the <i>offset</i> of the transmit duplex offset register. Modern transceivers have duplex offset registers for HF, 50 MHz, 144 MHz and 420 MHz bands. In order to read and write these registers, the frequency must be first set within the correct band.
+			<dt><tt>bank</tt> [ <i>bank</i> [ <i>name</i> ] ]
+			<dd>Set the current bank number and optional bank name. If no arguments are present, report the current bank number and name. So far as known, this works only on the R8500.
+			<dt><tt>tx</tt>
+			<dd>Place the transceiver in the transmit configuration.
+			<dt><tt>rx</tt>
+			<dd>Place the transceiver in the receive configuration.
+			<dt><tt>ptt [ on | off ]</tt>
+			<dd>With no argument the status of the transceiver is reported as <tt>on</tt> if transmitting and <tt>off</tt> otherwise. With one argument the transmitter is switched on or off.<dt><tt>utc</tt>
+			<dd>Set the transceiver year, date and time to the current Universal Coordinated Time (UTC) of the host operating system. The 7000 and 7800 can set the year, date and time. The 756 can set the time, but not the year and date.</dl>
+		<h4 id="#io">Memory Management Commands</h4>
+		<p>The following commands are used to read, write and empty (clear) memory channels and transfer memory contents to and from frequency (text) files. They take the argument <i>range</i> defining a single channel or range of channels that might be in the same or different banks. The channel notation used is represented <tt>b.c</tt>, where <tt>b</tt> is the bank number and <tt>c</tt> the channel number. For radios without banks, including the 706G and 756, the bank number is not used. A range of channels is represented by <tt>b1.c1:b2.c2</tt>. When spanning different banks, channels wrap from the last channel in one bank to the first channel in the next higher bank and vice versa. In addition, the channels wrap from the last channel in the radio to the first channel and vice versa. Numbering always goes from the first channel to the second channel number in either direction as indicated.</p>
+		<p>Various defaults apply in order to simplify operation. For instance, a <tt>chan</tt>, <tt>write</tt> or <tt>empty</tt> command with no arguments applies to the last selected bank and channel. When multiple banks are available, a channel number with no bank number applies to the last selected bank. The dollar sign $ replacing a bank or channel number applies to the entire range of banks or channels. For instance, a <tt>$:$</tt> represents the entire contents of the memory array.</p>
+		<p>Additional subcommands can appear on these commands when certain features are selected and available. These include the <tt>name</tt>, <tt>split</tt>, <tt>tone</tt>, <tt>tsql</tt>, <tt>dtcs</tt> and, in the R8500, <tt>atten</tt>, <tt>step</tt>, <tt>pstep</tt> and <tt>scan</tt>. These subcommands are useful when channels are read from the radio, written to a file or read from a file.</p>
+		<dl>
+			<dt><tt>save</tt> <i>range</i> <i>file</i>
+			<dd>Save the block of memory channels in <i>range</i> to <i>file</i>. Note that empty memory channels are not saved.
+			<dt><tt>restore</tt> <i>range</i> <i>file</i>
+			<dd>Restore the block of memory channels in <i>range</i> from <i>file</i>. If <i>range</i> is the single character *, restore the channels using the bank and channel number on each line of the file. Otherwise, renumber the channels as indicated by <i>range</i>.
+			<dt><tt>chan</tt> [ <i>range</i> ]
+			<dd>Read the block of memory channels in <i>range</i>.
+			<dt><tt>write</tt> [ <i>range</i> ]
+			<dd>Write the block of memory channels in <i>range</i>. Include the frequency, mode and other data available in the radio.
+			<dt><tt>empty</tt> [ <i>range</i> ]
+			<dd>Empty (clear) the block of memory channels in <i>range</i>. If <i>range</i> is missing, empty the last channel selected.</dl>
+		<h4 id="#ctl">Switches, Controls and Meters</h4>
+		<p>These commands are used to inspect and change the various switches, controls and meters available in the radio. As each radio is different, not all commands work with all radios. By convention, a subcommand with no argument displays a menu of all functions that work with the particular radio, while a subcommand with one argument ? displays a help menu of all arguments along with a short description of the function.</p>
+		<dl>
+			<dt><tt>set</tt> [ <i>switch</i> [ <i>value</i> ] ]
+			<dd>Display or set internal radio switches. A <tt>set</tt> with one argument <i>switch</i> displays the current value of that switch, but does not change its value. A <tt>set</tt> with two arguments <i>switch</i> and <i>value</i> sets the designated switch to the given value. Most switches take on names of only off or on, but some like <tt>agc</tt> and <tt>break</tt> can take on multiple values.
+			<dt><tt>ctl</tt> [ <i>control</i> [ <i>value</i> ] ]
+			<dd>Display or set internal radio controls. A <tt>ctl</tt> with one argument <i>control</i> displays the current value of that control, but does not change its value. A <tt>ctl</tt> with two arguments <i>control</i> and <i>value</i> sets the designated control to the given value. Note that those controls involving frequency take signed values over the range -128 to 127 inclusive, while others not involving frequency take values over the range 0 to 255 inclusive.
+			<dt><tt>meter</tt> [ <i>meter</i> ]
+			<dd>Display the internal radio meters. A <tt>meter</tt> with one argument <i>meter</i> displays the current value of that meter. The displayed values for most meters take on values in the range 0 to 255 inclusive. However, the signal (S) meter is calibrated in S units and dB above S9.
+		</dl>
+		<h4 id="#vfo">VFO and Memory Channel Operation</h4>
+		<p>Modern ICOM transceivers have two VFOs, called VFO A (or main VFO) and VFO B (or sub VFO). VFO A is ordinarily used for transmitting and receiving, but in split mode VFO A is used for receiving and VFO B for transmitting. A <tt>vfo swap</tt> command interchanges the contents of VFO A and VFO B. On the 706G and 7000 a <tt>vfo a</tt> command shows VFO A on the main display and VFO B on the sub display. A <tt>vfo b</tt> command shows VFO B on the main display and VFO A on the sub display. A <tt>vfo btoa</tt> command copies the contents of VFO B to VFO A. The 706G and 7000 can't do any of the other <tt>vfo</tt> commands.</p>
+		<p>On the 756 the main display is at the top in large bright font, while the sub display is at the bottom in small dim font. Ordinarily, updates from the panel controls and this program go to VFO A. A <tt>split sub</tt> command switches updates to VFO B, while a <tt>split main</tt> command switches back to the main VFO. A <tt>vfo equal</tt> command copies the contents of the main VFO to the sub VFO. The <tt>vfo watch</tt> and <tt>vfo nowatch</tt> turn the dual-watch function on and off.</p>
+		<p>ICOM transceivers can be switched to operate in either VFO or MEMO mode. In VFO mode the main display shows the frequency, mode and associated memory channel number. The frequency, mode, filter selection and other data can be changed by front panel controls and this program. The current VFO contents can be saved in a memory channel and recalled later. In VFO mode selecting a memory channel does not automatically transfer the contents to the VFO; however, this program does this with the <tt>read</tt> and <tt>restore</tt> commands.</p>
+		<p>In MEMO mode the memory channels are used directly. A <tt>read</tt> command automatically transfers the memory channel contents to the main VFO. While the VFO and MEMO modes can be selected by front panel controls, there are no explicit means to do this with the CI-V command set. Ordinarily, and to support memory channel operations like <tt>write</tt> and <tt>empty</tt>, MEMO mode is required. However, once one of the VFO subcommands is used, the radio switches to VFO mode. There appears no way with CI-V commands to switch back to MEMO mode.</p>
+		<dl>
+			<dt><tt>split</tt> <i>offset</i> | <i>subcommand</i>
+			<dd>If <i>offset</i> is present and a valid floating-point number preceded by a &quot;+&quot; or &quot;-&quot;, set the transmit frequency offset to the value in kHz and turn the split function on. If no &quot;+&quot; or &quot;-&quot;, set the transmit frequency directly in MHz and turn the split function on. If <i>subcommand</i> is present, execute one of the subcommands listed on the help menu.
+			<dt><tt>swap</tt>
+			<dd>If VFO A is selected, switch to VFO B. Further frequency and mode settings apply to VFO B. If VFO B is selected, switch to VFO A. Further frequency and mode settings apply to VFO A. This is the same function as the <tt>split swap</tt> subcommand and is most useful in keypad mode.
+			<dt><tt>vfo</tt> <i>subcommand</i><dd>Execute one of the subcommands listed on the help menu.
+		</dl>
+		<h4 id="#radio">Radio Control and Status Commands</h4>
+		<p>Various transceivers and receivers have idiosyncratic means to control the preamps and attentuators. In the R8500 the attentuator and tuning step information are saved along with the frequency and mode in a memory channel. In modern transceivers the preamp and attenuator values selected for each band are saved in nonvolatile registers for each band separately.</p>
+		<p>These commands are used to set and display various internal functions such as AGC time constant, antenna selection, etc. By convention, a command with no argument displays a menu of all subcommands that work with the particular radio, while a command with one argument ? displays a help menu of all subcommands along with a short description of the function.</p>
+		<dl>
+			<dt><tt>agc</tt> <i>time_constant</i>
+			<dd>Select one of the AGC time constants listed on the help menu. Some radios do not support this command. For the R8500 use the <tt>set agcfast</tt> or <tt>set agcslow</tt> commands. In FM modes all radios use the fast setting and cannot be overridden by command.<dt><tt>ant</tt> [ <i>antenna</i> ]
+			<dd>Select one of the antennas listed on the help menu. In some radios like the 756, one of two antennas can be selected for transmitting and receiving and a third for receiving only.
+			<dt><tt>atten</tt> [ <i>dB</i> ]
+			<dd>Select one of the attenuator dB listed on the help menu. Not all radios support all dB values shown; the 706G supports only 0 and 20 dB, the 7000 only 0 and 12 dB, the 756nand 775 only 0, 6, 12, and 18 dB and the R8500 0, 10, 20 and 30 dB.<dt><tt>preamp</tt> [ <i>function</i> ]
+			<dd>Select one of the preamp functions listed on the help menu. The 706G and 7000 support one preamp, the 756 two preamps and R8500 no preamps.<dt><tt>break</tt> [ <i>function</i> ]>
+			<dd>Select one of the break functions listed on the help menu.
+			<dt><tt>key</tt> <i>channel</i> [ <i>text</i> ]
+			<dd>Select the CW memory channel <i>channel</i>. If no <i>text</i> argument is present, report the current contents; otherwise replace the contents with the text.
+			<dt><tt>say [ <i>code</i> ]</tt>
+			<dd>Select one of the announce functions listed on the help menu. If no argument is given, announce the S-meter reading, frequency and mode.
+		</dl>
+		<h4 id="#step">Tuning Rate and Step Commands</h4>
+		<p>These commands set the radio dial tuning step and the variable tuning steps used in keypad mode. The <tt>dial</tt> and <tt>scan</tt> functions are provided by the radio, while the <tt>rate</tt> and <tt>step</tt> commands provide software control for the keypad tuning functions.</p>
+		<dl>
+			<dt><tt>dial</tt> [ <i>code</i> ]
+			<dd>Select one of the main dial tuning step listed on the help menu. If no argument is given, report the current selection. While most radios support only the values listed, the R8500 supports programmed steps between 0.5 kHz and 199.5 kHz in steps of 0.5 kHz.<dt><tt>scan</tt> [ <i>code</i> ]
+			<dd>Select the scan mode, where the argument corresponds to a member on the help menu. These have not been tested.<dt><tt>band</tt> [ <i>lowfreq</i> ] [ <i>highfreq</i> ]
+			<dd>Set the low and high band edges for step-scanning. If stepped above the high band edge, the frequency is set to the low band edge. If stepped below the low band edge, the frequency is set to the high band edge.
+			<dt><tt>rate [ <i>rate</i> ]</tt>
+			<dd>Set the initial tuning rate used in keypad mode by the <tt>LEFT</tt> and <tt>RIGHT</tt> keyboard arrow keys.to a value between 0 and 12 corresponding to rates from 1 Hz in increasing 1-2.5-5 multiples to the maximum 5 MHz. Whether or not the argument is present, report the current frequency, mode, rate and step values.<dt><tt>step</tt> [ <i>step</i> ]
+			<dd>Set the tuning step used in keypad mode by the <tt>UP</tt> and <tt>DOWN</tt> keyboard arrow keys. The <i>step</i> value does not have to conform to the steps available with the <tt>dial</tt> command and can be any value as long as the resulting frequency is valid for the radio.</dl>
+		<h4 id="#tone">Tone Commands</h4>
+		<p>Modern ICOM transceivers include provisions for repeater tone and tone squelch (CTSS), and digital tone squelch (DTCS) functions used to access repeaters. At the moment, the only radio verified to support all three tone functions is the 7000. The 756 supports only the tone and tone squelch functions. The 706G tone functions cannot be programmed via CI-V commands.</p>
+		<p>The CTSS uses discrete analog frequencies in the range 67.0-254.1 Hz as shown by the <tt>tone ?</tt> and <tt>tsql ?</tt> commands. The DTCS uses discrete digital codes 023-754, as shown by the <tt>dtcs ?</tt> command. The DTCS codes are augmented by <tt>-NN</tt>, where the first <tt>N</tt> ndicates normal transmit polarity and the second <tt>N</tt> indicates normal receive polarity. The <tt>N</tt> for normal polarity can be replaced by <tt>R</tt> for reverse polarity.</p>
+		<p>All three of the following commands work the same way. A command with no arguments reports the tone status (on or off) and tone code. An argument <tt>on</tt> turns the function on and argument <tt>off</tt> turns it off. An argument matching one of the help menu selections sets that tone code and turns the function on.</p>
+		<dl>
+			<dt><tt>tone on | off |</tt> <i>frequency</i>
+			<dd>Turn the repeater tone function on or off or select the frequency from the list on the help menu.
+			<dt><tt>tsql on | off |</tt> <i>frequency</i>
+			<dd>Turn the tone squelch function on or off or select the frequency from the list on the help menu.
+			<dt><tt>dtcs on | off |</tt> <i>code</i>
+			<dd>Turn the digital tone squelch function on or off or select the code from the list on the help menu.
+		</dl>
+		<h4 id="#misc">Frequency Compensation Commands</h4>
+		<p>These commands can provide software compensation for VFO and BFO frequency errors. Older radios generate LO frequencies from a single VFO synthesizer and generate BFO frequencies using a VCXO separately for each mode. Modern radios generate all LO and BFO frequencies from a single VFO synthesizer. The <tt>vfocomp</tt> command corrects for the VFO frequency error, while the <tt>bfocomp</tt> command corrects for the BFO frequency error in each mode.</p>
+		<p>Where all frequencies are synthesized from a common VFO, the calibration procedure is simple using a single WWV/H frequency. With keyboard commands, tune to the highest available WWV/H frequency in USB mode and note the beat note of the 500/600-Hz modulation tone, then switch to LSB mode and note the beat note. Use the <tt>vfocomp</tt> command to set the VFO compensation and retune the radio to implement it. Repeat as necessary until the beat notes are the same. Using this technique, it is readily possible to compensate within 0.1 PPM.</p>
+		<p>When the BFO frequencies are synthesized by a VCXO separately for each mode a different technique is necessary involving two WWV/H frequencies. As before, tune to the highest available frequency in USB mode and note the beat note. Then, retune to the lowest available WWV/H frequency and note the beat note. Use the <tt>vfocomp</tt> command to set the VFO compensation and retune the radio to implement it. Repeat as necessary between the highest and lowest frequencies until the beat notes are the same. This completes the VFO compensation.</p>
+		<p>The BFO compensation must be done for each mode separately, although usually only the USB and LSB modes are required. Using any available WWV/H frequency, note the difference between the 500/600-Hz modulation tones in AM mode and either USB or LSB mode. Adjust the USB and LSB BFO compensation so all three beat notes are the same.</p>
+		<dl>
+			<dt><tt>vfocomp</tt> [ <i>offset</i> ] 
+			<dd>If the argument <i>offset</i> is present, set the VFO frequency correction to the value specified in PPM. If not, display the current frequency and value.
+			<dt><tt>bfocomp</tt> [ <i>offset</i> ]
+			<dd>If the argument <i>offset</i> is present, set the BFO frequency correction to the value specified in Hz for the current mode. If not, display the current frequency and value.
+		</dl>
+		<hr>
+		<script type="text/javascript" language="javascript" src="scripts/footer.txt"></script>
+	</body>
+</html>
